@@ -224,3 +224,13 @@
     }
   }
 }
+.el-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.el-loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
