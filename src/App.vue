@@ -9,3 +9,10 @@ export default {
   name: 'App'
 }
 </script>
+
+<style lang="css">
+/* import styles/index.css */
+@import '~@/styles/style.css';
+
+/* Your component-specific styles */
+</style>
