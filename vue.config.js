@@ -49,6 +49,25 @@ module.exports = {
     }
   },
   chainWebpack(config) {
+    config.plugin('preload').tap(() => [
+      {
+        rel: 'preload',
+        herf: 'https://fonts.googleapis.com',
+        crossorigin: true
+      },
+      {
+        rel: 'preload',
+        herf: 'https://fonts.gstatic.com',
+        crossorigin: true
+      },
+      {
+        rel: 'preload',
+        herf: 'https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap',
+        crossorigin: true
+      }
+    ])
+
+
     // it can improve the speed of the first screen, it is recommended to turn on preload
     config.plugin('preload').tap(() => [
       {
