@@ -12,7 +12,7 @@ export default {
 
 <style lang="css">
 /* import styles/index.css */
-@import '~@/styles/style.css';
+@import '~@/style.css';
 
 /* Your component-specific styles */
 </style>
