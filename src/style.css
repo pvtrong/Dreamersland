@@ -1,6 +1,20 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import '~@/assets/css/animate.min.css';
+@import '~@/assets/css/magnific-popup.css';
+@import '~@/assets/css/fontawesome-all.min.css';
+@import '~@/assets/css/swiper-bundle.css';
+@import '~@/assets/css/tg-cursor.css';
+@import '~@/assets/css/jquery-ui.css';
+@import '~@/assets/css/odometer.css';
+@import '~@/assets/css/slick.css';
+@import '~@/assets/css/jquery-ui.css';
+@import '~@/assets/css/flaticon.css';
+@import '~@/assets/css/flowbite.min.css';
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base{
 @font-face {
