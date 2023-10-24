@@ -31,75 +31,87 @@
         </a>
       </div>
       <div
-        class="tournament__list-name w-[205px] flex-[0_0_auto] relative z-[1] pl-[35px] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
+        class="tournament__list-name flex-[0_0_auto] relative z-[1] pl-[0.5rem] pr-[0.5rem]"
+      >
+        <h5
+          class="status block uppercase text-[24px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
+        >
+          0{{ index }}
+        </h5>
+      </div>
+      <div
+        class="tournament__list-name w-[205px] flex-[0_0_auto] relative z-[1] pl-[35px]"
       >
         <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Nguyen Trong Ha</h5>
-        <span
-          class="status block uppercase text-[13px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] pl-[13px]"
-          >Snipper</span
+        <h5
+          class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] pl-[13px]"
         >
+          Snipper
+        </h5>
       </div>
-      <div
-        class="w-[125pxpx] flex-[0_0_auto] relative z-[1] pl-[35px] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
-      >
-        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Hang</h5>
-        <span
-          class="status block uppercase text-[13px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] "
-          >Snipper</span
+      <span v-for="(character, key) in listCharacters" :key="key">
+        <div
+          class="w-[125pxpx] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
         >
-      </div>
-      <div
-        class="w-[125pxpx] flex-[0_0_auto] relative z-[1] pl-[35px] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
-      >
-        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">So dien</h5>
-        <span
-          class="status block uppercase text-[13px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] "
-          >Snipper</span
-        >
-      </div>
-      <div
-        class="w-[125pxpx] flex-[0_0_auto] relative z-[1] pl-[35px] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
-      >
-        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Bonus</h5>
-        <span
-          class="status block uppercase text-[13px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] "
-          >Snipper</span
-        >
-      </div>
-      <div
-        class="w-[125pxpx] flex-[0_0_auto] relative z-[1] pl-[35px] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
-      >
-        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Tong diem</h5>
-        <span
-          class="status block uppercase text-[13px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] "
-          >Snipper</span
-        >
-      </div>
+          <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">
+            {{ character['title'] }}
+          </h5>
+          <h5
+            class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
+          >
+            {{ character['value'] }}
+          </h5>
+        </div>
+      </span>
       <div
         class="tournament__list-live ml-auto flex-[0_0_auto] md:mx-auto md:my-0 sm:mx-auto sm:my-0 xsm:mx-auto xsm:my-0"
       >
-        <a
-          class="group-hover:text-[#fff] inline-block uppercase font-bold text-[13px] text-[#adb0bc] tracking-[1px] px-[45px] py-3 rounded-md font-Barlow bg-[#0c1217] lg:px-[22px] lg:py-3"
-          href="https://www.twitch.tv/videos/1726788358"
-          target="_blank"
-          >Live now
-          <i
-            class="far fa-play-circle group-hover:text-[#ffbe18] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] ml-[3px]"
-          ></i
-        ></a>
+        <img
+          class="max-h-[412px] max-w-[402px] group-hover:animate-[breadcrumbShake_0.82s_cubic-bezier(0.36,0.07,0.19,0.97)_both] lg:max-h-[260px] lg:max-w-[255px] xl:max-h-80 xl:max-w-[310px]"
+          :src="rank1"
+          alt="img"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import team02 from "@/assets/img/team/team02.png";
+
+import team02 from '@/assets/img/team/team02.png';
+import rank1 from '@/assets/img/rank/rank_1.png';
+
+const listCharacters = [
+  {
+    title: 'Hạng',
+    value: 'Bạch Kim',
+    code: 'rankName',
+  },
+  {
+    title: 'Số điểm',
+    value: '80',
+    code: 'score',
+  },
+  {
+    title: 'Bonus',
+    value: '80',
+    code: 'bonus',
+  },
+  {
+    title: 'Tổng Điểm',
+    value: '80',
+    code: 'totalScore',
+  },
+];
 
 export default {
   props: {
     tournament: {
       type: Object,
       required: true,
+    },
+    index: {
+      type: Number,
     },
     animate: {
       type: Boolean,
@@ -109,6 +121,8 @@ export default {
   data() {
     return {
       thumbImage: team02,
+      listCharacters,
+      rank1: rank1
     };
   },
 };

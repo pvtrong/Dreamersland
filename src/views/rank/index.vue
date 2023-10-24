@@ -7,7 +7,6 @@
 
     <section
       class="tournament__list-area pb-[120px] pt-[120px] bg-center bg-cover"
-      :data-background="backgroundImage"
     >
       <div class="container">
         <custom-title :title="'Top of dreamers'"></custom-title>
@@ -18,6 +17,7 @@
             <tournament-item
               v-for="(tournament, index) in tournaments"
               :key="index"
+              :index="index+1"
               :tournament="tournament"
               :animate="animateText"
               class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-15"
@@ -30,10 +30,11 @@
 </template>
 
 <script>
-import TournamentItem from "@/views/rank/tournament-item.vue"; // Adjust the path to match your project structure
-import Breadcrumb from "@/components/CustomBreadcrumb/index.vue";
-import CustomTitle from "@/components/CustomTitle/index.vue";
-import breadcrumbImage03 from "@/assets/img/others/breadcrumb_img03.png";
+import TournamentItem from '@/views/rank/tournament-item.vue'; // Adjust the path to match your project structure
+import Breadcrumb from '@/components/CustomBreadcrumb/index.vue';
+import CustomTitle from '@/components/CustomTitle/index.vue';
+import breadcrumbImage03 from '@/assets/img/others/breadcrumb_img03.png';
+
 export default {
   components: {
     TournamentItem,
@@ -44,32 +45,32 @@ export default {
   data() {
     return {
       backgroundImage: breadcrumbImage03,
-      tournamentTitle: "Active tournament",
+      tournamentTitle: 'Active tournament',
       animateText: false, // Set to true for animation
       tournaments: [
         {
-          teamName: "FoxTie Max",
-          status: "Online",
-          prize: "$75000",
-          time: "10h : 15m",
-          thumbImage: "assets/img/others/tournament_thumb01.png",
-          liveLink: "https://www.twitch.tv/videos/1726788358",
+          teamName: 'FoxTie Max',
+          status: 'Online',
+          prize: '$75000',
+          time: '10h : 15m',
+          thumbImage: 'assets/img/others/tournament_thumb01.png',
+          liveLink: 'https://www.twitch.tv/videos/1726788358',
         },
         {
-          teamName: "Hatlax TM.",
-          status: "Online",
-          prize: "$85000",
-          time: "12h : 10m",
-          thumbImage: "assets/img/others/tournament_thumb02.png",
-          liveLink: "https://www.twitch.tv/videos/1726788358",
+          teamName: 'Hatlax TM.',
+          status: 'Online',
+          prize: '$85000',
+          time: '12h : 10m',
+          thumbImage: 'assets/img/others/tournament_thumb02.png',
+          liveLink: 'https://www.twitch.tv/videos/1726788358',
         },
         {
-          teamName: "Spartan iv",
-          status: "Online",
-          prize: "$45000",
-          time: "8h : 45m",
-          thumbImage: "assets/img/others/tournament_thumb03.png",
-          liveLink: "https://www.twitch.tv/videos/1726788358",
+          teamName: 'Spartan iv',
+          status: 'Online',
+          prize: '$45000',
+          time: '8h : 45m',
+          thumbImage: 'assets/img/others/tournament_thumb03.png',
+          liveLink: 'https://www.twitch.tv/videos/1726788358',
         },
       ],
       breadcrumbImage03,
