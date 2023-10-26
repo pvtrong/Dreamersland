@@ -42,7 +42,9 @@
       <div
         class="tournament__list-name w-[205px] flex-[0_0_auto] relative z-[1] pl-[35px]"
       >
-        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Nguyen Trong Ha</h5>
+        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">
+          {{ rank.user.first_name }} {{ rank.user.last_name }}
+        </h5>
         <h5
           class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] pl-[13px]"
         >

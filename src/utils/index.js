@@ -130,5 +130,20 @@ export function getStartAndEndOfWeek() {
   endDate.setDate(startDate.getDate() + 6); // Add 6 days to get the end of the week
   endDate.setHours(23, 59, 59, 999); // Set the time to the end of the day
 
-  return { start: startDate, end: endDate };
+  return { startDate, endDate };
+}
+
+export function getStartAndEndOfMonth() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+
+  // Calculate the start date of the month
+  const startDate = new Date(year, month, 1);
+
+  // Calculate the end date of the month
+  const nextMonth = new Date(year, month + 1, 1);
+  const endDate = new Date(nextMonth - 1);
+
+  return { startDate, endDate };
 }

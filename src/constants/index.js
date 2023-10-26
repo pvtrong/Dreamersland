@@ -3,4 +3,6 @@ const RANK_SORT_BY = {
     POINT: "point",
 };
 
-export { RANK_SORT_BY }
+const DATE_FORMAT = 'YYYY-MM-DD'
+
+export { RANK_SORT_BY, DATE_FORMAT }

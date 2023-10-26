@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 import getters from './getters';
 import app from './modules/app';
 import settings from './modules/settings';
-import users from './modules/user';
+import users from './modules/users';
 
 Vue.use(Vuex);
 
