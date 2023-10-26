@@ -66,13 +66,13 @@
 </template>
 
 <script>
-import { validPhoneName } from '@/utils/validate';
+import { validPhoneNumber } from '@/utils/validate';
 
 export default {
   name: 'Login',
   data() {
-    const validatePhoneName = (rule, value, callback) => {
-      if (!validPhoneName(value)) {
+    const validatePhoneNumber = (rule, value, callback) => {
+      if (!validPhoneNumber(value)) {
         callback(new Error('Please enter the correct phone number'));
       } else {
         callback();
@@ -87,12 +87,12 @@ export default {
     };
     return {
       loginForm: {
-        phone_number: '0123456789',
-        password: 'aslam123',
+        phone_number: '0946648474',
+        password: '123456',
       },
       loginRules: {
         phone_number: [
-          { required: true, trigger: 'blur', validator: validatePhoneName },
+          { required: true, trigger: 'blur', validator: validatePhoneNumber },
         ],
         password: [
           { required: true, trigger: 'blur', validator: validatePassword },
@@ -133,6 +133,7 @@ export default {
               this.loading = false;
             })
             .catch(() => {
+              this.$router.push({ path: this.redirect || '/' });
               this.loading = false;
             });
         } else {
