@@ -14,6 +14,6 @@ export function isExternal(path) {
  * @param {string} str
  * @returns {Boolean}
  */
-export function validUsername(str) {
-  return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(str)
+export function validPhoneName(str) {
+  return /^[0-9]+$/.test(str)
 }

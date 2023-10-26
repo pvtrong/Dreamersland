@@ -18,7 +18,8 @@
             >
               <span
                 class="sub-title tg__animate-text block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0"
-              >DREAMERS LAND</span>
+                >DREAMERS LAND</span
+              >
               <h3
                 class="title text-[45px] font-extrabold tracking-[1px] m-0 sm:text-[35px] xsm:text-[35px]"
               >
@@ -48,7 +49,8 @@
             >
               <span
                 class="sub-title tg__animate-text block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0"
-              >DREAMERS LAND</span>
+                >DREAMERS LAND</span
+              >
               <h3
                 class="title text-[45px] font-extrabold tracking-[1px] m-0 sm:text-[35px] xsm:text-[35px]"
               >
@@ -76,18 +78,18 @@
 </template>
 
 <script>
-import Breadcrumb from '@/components/CustomBreadcrumb/index.vue'
-import RankInfo from '@/views/users/rank-info.vue'
-import TaskCardItem from '@/views/users/task-card-item.vue'
-import win02Img from '@/assets/img/others/win02.png'
-import ItemCardImg from '@/assets/item-card.png'
+import Breadcrumb from '@/components/CustomBreadcrumb/index.vue';
+import RankInfo from '@/views/users/rank-info.vue';
+import TaskCardItem from '@/views/users/task-card-item.vue';
+import win02Img from '@/assets/img/others/win02.png';
+import ItemCardImg from '@/assets/item-card.png';
 
 export default {
   name: 'Users',
   components: {
     Breadcrumb,
     RankInfo,
-    TaskCardItem
+    TaskCardItem,
   },
   data() {
     return {
@@ -99,7 +101,7 @@ export default {
           status: 'Đã nhận',
           taskName: 'KỶ LỤC GIA NGÀY',
           image: ItemCardImg,
-          point: 40
+          point: 40,
         },
         {
           id: 2,
@@ -107,7 +109,7 @@ export default {
           status: 'Đã nhận',
           taskName: 'KỶ LỤC GIA NGÀY',
           image: ItemCardImg,
-          point: 40
+          point: 40,
         },
         {
           id: 3,
@@ -115,7 +117,7 @@ export default {
           status: 'Đã nhận',
           taskName: 'KỶ LỤC GIA NGÀY',
           image: ItemCardImg,
-          point: 40
+          point: 40,
         },
         {
           id: 4,
@@ -123,10 +125,10 @@ export default {
           status: 'Đã nhận',
           taskName: 'KỶ LỤC GIA NGÀY',
           image: ItemCardImg,
-          point: 40
-        }
-      ]
-    }
-  }
-}
+          point: 40,
+        },
+      ],
+    };
+  },
+};
 </script>
