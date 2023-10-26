@@ -77,36 +77,37 @@
 </template>
 
 <script>
-
 import team02 from '@/assets/img/team/team02.png';
 import rank1 from '@/assets/img/rank/rank_1.png';
 
-const listCharacters = [
-  {
-    title: 'Hạng',
-    value: 'Bạch Kim',
-    code: 'rankName',
-  },
-  {
-    title: 'Số điểm',
-    value: '80',
-    code: 'score',
-  },
-  {
-    title: 'Bonus',
-    value: '80',
-    code: 'bonus',
-  },
-  {
-    title: 'Tổng Điểm',
-    value: '80',
-    code: 'totalScore',
-  },
-];
+const parseListCharacter = (rank) => {
+  return [
+    {
+      title: 'Hạng',
+      value: 'Bạch Kim',
+      code: 'rankName',
+    },
+    {
+      title: 'Số điểm',
+      value: rank.point,
+      code: 'score',
+    },
+    {
+      title: 'Bonus',
+      value: '80',
+      code: 'bonus',
+    },
+    {
+      title: 'Tổng Điểm',
+      value: rank.amount,
+      code: 'totalScore',
+    },
+  ];
+};
 
 export default {
   props: {
-    tournament: {
+    rank: {
       type: Object,
       required: true,
     },
@@ -119,10 +120,11 @@ export default {
     },
   },
   data() {
+    const listCharacters = parseListCharacter(this.rank);
     return {
       thumbImage: team02,
       listCharacters,
-      rank1: rank1
+      rank1: rank1,
     };
   },
 };
@@ -130,7 +132,7 @@ export default {
 
 <style scoped>
 .tournament-item {
-  border: 1px solid #ccc;
+  border: 1px solid #2e0d0d;
   padding: 15px;
   margin: 15px;
 }
