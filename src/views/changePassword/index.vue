@@ -1,9 +1,9 @@
 <template>
   <div class="login-container">
     <el-form
-      ref="loginForm"
-      :model="loginForm"
-      :rules="loginRules"
+      ref="changePasswordForm"
+      :model="changePasswordForm"
+      :rules="changePasswordRules"
       class="login-form"
       auto-complete="on"
       label-position="left"
@@ -11,66 +11,47 @@
       <div class="title-container">
         <h3 class="title">Đổi mật khẩu</h3>
       </div>
-      <el-form-item prop="password">
+      <el-form-item prop="new_password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
         </span>
         <el-input
           :key="passwordType"
-          ref="password"
-          v-model="loginForm.password"
+          ref="new_password"
+          v-model="changePasswordForm.new_password"
           :type="passwordType"
-          placeholder="Password"
-          name="password"
+          placeholder="Mật khẩu mới"
+          name="new_password"
           tabindex="2"
           auto-complete="on"
-          @keyup.enter.native="handleLogin"
+          @keyup.enter.native="handleChangePassword"
         />
-        <span class="show-pwd" @click="showPwd">
+        <span class="show-pwd" @click="showPwd('new_password')">
           <svg-icon
-            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
+            :icon-class="passwordType === 'new_password' ? 'eye' : 'eye-open'"
           />
         </span>
       </el-form-item>
-      <el-form-item prop="password">
+      <el-form-item prop="repeat_new_password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
         </span>
         <el-input
           :key="passwordType"
-          ref="password"
-          v-model="loginForm.password"
+          ref="repeat_new_password"
+          v-model="changePasswordForm.repeat_new_password"
           :type="passwordType"
-          placeholder="Password"
-          name="password"
+          placeholder="Nhập lại mật khẩu"
+          name="repeat_new_password"
           tabindex="2"
           auto-complete="on"
-          @keyup.enter.native="handleLogin"
+          @keyup.enter.native="handleChangePassword"
         />
-        <span class="show-pwd" @click="showPwd">
+        <span class="show-pwd" @click="showPwd('repeat_new_password')">
           <svg-icon
-            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
-          />
-        </span>
-      </el-form-item>
-      <el-form-item prop="password">
-        <span class="svg-container">
-          <svg-icon icon-class="password" />
-        </span>
-        <el-input
-          :key="passwordType"
-          ref="password"
-          v-model="loginForm.password"
-          :type="passwordType"
-          placeholder="Password"
-          name="password"
-          tabindex="2"
-          auto-complete="on"
-          @keyup.enter.native="handleLogin"
-        />
-        <span class="show-pwd" @click="showPwd">
-          <svg-icon
-            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
+            :icon-class="
+              passwordType === 'repeat_new_password' ? 'eye' : 'eye-open'
+            "
           />
         </span>
       </el-form-item>
@@ -79,31 +60,21 @@
         :loading="loading"
         type="primary"
         style="width: 100%; margin-bottom: 30px"
-        @click.native.prevent="handleLogin"
+        @click.native.prevent="handleChangePassword"
         >Login</el-button
       >
-
-      <div class="tips">
-        <span style="margin-right: 20px">Phone number: 0123456789</span>
-        <span>Password: any123</span>
-      </div>
     </el-form>
   </div>
 </template>
 
 <script>
-import { validPhoneNumber } from '@/utils/validate';
+import { changePassword } from '@/api/user';
+import router from '@/router';
+import { Message } from 'element-ui';
 
 export default {
   name: 'Login',
   data() {
-    const validatePhoneNumber = (rule, value, callback) => {
-      if (!validPhoneNumber(value)) {
-        callback(new Error('Please enter the correct phone number'));
-      } else {
-        callback();
-      }
-    };
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
         callback(new Error('The password can not be less than 6 digits'));
@@ -112,15 +83,15 @@ export default {
       }
     };
     return {
-      loginForm: {
-        phone_number: '0946648474',
-        password: '123456',
+      changePasswordForm: {
+        new_password: '',
+        repeat_new_password: '',
       },
-      loginRules: {
-        phone_number: [
-          { required: true, trigger: 'blur', validator: validatePhoneNumber },
+      changePasswordRules: {
+        new_password: [
+          { required: true, trigger: 'blur', validator: validatePassword },
         ],
-        password: [
+        repeat_new_password: [
           { required: true, trigger: 'blur', validator: validatePassword },
         ],
       },
@@ -138,28 +109,30 @@ export default {
     },
   },
   methods: {
-    showPwd() {
-      if (this.passwordType === 'password') {
+    showPwd(key) {
+      if (this.passwordType === key) {
         this.passwordType = '';
       } else {
-        this.passwordType = 'password';
+        this.passwordType = key;
       }
       this.$nextTick(() => {
         this.$refs.password.focus();
       });
     },
-    handleLogin() {
-      this.$refs.loginForm.validate((valid) => {
+    handleChangePassword() {
+      this.$refs.changePasswordForm.validate((valid) => {
         if (valid) {
           this.loading = true;
-          this.$store
-            .dispatch('users/login', this.loginForm)
+          changePassword(this.changePasswordForm)
             .then(() => {
-              this.$router.push({ path: this.redirect || '/' });
-              this.loading = false;
+              Message({
+                message: 'Thay đổi mật khẩu thành công!',
+                type: 'success',
+                duration: 5 * 1000,
+              });
+              router.push({ path: 'rank' });
             })
-            .catch(() => {
-              this.$router.push({ path: this.redirect || '/' });
+            .finally(() => {
               this.loading = false;
             });
         } else {
@@ -274,7 +247,7 @@ $light_gray: #eee;
   .show-pwd {
     position: absolute;
     right: 10px;
-    top: 7px;
+    top: 30%;
     font-size: 16px;
     color: $dark_gray;
     cursor: pointer;

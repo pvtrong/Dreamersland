@@ -111,7 +111,7 @@ export default {
       immediate: true,
     },
   },
-  methods: {
+  methods: {  
     showPwd() {
       if (this.passwordType === 'password') {
         this.passwordType = '';

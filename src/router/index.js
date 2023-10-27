@@ -62,6 +62,11 @@ export const constantRoutes = [
         name: 'RankDetail',
         component: () => import('@/views/users/index'),
       },
+      {
+        path: '/change-password',
+        name: 'Change Password',
+        component: () => import('@/views/changePassword/index'),
+      },
     ],
   },
 
