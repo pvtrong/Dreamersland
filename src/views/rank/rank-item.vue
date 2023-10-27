@@ -22,13 +22,13 @@
       <div
         class="tournament__list-thumb w-[150px] flex-[0_0_auto] lg:w-[115px] md:w-6/12 sm:w-6/12 xsm:w-6/12"
       >
-        <a href="tournament-details.html">
+        <div @click="handleUserDetail()">
           <img
             class="max-w-[89px] max-h-[91px] lg:max-w-[80px] lg:max-h-[75px] md:max-w-[80px] md:max-h-[75px] sm:max-w-[80px] sm:max-h-[75px] xsm:max-w-[80px] xsm:max-h-[75px]"
             :src="thumbImage"
             alt="thumb"
           />
-        </a>
+        </div>
       </div>
       <div
         class="tournament__list-name flex-[0_0_auto] relative z-[1] pl-[0.5rem] pr-[0.5rem]"
@@ -128,6 +128,13 @@ export default {
       listCharacters,
       rank1: rank1,
     };
+  },
+  methods: {
+    handleUserDetail() {
+      this.$router.push({
+        path: `/rank/${this.rank.user.id}`,
+      });
+    },
   },
 };
 </script>
