@@ -16,10 +16,10 @@
           <svg-icon icon-class="password" />
         </span>
         <el-input
-          :key="passwordType"
-          ref="new_password"
+          :key="newPasswordType"
+          ref="password"
           v-model="changePasswordForm.new_password"
-          :type="passwordType"
+          :type="newPasswordType"
           placeholder="Mật khẩu mới"
           name="new_password"
           tabindex="2"
@@ -28,7 +28,7 @@
         />
         <span class="show-pwd" @click="showPwd('new_password')">
           <svg-icon
-            :icon-class="passwordType === 'new_password' ? 'eye' : 'eye-open'"
+            :icon-class="newPasswordType === 'password' ? 'eye' : 'eye-open'"
           />
         </span>
       </el-form-item>
@@ -38,7 +38,7 @@
         </span>
         <el-input
           :key="passwordType"
-          ref="repeat_new_password"
+          ref="password"
           v-model="changePasswordForm.repeat_new_password"
           :type="passwordType"
           placeholder="Nhập lại mật khẩu"
@@ -49,9 +49,7 @@
         />
         <span class="show-pwd" @click="showPwd('repeat_new_password')">
           <svg-icon
-            :icon-class="
-              passwordType === 'repeat_new_password' ? 'eye' : 'eye-open'
-            "
+            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
           />
         </span>
       </el-form-item>
@@ -96,6 +94,7 @@ export default {
         ],
       },
       loading: false,
+      newPasswordType: 'password',
       passwordType: 'password',
       redirect: undefined,
     };
@@ -110,11 +109,13 @@ export default {
   },
   methods: {
     showPwd(key) {
-      if (this.passwordType === key) {
-        this.passwordType = '';
+      if (key === 'new_password') {
+        this.newPasswordType =
+          this.newPasswordType === 'password' ? '' : 'password';
       } else {
-        this.passwordType = key;
+        this.passwordType = this.passwordType === 'password' ? '' : 'password';
       }
+
       this.$nextTick(() => {
         this.$refs.password.focus();
       });

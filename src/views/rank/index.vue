@@ -23,7 +23,7 @@
           </div>
         </div> -->
         <div
-          class="sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[5rem]"
+          class="sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[5rem] lg:p-0 md:p-0 sm:p-0 xsm:p-0"
         >
           <div class="shop__top-wrap mt-0 mb-[30px] mx-0">
             <div class="flex flex-wrap mx-[-15px] items-center">
@@ -40,7 +40,7 @@
                 class="w-4/12 basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-4/12 lg:basis-4/12 md:w-6/12 md:basis-6/12 sm:w-6/12 sm:basis-6/12 xsm:w-full xsm:basis-full relative px-[15px]"
               >
                 <div
-                  class="shop__ordering flex relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0] xsm:w-[200px]"
+                  class="shop__ordering flex relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]"
                 >
                   <select
                     v-model="sortBy"
@@ -77,7 +77,6 @@
               :index="index + 1"
               :rank="rank"
               :animate="animateText"
-              class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 px-15"
             ></rank-item>
           </div>
         </div>
