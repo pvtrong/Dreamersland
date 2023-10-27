@@ -37,20 +37,10 @@ export const constantRoutes = [
     hidden: true,
   },
   {
-    path: '/rank',
-    component: () => import('@/views/rank/index'),
-  },
-  {
-    path: '/rank/:id',
-    name: 'RankDetail',
-    component: () => import('@/views/users/index'),
-  },
-  {
     path: '/404',
     component: () => import('@/views/404'),
     hidden: true,
   },
-
   {
     path: '/',
     component: Layout,
@@ -61,6 +51,16 @@ export const constantRoutes = [
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
         meta: { title: 'Dashboard', icon: 'dashboard' },
+      },
+      {
+        path: '/rank',
+        name: 'Ranking',
+        component: () => import('@/views/rank/index'),
+      },
+      {
+        path: '/rank/:id',
+        name: 'RankDetail',
+        component: () => import('@/views/users/index'),
       },
     ],
   },

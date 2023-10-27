@@ -9,24 +9,50 @@
       label-position="left"
     >
       <div class="title-container">
-        <h3 class="title">Login Form</h3>
+        <h3 class="title">Đổi mật khẩu</h3>
       </div>
-
-      <el-form-item prop="phone_number">
+      <el-form-item prop="password">
         <span class="svg-container">
-          <svg-icon icon-class="user" />
+          <svg-icon icon-class="password" />
         </span>
         <el-input
-          ref="phone_number"
-          v-model="loginForm.phone_number"
-          placeholder="Phone number"
-          name="phone_number"
-          type="tel"
-          tabindex="1"
+          :key="passwordType"
+          ref="password"
+          v-model="loginForm.password"
+          :type="passwordType"
+          placeholder="Password"
+          name="password"
+          tabindex="2"
           auto-complete="on"
+          @keyup.enter.native="handleLogin"
         />
+        <span class="show-pwd" @click="showPwd">
+          <svg-icon
+            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
+          />
+        </span>
       </el-form-item>
-
+      <el-form-item prop="password">
+        <span class="svg-container">
+          <svg-icon icon-class="password" />
+        </span>
+        <el-input
+          :key="passwordType"
+          ref="password"
+          v-model="loginForm.password"
+          :type="passwordType"
+          placeholder="Password"
+          name="password"
+          tabindex="2"
+          auto-complete="on"
+          @keyup.enter.native="handleLogin"
+        />
+        <span class="show-pwd" @click="showPwd">
+          <svg-icon
+            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
+          />
+        </span>
+      </el-form-item>
       <el-form-item prop="password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
@@ -248,7 +274,7 @@ $light_gray: #eee;
   .show-pwd {
     position: absolute;
     right: 10px;
-    top: 30%;
+    top: 7px;
     font-size: 16px;
     color: $dark_gray;
     cursor: pointer;
