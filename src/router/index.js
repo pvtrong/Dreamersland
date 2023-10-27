@@ -63,6 +63,11 @@ export const constantRoutes = [
         component: () => import('@/views/users/index'),
       },
       {
+        path: '/users',
+        name: 'Users',
+        component: () => import('@/views/users/index'),
+      },
+      {
         path: '/change-password',
         name: 'Change Password',
         component: () => import('@/views/changePassword/index'),
