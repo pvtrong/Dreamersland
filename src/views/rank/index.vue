@@ -173,6 +173,8 @@ export default {
   },
   created() {
     this.getData({ ...this.filterBy, sort_by: this.sortBy });
+    const namePath = this.$router.currentRoute;
+    console.log({ namePath });
   },
   methods: {
     async getData(params) {

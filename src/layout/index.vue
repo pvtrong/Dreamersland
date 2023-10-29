@@ -1,17 +1,23 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
-    <app-main />
+  <div>
+    <header-component />
+
+    <div :class="classObj" class="app-wrapper">
+      <app-main />
+    </div>
   </div>
 </template>
 
 <script>
 import { AppMain } from './components';
 import ResizeMixin from './mixin/ResizeHandler';
+import HeaderComponent from '@/components/Header/index.vue';
 
 export default {
   name: 'Layout',
   components: {
     AppMain,
+    HeaderComponent,
   },
   mixins: [ResizeMixin],
   computed: {

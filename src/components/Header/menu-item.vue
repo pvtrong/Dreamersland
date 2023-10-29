@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     redirectPage(path) {
-      this.$router.push(path);
+      this.$router.push({ path });
     },
   },
 };

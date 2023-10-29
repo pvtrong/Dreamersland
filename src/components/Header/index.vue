@@ -26,7 +26,7 @@
               </nav>
             </div>
             <!-- Mobile Menu  -->
-            <!-- <mobile-menu /> -->
+            <mobile-menu />
             <div
               class="tgmobile__menu-backdrop fixed w-full h-full z-[2] transition-all duration-700 ease-[ease] opacity-0 invisible right-0 top-0 bg-[rgba(0,0,0,0.5)]"
             ></div>
@@ -36,13 +36,13 @@
       </div>
     </div>
 
-    <!-- <header-search /> -->
-    <!-- <info-company /> -->
+    <header-search />
+    <info-company />
   </header>
 </template>
 
 <script>
-import MenuComponent from './menu.vue';
+import MenuComponent from './menu-component.vue';
 import ToggleSearch from './toggle-search.vue';
 import MobileMenu from './mobile-menu.vue';
 import InfoCompany from './info-company.vue';
