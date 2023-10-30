@@ -131,11 +131,11 @@ export default {
           this.$store
             .dispatch('users/login', this.loginForm)
             .then(() => {
-              this.$router.push({ path: this.redirect || '/' });
+              this.$router.push({ path: '/rank' });
               this.loading = false;
             })
             .catch(() => {
-              this.$router.push({ path: this.redirect || '/' });
+              this.$router.push({ path: this.redirect || '/rank' });
               this.loading = false;
             });
         } else {
