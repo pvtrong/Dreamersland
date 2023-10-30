@@ -48,23 +48,51 @@
         <h5
           class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
         >
-        {{ rank.user.rank.rank_name }}
+          {{ rank.user.rank.rank_name }}
         </h5>
       </div>
-      <span v-for="(character, key) in listCharacters" :key="key">
-        <div
-          class="w-[125pxpx] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
+      <!-- <span v-for="(character, key) in listCharacters" :key="key"> -->
+      <div
+        class="w-[125pxpx] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
+      >
+        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Hạng</h5>
+        <h5
+          class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
         >
-          <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">
-            {{ character['title'] }}
-          </h5>
-          <h5
-            class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
-          >
-            {{ character['value'] }}
-          </h5>
-        </div>
-      </span>
+          {{ rank.user.rank.rank_name }}
+        </h5>
+      </div>
+      <div
+        class="w-[125pxpx] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
+      >
+        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Số điểm</h5>
+        <h5
+          class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
+        >
+          {{ rank.point }}
+        </h5>
+      </div>
+      <div
+        class="w-[125pxpx] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
+      >
+        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Bonus</h5>
+        <h5
+          class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
+        >
+          80
+        </h5>
+      </div>
+      <div
+        class="w-[125pxpx] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:-translate-y-2/4 before:h-[53px] before:w-px before:opacity-[0.18] before:z-[1] before:left-px before:top-2/4 before:bg-[radial-gradient(circle,_var(--tw-gradient-stops))] before:from-[#fff_0%] before:via-[transparent_100%] before:to-[#10181f_100%] after:content-[''] after:absolute after:-translate-y-2/4 after:h-[60px] after:w-[3px] after:left-0 after:top-2/4 after:bg-[#121920] md:w-6/12 md:flex-[0_0_auto] md:text-right md:pl-5 sm:w-6/12 sm:flex-[0_0_auto] sm:text-right sm:pl-5 xsm:w-6/12 xsm:flex-[0_0_auto] xsm:text-right xsm:pl-5"
+      >
+        <h5 class="team-name text-[18px] mt-0 mb-2 mx-0">Tổng Điểm</h5>
+        <h5
+          class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
+        >
+          {{ rank.amount }}
+        </h5>
+      </div>
+      <!-- </span> -->
       <div
         class="tournament__list-live ml-auto flex-[0_0_auto] md:mx-auto md:my-0 sm:mx-auto sm:my-0 xsm:mx-auto xsm:my-0"
       >
@@ -82,30 +110,30 @@
 import team02 from '@/assets/img/team/team02.png';
 import rank1 from '@/assets/img/rank/rank_1.png';
 
-const parseListCharacter = (rank) => {
-  return [
-    {
-      title: 'Hạng',
-      value: rank.user.rank.rank_name,
-      code: 'rankName',
-    },
-    {
-      title: 'Số điểm',
-      value: rank.point,
-      code: 'score',
-    },
-    {
-      title: 'Bonus',
-      value: '80',
-      code: 'bonus',
-    },
-    {
-      title: 'Tổng Điểm',
-      value: rank.amount,
-      code: 'totalScore',
-    },
-  ];
-};
+// const parseListCharacter = (rank) => {
+//   return [
+//     {
+//       title: 'Hạng',
+//       value: rank.user.rank.rank_name,
+//       code: 'rankName',
+//     },
+//     {
+//       title: 'Số điểm',
+//       value: rank.point,
+//       code: 'score',
+//     },
+//     {
+//       title: 'Bonus',
+//       value: '80',
+//       code: 'bonus',
+//     },
+//     {
+//       title: 'Tổng Điểm',
+//       value: rank.amount,
+//       code: 'totalScore',
+//     },
+//   ];
+// };
 
 export default {
   props: {
@@ -122,10 +150,10 @@ export default {
     },
   },
   data() {
-    const listCharacters = parseListCharacter(this.rank);
+    // const listCharacters = parseListCharacter(this.rank);
     return {
       thumbImage: team02,
-      listCharacters,
+      // listCharacters,
       rank1: rank1,
     };
   },
