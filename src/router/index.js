@@ -95,7 +95,7 @@ export const constantRoutes = [
       },
       {
         path: '/rank/:id',
-        name: 'Ranking',
+        name: 'Ranking Detail',
         component: () => import('@/views/rank/index'),
         meta: {
           title: 'Chi tiết bảng xếp hạng',

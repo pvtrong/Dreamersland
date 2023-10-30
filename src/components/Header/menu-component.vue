@@ -14,10 +14,6 @@
         :itemName="menu.itemName"
       />
     </el-menu>
-    test
-    {{
-      currentR
-    }}
   </ul>
 </template>
 
