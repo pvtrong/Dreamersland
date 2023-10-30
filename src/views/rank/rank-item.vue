@@ -46,7 +46,7 @@
           {{ rank.user.first_name }} {{ rank.user.last_name }}
         </h5>
         <h5
-          class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s] pl-[13px]"
+          class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
         >
           Snipper
         </h5>

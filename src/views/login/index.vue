@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login-container" :data-background="backgroundImage">
     <el-form
       ref="loginForm"
       :model="loginForm"
@@ -67,6 +67,7 @@
 
 <script>
 import { validPhoneNumber } from '@/utils/validate';
+import backgroundImage from '@/assets/img/slider/slider_bg.jpg'
 
 export default {
   name: 'Login',
@@ -86,6 +87,7 @@ export default {
       }
     };
     return {
+      backgroundImage,
       loginForm: {
         phone_number: '0946648474',
         password: '123456',
@@ -111,7 +113,7 @@ export default {
       immediate: true,
     },
   },
-  methods: {  
+  methods: {
     showPwd() {
       if (this.passwordType === 'password') {
         this.passwordType = '';
@@ -176,7 +178,8 @@ $cursor: #fff;
       color: $light_gray;
       height: 47px;
       caret-color: $cursor;
-
+      -webkit-box-shadow: unset;
+      box-shadow: unset;
       &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px $bg inset !important;
         -webkit-text-fill-color: $cursor !important;

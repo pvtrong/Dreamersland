@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container">
+  <div class="login-container" :data-background="backgroundImage">
     <el-form
       ref="changePasswordForm"
       :model="changePasswordForm"
@@ -11,7 +11,7 @@
       <div class="title-container">
         <h3 class="title">Đổi mật khẩu</h3>
       </div>
-      <el-form-item prop="new_password">
+      <el-form-item class="focus:shadow" prop="new_password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
         </span>
@@ -32,7 +32,7 @@
           />
         </span>
       </el-form-item>
-      <el-form-item prop="repeat_new_password">
+      <el-form-item class="focus:shadow" prop="repeat_new_password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
         </span>
@@ -69,18 +69,33 @@
 import { changePassword } from '@/api/user';
 import router from '@/router';
 import { Message } from 'element-ui';
+import backgroundImage from '@/assets/img/slider/slider_bg.jpg'
 
 export default {
   name: 'Login',
   data() {
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'));
+        callback(new Error('Mật khẩu phải có ít nhất 6 ký tự.'));
       } else {
         callback();
       }
     };
+
+    const validateConfirmPassword = (rule, value, callback) => {
+      console.log(
+        'this.changePasswordForm.new_password',
+        this.changePasswordForm.new_password
+      );
+      if (value !== this.changePasswordForm.new_password) {
+        callback(new Error('Mật khẩu xác nhận không khớp với mật khẩu mới.'));
+      } else {
+        callback();
+      }
+    };
+
     return {
+      backgroundImage,
       changePasswordForm: {
         new_password: '',
         repeat_new_password: '',
@@ -90,7 +105,11 @@ export default {
           { required: true, trigger: 'blur', validator: validatePassword },
         ],
         repeat_new_password: [
-          { required: true, trigger: 'blur', validator: validatePassword },
+          {
+            required: true,
+            trigger: 'blur',
+            validator: validateConfirmPassword,
+          },
         ],
       },
       loading: false,
@@ -162,6 +181,7 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+  height: 100vh;
   .el-input {
     display: inline-block;
     height: 47px;
@@ -176,6 +196,8 @@ $cursor: #fff;
       color: $light_gray;
       height: 47px;
       caret-color: $cursor;
+      -webkit-box-shadow: unset;
+      box-shadow: unset;
 
       &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px $bg inset !important;
