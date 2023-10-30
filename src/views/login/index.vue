@@ -57,10 +57,10 @@
         >Login</el-button
       >
 
-      <div class="tips">
+      <!-- <div class="tips">
         <span style="margin-right: 20px">Phone number: 0123456789</span>
         <span>Password: any123</span>
-      </div>
+      </div> -->
     </el-form>
   </div>
 </template>

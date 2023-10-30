@@ -18,7 +18,11 @@
                 <div
                   class="shop__ordering flex gap-5 relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]"
                 >
-                  <el-select v-model="sortBy" placeholder="Sắp xếp theo">
+                  <el-select
+                    v-model="sortBy"
+                    placeholder="Sắp xếp theo"
+                    @change="handleSortBy"
+                  >
                     <el-option
                       v-for="itemSort in rankSortByOptions"
                       :key="itemSort.value"
@@ -39,10 +43,11 @@
                       :value="itemFilter.value"
                     >
                       <div
-                        style="width: 100%;"
+                        style="width: 100%"
                         @mouseenter="handleOptionHover(itemFilter.label)"
-                        >{{ itemFilter.label }}</div
                       >
+                        {{ itemFilter.label }}
+                      </div>
                     </el-option>
                   </el-select>
                   <!-- <el-date-picker
@@ -123,7 +128,7 @@ export default {
       //       offset: {
       //       	offset: [10, -20]
       //       }
-      //  		}   
+      //  		}
       // },
       rankSortByOptions: [
         {
@@ -155,7 +160,7 @@ export default {
       ],
 
       sortBy: RANK_SORT_BY.AMOUNT,
-      filterBy: JSON.stringify(filterByDate),
+      filterBy: JSON.stringify(filterByWeek),
       breadcrumbImage03,
       dateRange: '', // This will store the selected date range
       pickerRef: 'datePickerRef', // Reference for the date range picker
@@ -197,7 +202,7 @@ export default {
     };
   },
   created() {
-    this.getData({ ...this.filterBy, sort_by: this.sortBy });
+    this.getData({ ...JSON.parse(this.filterBy), sort_by: this.sortBy });
   },
   methods: {
     async getData(params) {
@@ -216,7 +221,7 @@ export default {
     },
     handleSortBy(value) {
       this.getData({
-        ...JSON.parse(this.filterBy).value,
+        ...JSON.parse(this.filterBy),
         sort_by: this.sortBy,
       });
     },
