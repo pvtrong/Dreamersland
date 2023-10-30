@@ -61,14 +61,14 @@ export const constantRoutes = [
   },
 
   {
-    path: '/users',
+    path: '/my-profile',
     component: Layout,
     meta: {
       title: 'Quản lý nhân viên',
     },
     children: [
       {
-        path: '/users',
+        path: '/my-profile',
         name: 'Users',
         component: () => import('@/views/users/index'),
         meta: {

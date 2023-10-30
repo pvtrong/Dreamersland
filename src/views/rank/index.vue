@@ -38,21 +38,19 @@
                       :label="itemFilter.label"
                       :value="itemFilter.value"
                     >
-                      <span
-                        style="float: left"
+                      <div
+                        style="width: 100%;"
                         @mouseenter="handleOptionHover(itemFilter.label)"
-                        >{{ itemFilter.label }}</span
+                        >{{ itemFilter.label }}</div
                       >
                     </el-option>
                   </el-select>
-                  <el-date-picker
+                  <!-- <el-date-picker
                     v-model="dateRange"
                     type="daterange"
                     :ref="pickerRef"
-                    c
                     style="width: 0px; height: 0px; overflow: hidden; opacity: 0;"
-                    :popper-options="popperOptions"
-                  ></el-date-picker>
+                  ></el-date-picker> -->
                 </div>
               </div>
             </div>
@@ -75,7 +73,6 @@
     </section>
   </div>
 </template>
-
 <script>
 import RankItem from '@/views/rank/rank-item.vue'; // Adjust the path to match your project structure
 import Breadcrumb from '@/components/CustomBreadcrumb/index.vue';
@@ -114,23 +111,20 @@ export default {
     return {
       isLoading: false,
       typeDate: 'daterange',
-      backgroundImage: breadcrumbImage03,
       rankTitle: 'Active rank',
       animateText: false, // Set to true for animation
       rankSortBy: RANK_SORT_BY,
       ranks: [],
-      popperOptions: {
-        modifiers: {
-          offset: {
-            // Configure the offset
-            enabled: true,
-            offset: '500, 1000', // Set the desired offset values
-          },
-          flip: {
-            behavior: ['top', 'bottom', 'left', 'right'],
-          },
-        },
-      },
+      // popperOptions: {
+      //   modifiers: {
+      //     	flip: {
+      //       	enabled: false
+      //       },
+      //       offset: {
+      //       	offset: [10, -20]
+      //       }
+      //  		}   
+      // },
       rankSortByOptions: [
         {
           label: 'Theo điểm',
@@ -151,13 +145,13 @@ export default {
           value: JSON.stringify(filterByWeek),
         },
         {
-          label: 'Ngày',
+          label: 'Tháng',
           value: JSON.stringify(filterByMonth),
         },
-        {
-          label: 'Tùy chọn',
-          value: '',
-        },
+        // {
+        //   label: 'Tùy chọn',
+        //   value: '',
+        // },
       ],
 
       sortBy: RANK_SORT_BY.AMOUNT,
@@ -165,38 +159,38 @@ export default {
       breadcrumbImage03,
       dateRange: '', // This will store the selected date range
       pickerRef: 'datePickerRef', // Reference for the date range picker
-      pickerOptions: {
-        shortcuts: [
-          {
-            text: 'Last week',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
-              picker.$emit('pick', [start, end]);
-              this.changeType('date');
-            },
-          },
-          {
-            text: 'Last month',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
-              picker.$emit('pick', [start, end]);
-            },
-          },
-          {
-            text: 'Last 3 months',
-            onClick(picker) {
-              const end = new Date();
-              const start = new Date();
-              start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
-              picker.$emit('pick', [start, end]);
-            },
-          },
-        ],
-      },
+      // pickerOptions: {
+      //   shortcuts: [
+      //     {
+      //       text: 'Last week',
+      //       onClick(picker) {
+      //         const end = new Date();
+      //         const start = new Date();
+      //         start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+      //         picker.$emit('pick', [start, end]);
+      //         this.changeType('date');
+      //       },
+      //     },
+      //     {
+      //       text: 'Last month',
+      //       onClick(picker) {
+      //         const end = new Date();
+      //         const start = new Date();
+      //         start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+      //         picker.$emit('pick', [start, end]);
+      //       },
+      //     },
+      //     {
+      //       text: 'Last 3 months',
+      //       onClick(picker) {
+      //         const end = new Date();
+      //         const start = new Date();
+      //         start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+      //         picker.$emit('pick', [start, end]);
+      //       },
+      //     },
+      //   ],
+      // },
       value1: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
       value2: '',
       radio1: 'New York',

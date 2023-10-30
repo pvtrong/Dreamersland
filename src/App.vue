@@ -18,7 +18,6 @@ export default {
   },
   methods: {
     search() {
-      debugger;
     },
     redirectPage(path) {
       this.$router.push(path);

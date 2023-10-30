@@ -25,6 +25,9 @@ const mutations = {
   SET_AVATAR: (state, avatar) => {
     state.avatar = avatar;
   },
+  SET_CURRENT_USER: (state, currentUser) => {
+    state.currentUser = currentUser
+  }
 };
 
 const actions = {
@@ -55,9 +58,10 @@ const actions = {
             return reject('Verification failed, please Login again.');
           }
 
-          const { user } = data;
+          const { currentUser } = data;
 
-          commit('SET_NAME', user.first_name + ' ' + user.last_name);
+          commit('SET_NAME', currentUser.first_name + ' ' + currentUser.last_name);
+          commit('SET_CURRENT_USER', currentUser)
           // commit('SET_AVATAR', avatar)
           resolve(data);
         })

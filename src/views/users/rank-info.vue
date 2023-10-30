@@ -32,7 +32,7 @@
                 <div>
                   <div class="text-[#a0a4b1] font-bold">SỐ ĐIỂM</div>
                   <span class="text-[#3CF777] text-4xl font-bold">
-                    80
+                    {{ currentUser.current_season_point || 0 }}
                   </span>
                 </div>
 
@@ -46,7 +46,7 @@
                 <div>
                   <div class="text-[#a0a4b1] font-bold">TỔNG ĐIỂM</div>
                   <span class="text-[#3CF777] text-4xl font-bold">
-                    160
+                    {{ currentUser.all_season_sales || 0 }}
                   </span>
                 </div>
               </div>
@@ -59,7 +59,7 @@
                     HẠNG HIỆN TẠI
                   </div>
                   <span class="text-[#3CF777] text-3xl font-bold">
-                    BẠCH KIM
+                    {{ currentUser.rank.rank_name }}
                   </span>
                 </div>
 
@@ -90,8 +90,14 @@
 </template>
 
 <script>
-export default {
+import store from '@/store'
 
+export default {
+  data() {
+    return {
+      currentUser: store.getters.currentUser
+    }
+  }
 }
 </script>
 
