@@ -89,7 +89,7 @@ export default {
     return {
       backgroundImage,
       loginForm: {
-        phone_number: '0946648474',
+        phone_number: '0888888888',
         password: '123456',
       },
       loginRules: {
