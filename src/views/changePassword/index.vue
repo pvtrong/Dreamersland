@@ -72,7 +72,7 @@ import { Message } from 'element-ui';
 import backgroundImage from '@/assets/img/slider/slider_bg.jpg'
 
 export default {
-  name: 'Login',
+  name: 'Change Password',
   data() {
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
