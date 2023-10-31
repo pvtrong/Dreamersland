@@ -79,7 +79,7 @@
         <h5
           class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
         >
-        {{ rank.user.rank.bonus }}
+          {{ rank.user.rank.bonus }}
         </h5>
       </div>
       <div
@@ -96,7 +96,8 @@
       <div
         class="tournament__list-live ml-auto flex-[0_0_auto] md:mx-auto md:my-0 sm:mx-auto sm:my-0 xsm:mx-auto xsm:my-0"
       >
-        <img width="60"
+        <img
+          width="60"
           class="h-[66px] w-[66px] group-hover:animate-[breadcrumbShake_0.82s_cubic-bezier(0.36,0.07,0.19,0.97)_both] lg:max-h-[260px] lg:max-w-[255px] xl:max-h-80 xl:max-w-[310px]"
           :src="rank.user.rank.image_url"
           alt="img"

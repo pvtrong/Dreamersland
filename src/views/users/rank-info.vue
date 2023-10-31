@@ -27,23 +27,26 @@
             >
               <div class="flex w-full justify-evenly items-center px-8">
                 <div>
-                  <img :src="currentUser.rank.image_url" alt="image" width="120" height="100">
+                  <img
+                    :src="currentUser.rank.image_url"
+                    alt="image"
+                    width="120"
+                    height="100"
+                  />
                 </div>
-                <div>
+                <div class="text-center">
                   <div class="text-[#a0a4b1] font-bold">SỐ ĐIỂM</div>
-                  <span class="text-[#3CF777] text-4xl font-bold">
+                  <span class="text-[#3CF777] text-4xl font-bold text-center">
                     {{ currentUser.current_season_point || 0 }}
                   </span>
                 </div>
 
-                <!-- <div>
+                <div class="text-center">
                   <div class="text-[#a0a4b1] font-bold">BONUS</div>
-                  <span class="text-[#3CF777] text-4xl font-bold">
-                    80
-                  </span>
-                </div> -->
+                  <span class="text-[#3CF777] text-4xl font-bold"> 0 </span>
+                </div>
 
-                <div>
+                <div class="text-center">
                   <div class="text-[#a0a4b1] font-bold">TỔNG DOANH SÔ</div>
                   <span class="text-[#3CF777] text-4xl font-bold">
                     {{ currentUser.all_season_sales || 0 }}
@@ -51,35 +54,23 @@
                 </div>
               </div>
 
-              <div
-                class="flex w-full justify-evenly items-center px-4 mt-4"
-              >
+              <div class="flex w-full justify-evenly items-center px-4 mt-4">
                 <div class="text-center">
-                  <div class="text-[#a0a4b1] font-bold">
-                    HẠNG HIỆN TẠI
-                  </div>
+                  <div class="text-[#a0a4b1] font-bold">HẠNG HIỆN TẠI</div>
                   <span class="text-[#3CF777] text-3xl font-bold">
                     {{ currentUser.rank.rank_name }}
                   </span>
                 </div>
 
-                <!-- <div class="text-center">
-                  <div class="color-[#a0a4b1] font-bold">
-                    SỐ TRẬN DUAL
-                  </div>
-                  <span class="text-[#3CF777] text-3xl font-bold">
-                    160
-                  </span>
+                <div class="text-center">
+                  <div class="color-[#a0a4b1] font-bold">SỐ TRẬN DUAL</div>
+                  <span class="text-[#3CF777] text-3xl font-bold"> 0 </span>
                 </div>
 
                 <div class="text-center">
-                  <div class="color-[#a0a4b1] font-bold">
-                    TỈ LỆ THẮNG
-                  </div>
-                  <span class="text-[#3CF777] text-3xl font-bold">
-                    12.67%
-                  </span>
-                </div> -->
+                  <div class="color-[#a0a4b1] font-bold">TỈ LỆ THẮNG</div>
+                  <span class="text-[#3CF777] text-3xl font-bold"> 0% </span>
+                </div>
               </div>
             </div>
           </div>
@@ -90,17 +81,15 @@
 </template>
 
 <script>
-import store from '@/store'
+import store from '@/store';
 
 export default {
   data() {
     return {
-      currentUser: store.getters.currentUser
-    }
-  }
-}
+      currentUser: store.getters.currentUser,
+    };
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

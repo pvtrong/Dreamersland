@@ -17,7 +17,7 @@
         <div class="offCanvas__content pt-[25px] pb-[50px] px-10">
           <h2 class="title text-3xl tracking-[1px] mt-0 mb-[50px] mx-0">
             Best Seller of Month Ideas for
-            <span class="text-[#45f882]">NFT Wallet</span>
+            <span class="text-[#45f882]">Dreamersland</span>
           </h2>
           <div class="offCanvas__contact mt-0 mb-10 mx-0">
             <h4
@@ -41,13 +41,13 @@
                 <a
                   class="text-[#adb0bc] hover:text-[#45f882]"
                   href="mailto:info@webmail.com"
-                  >info@webmail.com</a
+                  >info@dreamersland.vn</a
                 >
               </li>
               <li
                 class="text-[#adb0bc] font-medium relative mt-0 mb-2 mx-0 pl-[23px] before:content-[''] before:absolute before:w-[7px] before:h-[7px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:left-0 before:top-[11px] last:m-0 font-Barlow before:bg-[#adb0bc] hover::before:bg-[#45f882]"
               >
-                New Central Park W7 Street ,New York
+                Hà Nội
               </li>
             </ul>
           </div>
@@ -79,7 +79,7 @@
             </p>
           </div>
           <ul
-            class="offCanvas__social list-wrap m-0 p-0 flex items-center flex-wrap gap-[10px_28px] mt-[50px] mb-5 mx-0 pt-[30px] pb-0 px-0 border-t-[#202b36] border-t border-solid"
+            class="offCanvas__social list-wrap m-0 p-0 flex items-center flex-wrap gap-[10px_28px] mt-[50px] mb-10 mx-0 pt-[30px] pb-0 px-0 border-t-[#202b36] border-t border-solid"
           >
             <li class="leading-none">
               <a
@@ -110,10 +110,17 @@
               ></a>
             </li>
           </ul>
-          <div class="offCanvas__newsletter">
+          <div class="offCanvas__newsletter flex gap-[10px]">
+            <h4
+              style="cursor: pointer"
+              @click="handleRedirectChangePassword"
+              class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0"
+            >
+              Đổi mật khẩu
+            </h4>
             <h4
               @click="logout"
-              style="cursor: pointer;"
+              style="cursor: pointer"
               class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0"
             >
               Đăng xuất
@@ -144,8 +151,14 @@ export default {
   methods: {
     async logout() {
       await this.$store.dispatch('users/logout');
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`);
+      // this.$router.push(`/login?redirect=${this.$route.fullPath}`);
+      window.location.href = '/login?redirect=${this.$route.fullPath}';
     },
+    handleRedirectChangePassword() {
+      // this.$router.push('/change-password');
+      window.location.href = '/change-password';
+      // document.getElementsByTagName('body').classList.remove('offCanvas__menu-visible');
+    }
   },
 };
 </script>

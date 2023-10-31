@@ -1,6 +1,9 @@
 <template>
   <main class="main--area overflow-x-hidden">
-    <breadcrumb :page-title="'Người chơi'" :thumb-image="win02Img" />
+    <breadcrumb
+      :page-title="currentUser.last_name + ' ' + currentUser.first_name"
+      :thumb-image="win02Img"
+    />
 
     <!-- services-area done -->
     <section
@@ -48,7 +51,7 @@
           </div>
 
           <div class="flex flex-wrap justify-between w-full">
-            <!-- <task-card-item
+            <task-card-item
               v-for="task in tasks"
               :key="task.id"
               :blood-count="task.bloodCount"
@@ -56,7 +59,7 @@
               :task-name="task.taskName"
               :point="task.point"
               :image="task.image"
-            /> -->
+            />
           </div>
         </div>
       </div>
@@ -69,7 +72,8 @@
 import Breadcrumb from '@/components/CustomBreadcrumb/index.vue';
 import RankInfo from '@/views/users/rank-info.vue';
 import TaskCardItem from '@/views/users/task-card-item.vue';
-import win02Img from '@/assets/img/others/win02.png';
+import win02Img from '@/assets/img/team/team02.png';
+import store from '@/store';
 import ItemCardImg from '@/assets/item-card.png';
 
 export default {
@@ -82,6 +86,7 @@ export default {
   data() {
     return {
       win02Img,
+      currentUser: store.getters.currentUser,
       tasks: [
         {
           id: 1,
