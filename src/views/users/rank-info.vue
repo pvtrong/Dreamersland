@@ -36,15 +36,15 @@
                   </span>
                 </div>
 
-                <div>
+                <!-- <div>
                   <div class="text-[#a0a4b1] font-bold">BONUS</div>
                   <span class="text-[#3CF777] text-4xl font-bold">
                     80
                   </span>
-                </div>
+                </div> -->
 
                 <div>
-                  <div class="text-[#a0a4b1] font-bold">TỔNG ĐIỂM</div>
+                  <div class="text-[#a0a4b1] font-bold">TỔNG DOANH SÔ</div>
                   <span class="text-[#3CF777] text-4xl font-bold">
                     {{ currentUser.all_season_sales || 0 }}
                   </span>
@@ -63,7 +63,7 @@
                   </span>
                 </div>
 
-                <div class="text-center">
+                <!-- <div class="text-center">
                   <div class="color-[#a0a4b1] font-bold">
                     SỐ TRẬN DUAL
                   </div>
@@ -79,7 +79,7 @@
                   <span class="text-[#3CF777] text-3xl font-bold">
                     12.67%
                   </span>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
