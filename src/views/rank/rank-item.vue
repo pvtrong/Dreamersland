@@ -79,7 +79,7 @@
         <h5
           class="status block uppercase text-[16px] font-bold tracking-[1px] text-[#45f882] relative leading-none transition-all duration-[0.3s] ease-[ease-out] delay-[0s]"
         >
-          80
+        {{ rank.user.rank.bonus }}
         </h5>
       </div>
       <div
