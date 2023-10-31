@@ -27,7 +27,7 @@
             >
               <div class="flex w-full justify-evenly items-center px-8">
                 <div>
-                  <img src="@/assets/champion.png" alt="image">
+                  <img :src="currentUser.rank.image_url" alt="image" width="120" height="100">
                 </div>
                 <div>
                   <div class="text-[#a0a4b1] font-bold">SỐ ĐIỂM</div>
