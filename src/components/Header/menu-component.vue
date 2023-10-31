@@ -33,11 +33,11 @@ export default {
           itemKey: '1',
           itemName: 'Trang Chủ',
         },
-        {
-          pathName: '/info-tournament',
-          itemKey: '2',
-          itemName: 'THÔNG TIN GIẢI ĐẤU',
-        },
+        // {
+        //   pathName: '/info-tournament',
+        //   itemKey: '2',
+        //   itemName: 'THÔNG TIN GIẢI ĐẤU',
+        // },
         {
           pathName: '/rank',
           itemKey: '3',
@@ -48,21 +48,21 @@ export default {
           itemKey: '4',
           itemName: 'NGƯỜI CHƠI',
         },
-        {
-          pathName: '/tournament',
-          itemKey: '5',
-          itemName: 'Trận đấu',
-        },
-        {
-          pathName: '/hall-of-fame',
-          itemKey: '6',
-          itemName: 'HALL OF FAME',
-        },
-        {
-          pathName: '/tasks',
-          itemKey: '7',
-          itemName: 'NHIỆM VỤ',
-        },
+        // {
+        //   pathName: '/tournament',
+        //   itemKey: '5',
+        //   itemName: 'Trận đấu',
+        // },
+        // {
+        //   pathName: '/hall-of-fame',
+        //   itemKey: '6',
+        //   itemName: 'HALL OF FAME',
+        // },
+        // {
+        //   pathName: '/tasks',
+        //   itemKey: '7',
+        //   itemName: 'NHIỆM VỤ',
+        // },
       ],
     };
   },
