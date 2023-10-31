@@ -79,7 +79,7 @@
             </p>
           </div>
           <ul
-            class="offCanvas__social list-wrap m-0 p-0 flex items-center flex-wrap gap-[10px_28px] mt-[50px] mb-0 mx-0 pt-[30px] pb-0 px-0 border-t-[#202b36] border-t border-solid"
+            class="offCanvas__social list-wrap m-0 p-0 flex items-center flex-wrap gap-[10px_28px] mt-[50px] mb-5 mx-0 pt-[30px] pb-0 px-0 border-t-[#202b36] border-t border-solid"
           >
             <li class="leading-none">
               <a
@@ -110,6 +110,15 @@
               ></a>
             </li>
           </ul>
+          <div class="offCanvas__newsletter">
+            <h4
+              @click="logout"
+              style="cursor: pointer;"
+              class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0"
+            >
+              Đăng xuất
+            </h4>
+          </div>
         </div>
         <div
           class="offCanvas__copyright mt-auto mb-0 mx-0 px-10 py-[30px] bg-[#090f16]"
@@ -131,7 +140,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    async logout() {
+      await this.$store.dispatch('users/logout');
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
