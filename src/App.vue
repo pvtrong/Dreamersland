@@ -6,6 +6,9 @@
 
 <script>
 import HeaderComponent from '@/components/Header/index.vue';
+import { main } from '@/utils/main';
+import jQuery from 'jquery';
+
 export default {
   name: 'App',
   components: {
@@ -17,15 +20,18 @@ export default {
     };
   },
   methods: {
-    search() {
-    },
+    search() {},
     redirectPage(path) {
       this.$router.push(path);
     },
     handleSelect(key, keyPath) {
       this.activeIndex = keyPath;
-      console.log(key, keyPath);
     },
+  },
+  mounted: function () {
+    setTimeout(() => {
+      main(jQuery);
+    }, 500);
   },
 };
 </script>
