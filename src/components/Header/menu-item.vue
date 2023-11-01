@@ -34,6 +34,7 @@ export default {
   methods: {
     redirectPage(path) {
       this.$router.push({ path });
+      this.$store.dispatch('showToggle/changeShowToggleMobile', false);
     },
   },
 };

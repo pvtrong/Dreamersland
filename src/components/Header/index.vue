@@ -8,6 +8,7 @@
         <div class="flex flex-wrap mx-[-15px]">
           <div class="w-full basis-full relative px-[15px]">
             <div
+              @click="handleShowToggleMobile"
               class="mobile-nav-toggler relative float-right text-[26px] cursor-pointer leading-none text-[#45f882] hidden lg:block md:block sm:block xsm:block border-[#45f882] mt-[3px] px-2.5 py-[5px] border-2 border-solid"
             >
               <i class="fas fa-bars"></i>
@@ -42,6 +43,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import MenuComponent from './menu-component.vue';
 import ToggleSearch from './toggle-search.vue';
 import MobileMenu from './mobile-menu.vue';
@@ -56,6 +59,14 @@ export default {
     MobileMenu,
     InfoCompany,
     HeaderSearch,
+  },
+  computed: {
+    ...mapGetters(['isShowToggleMobile']),
+  },
+  methods: {
+    handleShowToggleMobile() {
+      this.$store.dispatch('showToggle/changeShowToggleMobile', !this.isShowToggleMobile);
+    },
   },
 };
 </script>

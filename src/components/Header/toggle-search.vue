@@ -1,5 +1,5 @@
 <template>
-  <div class="tgmenu__action block lg:mr-10 md:mr-10 sm:hidden xsm:hidden">
+  <div @click="handleShowToggle" class="tgmenu__action block lg:mr-10 md:mr-10 sm:hidden xsm:hidden">
     <ul class="list-wrap m-0 p-0 flex items-center ml-2.5">
       <li class="search relative ml-0">
         <i class="block text-[20px] hover:text-[#45f882] text-[#fff]" href="#"
@@ -23,6 +23,23 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
+
+export default {
+  name: 'ToggleSearch',
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapGetters(['isShowTogglePC']),
+  },
+  methods: {
+    handleShowToggle() {
+      this.$store.dispatch('showToggle/changeShowTogglePc', !this.isShowTogglePC)
+    }
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex justify-end w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-6/12 lg:basis-6/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative md:justify-center"
+    class="flex justify-end w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-6/12 lg:basis-6/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative md:justify-start xsm:!justify-start"
   >
     <div
-      class="flex flex-wrap mx-[-15px] md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full"
+      class="flex flex-wrap mx-[-15px] md:w-full md:basis-full md:mx-0 sm:mx-0 xsm:mx-0 sm:w-full sm:basis-full xsm:w-full xsm:basis-full"
     >
       <div class="w-full basis-full relative">
         <div class="">
@@ -13,7 +13,7 @@
               width="630"
               height="335.249"
               viewBox="287.444 2328.97 824.634 335.249"
-              class="md:w-full"
+              class="md:w-full xsm:w-full md:scale-110 xsm:scale-125"
             >
               <path
                 d="M287.444 2555.2v-119.157l41.508-107.073h69.703l1.197 3.432h139.585l.04-.104 531.549-2.838 41.052 106.218v123.735l-41.052 104.31-742.074.497-41.508-109.02Z"

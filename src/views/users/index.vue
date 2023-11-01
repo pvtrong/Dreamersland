@@ -50,7 +50,7 @@
             <!--  -->
           </div>
 
-          <div class="flex flex-wrap justify-between w-full">
+          <div class="flex flex-wrap justify-between w-full md:justify-center xsm:justify-center">
             <task-card-item
               v-for="task in tasks"
               :key="task.id"

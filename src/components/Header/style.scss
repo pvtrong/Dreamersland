@@ -1,6 +1,14 @@
-.is-active {
+.color-active {
   color: #46f780 !important;
   border-bottom: none !important;
+}
+
+.is-active {
+  @extend .color-active;
+
+  a {
+    @extend .color-active;
+  }
 }
 
 .is-active::before {
