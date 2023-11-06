@@ -1,7 +1,7 @@
 <template>
   <section
     class="breadcrumb-area relative bg-center bg-cover min-h-[561px] flex items-center pt-[110px] pb-[75px] px-0 before:content-[''] before:absolute before:w-6/12 before:bg-[#45f882] before:h-[50px] before:left-0 before:bottom-0 after:content-[''] after:absolute after:w-6/12 after:bg-[#45f882] after:h-[50px] after:left-auto after:right-0 after:bottom-0 before:clip-path-polygon-[0_0,0_100%,100%_100%] after:clip-path-polygon-[100%_0,0_100%,100%_100%] xl:min-h-[480px] lg:min-h-[400px] md:min-h-[400px] xl:before:h-10 xl:after:h-10 lg:before:h-[30px] lg:after:h-[30px] md:before:h-[30px] md:after:h-[30px] sm:min-h-[310px] sm:pt-[120px] sm:pb-[75px] sm:px-0 sm:before:h-5 sm:after:h-5 xsm:min-h-[310px] xsm:pt-[120px] xsm:pb-[75px] xsm:px-0 xsm:before:h-5 xsm:after:h-5"
-    :data-background="backgroundImage"
+    :style="{ 'background-image': 'url(' + backgroundImage + ')' }"
   >
     <div class="container">
       <div

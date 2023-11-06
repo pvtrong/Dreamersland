@@ -20,7 +20,6 @@ export default {
       screens: {
         '2xl': {
           'min': '1500px',
-          'max': '1800px'
         },
         'xxl': {
           'min': '1400px',
@@ -71,10 +70,10 @@ export default {
             'maxWidth': '1260px',
           },
           '@screen xxl': {
-            'maxWidth': '1260px',
+            'maxWidth': '1300px',
           },
           '@screen 2xl': {
-            'maxWidth': '1300px',
+            'maxWidth': '1500px',
           },
         }
       })

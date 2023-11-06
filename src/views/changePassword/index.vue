@@ -1,5 +1,5 @@
 <template>
-  <div class="login-container" :data-background="backgroundImage">
+  <div class="login-container" :style="{ 'background-image': 'url(' + backgroundImage + ')' }">
     <el-form
       ref="changePasswordForm"
       :model="changePasswordForm"

@@ -1,5 +1,8 @@
 <template>
-  <div class="login-container" :data-background="backgroundImage">
+  <div
+    class="login-container"
+    :style="{ 'background-image': 'url(' + backgroundImage + ')' }"
+  >
     <el-form
       ref="loginForm"
       :model="loginForm"
@@ -67,7 +70,7 @@
 
 <script>
 import { validPhoneNumber } from '@/utils/validate';
-import backgroundImage from '@/assets/img/slider/slider_bg.jpg'
+import backgroundImage from '@/assets/img/slider/slider_bg.jpg';
 
 export default {
   name: 'Login',

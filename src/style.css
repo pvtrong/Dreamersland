@@ -478,7 +478,7 @@ textPath {
     .mfp-bottom-bar {
         @apply mt-[-30px]
     }
-    .project__wrapper .slider-button-prev > *:last-child {;
+    .project__wrapper .slider-button-prev > *:last-child {
         animation-delay: 0.2s;
     }
 
@@ -630,9 +630,7 @@ textPath {
         @apply px-[15px]
     }
 }
-.container {
-    @apply px-[15px] max-w-[1300px] xl:max-w-[1260px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] xsm:max-w-full
-    }        
+    
 .custom-container {
     @apply max-w-[1590px] 2xl:max-w-[1490px] xl:max-w-[1260px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] xsm:max-w-full
 }
