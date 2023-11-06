@@ -112,6 +112,7 @@
           </ul>
           <div class="offCanvas__newsletter flex gap-[10px]">
             <h4
+              id="change-password"
               style="cursor: pointer"
               @click="handleRedirectChangePassword"
               class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0"
@@ -155,8 +156,8 @@ export default {
       window.location.href = '/login?redirect=${this.$route.fullPath}';
     },
     handleRedirectChangePassword() {
-      // this.$router.push('/change-password');
-      window.location.href = '/change-password';
+      this.$router.push('/change-password');
+      // window.location.href = '/change-password';
       // document.getElementsByTagName('body').classList.remove('offCanvas__menu-visible');
     }
   },

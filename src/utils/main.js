@@ -37,7 +37,7 @@ export const main = function ($) {
       31. SplitText Active
       32. GSAP Active
       33. Wow Active
-  
+
   ================================*/
 
   /*==========================================
@@ -214,6 +214,9 @@ export const main = function ($) {
     $('body').addClass('offCanvas__menu-visible');
   });
   $('.offCanvas__overlay, .offCanvas__toggle').on('click', function () {
+    $('body').removeClass('offCanvas__menu-visible');
+  });
+  $('#change-password').on('click', function () {
     $('body').removeClass('offCanvas__menu-visible');
   });
 
