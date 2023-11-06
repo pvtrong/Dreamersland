@@ -47,3 +47,7 @@
 .el-range-separator {
   box-sizing: content-box;
 }
+
+.el-scrollbar__wrap {
+  overflow: auto !important;
+}

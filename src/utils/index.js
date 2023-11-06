@@ -115,3 +115,35 @@ export function param2Obj(url) {
   })
   return obj
 }
+
+
+export function getStartAndEndOfWeek() {
+  const today = new Date();
+  const currentDay = today.getDay(); // 0 for Sunday, 1 for Monday, and so on
+  const diff = today.getDate() - currentDay + (currentDay === 0 ? -6 : 1); // Adjust if today is Sunday
+
+  const startDate = new Date(today); // Clone the current date
+  startDate.setDate(diff);
+  startDate.setHours(0, 0, 0, 0); // Set the time to the beginning of the day
+
+  const endDate = new Date(startDate);
+  endDate.setDate(startDate.getDate() + 6); // Add 6 days to get the end of the week
+  endDate.setHours(23, 59, 59, 999); // Set the time to the end of the day
+
+  return { startDate, endDate };
+}
+
+export function getStartAndEndOfMonth() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+
+  // Calculate the start date of the month
+  const startDate = new Date(year, month, 1);
+
+  // Calculate the end date of the month
+  const nextMonth = new Date(year, month + 1, 1);
+  const endDate = new Date(nextMonth - 1);
+
+  return { startDate, endDate };
+}

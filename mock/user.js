@@ -1,6 +1,6 @@
 
 const tokens = {
-  admin: {
+  'aslam.doctor@gmail.com': {
     token: 'admin-token'
   },
   editor: {
@@ -13,24 +13,32 @@ const users = {
     roles: ['admin'],
     introduction: 'I am a super administrator',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Super Admin'
+    name: 'Super Admin',
+    user: {
+      first_name: 'aslam',
+      last_name: 'doctor'
+    }
   },
   'editor-token': {
     roles: ['editor'],
     introduction: 'I am an editor',
     avatar: 'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-    name: 'Normal Editor'
+    name: 'Normal Editor',
+    user: {
+      first_name: 'aslam',
+      last_name: 'doctor'
+    }
   }
 }
 
 module.exports = [
   // user login
   {
-    url: '/vue-admin-template/user/login',
+    url: '/user/login',
     type: 'post',
     response: config => {
-      const { username } = config.body
-      const token = tokens[username]
+      const { email } = config.body
+      const token = tokens[email]
 
       // mock error
       if (!token) {
@@ -49,19 +57,19 @@ module.exports = [
 
   // get user info
   {
-    url: '/vue-admin-template/user/info\.*',
+    url: '/user\.*',
     type: 'get',
     response: config => {
-      const { token } = config.query
-      const info = users[token]
+      // const { token } = config.query
+      const info = users['admin-token']
 
-      // mock error
-      if (!info) {
-        return {
-          code: 50008,
-          message: 'Login failed, unable to get user details.'
-        }
-      }
+      // // mock error
+      // if (!info) {
+      //   return {
+      //     code: 50008,
+      //     message: 'Login failed, unable to get user details.'
+      //   }
+      // }
 
       return {
         code: 20000,
@@ -72,7 +80,7 @@ module.exports = [
 
   // user logout
   {
-    url: '/vue-admin-template/user/logout',
+    url: '/user/logout',
     type: 'post',
     response: _ => {
       return {

@@ -3,7 +3,7 @@
   .main-container {
     min-height: 100%;
     transition: margin-left .28s;
-    margin-left: $sideBarWidth;
+    // margin-left: $sideBarWidth;
     position: relative;
   }
 
@@ -223,4 +223,14 @@
       border-radius: 20px;
     }
   }
+}
+.el-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+.el-loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
