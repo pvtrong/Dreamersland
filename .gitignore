@@ -16,4 +16,3 @@ tests/**/coverage/
 *.sln
 .env
 yarn.lock
-.env.development
