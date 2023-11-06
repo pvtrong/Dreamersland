@@ -1,51 +1,26 @@
 <template>
   <div>
-    <breadcrumb
-      :pageTitle="'Ranking'"
-      :thumbImage="breadcrumbImage03"
-    ></breadcrumb>
+    <breadcrumb :pageTitle="'Ranking'" :thumbImage="breadcrumbImage03" :isUserDetail="false"></breadcrumb>
 
     <section class="rank__list-area pb-[120px] pt-[120px] bg-center bg-cover">
       <div class="container">
         <custom-title :title="'Top of dreamers'"></custom-title>
 
-        <div
-          class="sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[5rem] lg:p-0 md:p-0 sm:p-0 xsm:p-0"
-        >
+        <div class="sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[5rem] lg:p-0 md:p-0 sm:p-0 xsm:p-0">
           <div class="shop__top-wrap mt-0 mb-[30px] mx-0">
             <div class="flex flex-wrap mx-[-15px] items-center">
               <div class="relative px-[15px] flex">
                 <div
-                  class="shop__ordering flex gap-5 relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]"
-                >
-                  <el-select
-                    v-model="sortBy"
-                    placeholder="Sắp xếp theo"
-                    @change="handleSortBy"
-                  >
-                    <el-option
-                      v-for="itemSort in rankSortByOptions"
-                      :key="itemSort.value"
-                      :label="itemSort.label"
-                      :value="itemSort.value"
-                    >
+                  class="shop__ordering flex gap-5 relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]">
+                  <el-select v-model="sortBy" placeholder="Sắp xếp theo" @change="handleSortBy">
+                    <el-option v-for="itemSort in rankSortByOptions" :key="itemSort.value" :label="itemSort.label"
+                      :value="itemSort.value">
                     </el-option>
                   </el-select>
-                  <el-select
-                    v-model="filterBy"
-                    placeholder="Lọc theo"
-                    @change="handleFilterBy"
-                  >
-                    <el-option
-                      v-for="itemFilter in filterByOptions"
-                      :key="itemFilter.value"
-                      :label="itemFilter.label"
-                      :value="itemFilter.value"
-                    >
-                      <div
-                        style="width: 100%"
-                        @mouseenter="handleOptionHover(itemFilter.label)"
-                      >
+                  <el-select v-model="filterBy" placeholder="Lọc theo" @change="handleFilterBy">
+                    <el-option v-for="itemFilter in filterByOptions" :key="itemFilter.value" :label="itemFilter.label"
+                      :value="itemFilter.value">
+                      <div style="width: 100%" @mouseenter="handleOptionHover(itemFilter.label)">
                         {{ itemFilter.label }}
                       </div>
                     </el-option>
@@ -61,17 +36,10 @@
             </div>
           </div>
         </div>
-        <div
-          class="rank__wrapper px-20 py-0 xl:px-[60px] xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0"
-        >
+        <div class="rank__wrapper px-20 py-0 xl:px-[60px] xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0">
           <div class="flex flex-wrap mx-[-15px]">
-            <rank-item
-              v-for="(rank, index) in ranks"
-              :key="index"
-              :index="index + 1"
-              :rank="rank"
-              :animate="animateText"
-            ></rank-item>
+            <rank-item v-for="(rank, index) in ranks" :key="index" :index="index + 1" :rank="rank"
+              :animate="animateText"></rank-item>
           </div>
         </div>
       </div>
@@ -210,7 +178,7 @@ export default {
       try {
         const { data } = await getListRanks({ ...params, season_id: 1 });
         this.ranks = data;
-      } catch (error) {}
+      } catch (error) { }
       this.isLoading = false;
     },
     handleFilterBy(value) {
@@ -228,7 +196,7 @@ export default {
     changeType(newType) {
       this.typeDate = value;
     },
-    exploreMore() {},
+    exploreMore() { },
     openDateRangePicker() {
       // Access the date range picker using its ref
       const datePicker = this.$refs.datePickerRef;

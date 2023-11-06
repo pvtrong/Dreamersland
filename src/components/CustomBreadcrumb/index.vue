@@ -1,54 +1,45 @@
 <template>
   <section
     class="breadcrumb-area relative bg-center bg-cover min-h-[561px] flex items-center pt-[110px] pb-[75px] px-0 before:content-[''] before:absolute before:w-6/12 before:bg-[#45f882] before:h-[50px] before:left-0 before:bottom-0 after:content-[''] after:absolute after:w-6/12 after:bg-[#45f882] after:h-[50px] after:left-auto after:right-0 after:bottom-0 before:clip-path-polygon-[0_0,0_100%,100%_100%] after:clip-path-polygon-[100%_0,0_100%,100%_100%] xl:min-h-[480px] lg:min-h-[400px] md:min-h-[400px] xl:before:h-10 xl:after:h-10 lg:before:h-[30px] lg:after:h-[30px] md:before:h-[30px] md:after:h-[30px] sm:min-h-[310px] sm:pt-[120px] sm:pb-[75px] sm:px-0 sm:before:h-5 sm:after:h-5 xsm:min-h-[310px] xsm:pt-[120px] xsm:pb-[75px] xsm:px-0 xsm:before:h-5 xsm:after:h-5"
-    :style="{ 'background-image': 'url(' + backgroundImage + ')' }"
-  >
+    :style="{ 'background-image': 'url(' + backgroundImage + ')' }">
     <div class="container">
-      <div
-        class="breadcrumb__wrapper relative px-20 py-0 lg:px-0 md:px-0 sm:px-0 xsm:px-0"
-      >
+      <div class="breadcrumb__wrapper relative px-20 py-0 lg:px-0 md:px-0 sm:px-0 xsm:px-0">
         <div class="flex flex-wrap mx-[-15px]">
           <div
-            class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-7/12 lg:basis-7/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]"
-          >
-            <div
-              class="breadcrumb__content text-left md:text-center sm:text-center xsm:text-center"
-            >
+            class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-7/12 lg:basis-7/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
+            <div class="breadcrumb__content text-left md:text-center sm:text-center xsm:text-center">
               <h2
-                class="title text-[60px] font-extrabold tracking-[3px] leading-none m-0 xl:text-[50px] xl:tracking-[2px] lg:text-[50px] lg:tracking-[2px] md:text-[50px] md:tracking-[2px] sm:text-[43px] sm:tracking-[2px] xsm:text-[43px] xsm:tracking-[2px]"
-              >
+                class="title text-[60px] font-extrabold tracking-[3px] leading-none m-0 xl:text-[50px] xl:tracking-[2px] lg:text-[50px] lg:tracking-[2px] md:text-[50px] md:tracking-[2px] sm:text-[43px] sm:tracking-[2px] xsm:text-[43px] xsm:tracking-[2px]">
                 {{ pageTitle }}
               </h2>
               <nav aria-label="breadcrumb">
                 <ol
-                  class="breadcrumb justify-start sm:justify-center xsm:justify-center mt-3 mb-0 mx-0 flex flex-wrap list-none md:justify-center sm:text-center xsm:text-center"
-                >
+                  class="breadcrumb justify-start sm:justify-center xsm:justify-center mt-3 mb-0 mx-0 flex flex-wrap list-none md:justify-center sm:text-center xsm:text-center">
                   <li
-                    class="breadcrumb-item uppercase font-bold text-[14px] tracking-[2px] flex items-center after:content-[''] after:block after:w-2 after:h-2 after:transition-all after:duration-[0.3s] after:ease-[ease-out] after:delay-[0s] after:mx-2.5 after:my-0 after:rounded-[50%] after:bg-[#45f882] hover:after:bg-[#ffbe18]"
-                  >
+                    class="breadcrumb-item uppercase font-bold text-[14px] tracking-[2px] flex items-center after:content-[''] after:block after:w-2 after:h-2 after:transition-all after:duration-[0.3s] after:ease-[ease-out] after:delay-[0s] after:mx-2.5 after:my-0 after:rounded-[50%] after:bg-[#45f882] hover:after:bg-[#ffbe18]">
                     <a class="hover:text-[#ffbe18]" href="index.html">Home</a>
                   </li>
                   <li
                     class="breadcrumb-item uppercase font-bold text-[14px] tracking-[2px] flex items-center after:content-[''] after:block after:w-2 after:h-2 after:transition-all after:duration-[0.3s] after:ease-[ease-out] after:delay-[0s] after:mx-2.5 after:my-0 after:rounded-[50%] after:bg-[#45f882] hover:after:bg-[#ffbe18] active text-[#fff]"
-                    aria-current="page"
-                  >
+                    aria-current="page">
                     {{ pageTitle }}
                   </li>
                 </ol>
               </nav>
+
+              <div v-if="isUserDetail"
+                class="mt-9 px-14 py-4 bg-[#EBB917] inline-block text-black font-Barlow font-bold rounded-md">
+                NGÀY THAM GIA: {{ createdDate }}
+              </div>
             </div>
           </div>
           <div
-            class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-5/12 lg:basis-5/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px] block md:hidden sm:hidden xsm:hidden"
-          >
+            class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-5/12 lg:basis-5/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px] block md:hidden sm:hidden xsm:hidden">
             <div
-              class="breadcrumb__img absolute -translate-y-2/4 right-[30px] top-2/4 group xl:right-[60px] xl:top-[60%] lg:right-[60px] lg:top-[60%]"
-            >
+              class="breadcrumb__img absolute -translate-y-2/4 right-[30px] top-2/4 group xl:right-[60px] xl:top-[60%] lg:right-[60px] lg:top-[60%]">
               <img
                 class="max-h-[412px] max-w-[402px] group-hover:animate-[breadcrumbShake_0.82s_cubic-bezier(0.36,0.07,0.19,0.97)_both] lg:max-h-[260px] lg:max-w-[255px] xl:max-h-80 xl:max-w-[310px]"
-                :src="thumbImage"
-                alt="img"
-              />
+                :src="thumbImage" alt="img" />
             </div>
           </div>
         </div>
@@ -71,6 +62,14 @@ export default {
     },
     backgroundImage: {
       default: breadcrumbBgImage03,
+    },
+    isUserDetail: {
+      type: Boolean,
+      required: true,
+    },
+    createdDate: {
+      type: String,
+      required: false,
     },
   },
 };
