@@ -3,7 +3,7 @@
     <breadcrumb :page-title="currentUser.last_name + ' ' + currentUser.first_name" :thumb-image="win02Img"
       :isUserDetail="true" :createdDate="createdAt" />
     <!-- services-area done -->
-    <section class="services-area services__bg-color pt-[120px] pb-[120px] bg-[#7d6464f2]">
+    <section class="services-area services__bg-color pt-[120px] pb-[120px] bg-[#11171D]">
       <div class="container">
         <div class="tournament__wrapper px-20 py-0 xl:px-[60px] xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0">
           <div class="services-row flex flex-wrap mx-[-15px] items-center align-items-xl-start">

@@ -1,10 +1,10 @@
 <template>
   <div class="tgmenu__action block lg:mr-10 md:mr-10 sm:hidden xsm:hidden">
     <ul class="list-wrap m-0 p-0 flex items-center ml-2.5">
-      <li class="search relative ml-0">
-        <i class="block text-[20px] hover:text-[#45f882] text-[#fff]" href="#"
-          ><i class="flaticon-search-1"></i
-        ></i>
+      <li class="cursor-pointer header-btn relative ml-[25px] pl-[25px]">
+        <div @click="handleRedirectLogin" class="tg-border-btn text-[#fff]">
+          <i class="flaticon-edit"></i> ~sing in
+        </div>
       </li>
       <audio ref="audioElementSound">
         <source :src="ClickSound" type="audio/wav" />
@@ -40,6 +40,9 @@ export default {
     },
     playAudio() {
       this.$refs.audioElementSound.play();
+    },
+    handleRedirectLogin() {
+      this.$router.push('/login');
     },
   },
   data() {
