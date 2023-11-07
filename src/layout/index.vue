@@ -2,7 +2,7 @@
   <div>
     <header-component />
 
-    <div :class="classObj" class="app-wrapper">
+    <div class="app-wrapper">
       <app-main />
     </div>
 
