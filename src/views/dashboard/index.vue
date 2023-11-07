@@ -1,26 +1,24 @@
 <template>
-  <div class="dashboard-container"></div>
+  <div>
+    <main class="main--area overflow-x-hidden">
+      <banner-area />
+      <match-result-area />
+      <area-background />
+    </main>
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-
+import BannerArea from './banner-area.vue';
+import MatchResultArea from './match-result-area.vue';
+import AreaBackground from './area-background/index.vue';
 export default {
-  name: 'Dashboard',
-  computed: {
-    ...mapGetters(['name']),
-  },
+  components: {
+    BannerArea,
+    MatchResultArea,
+    AreaBackground
+  }
 };
 </script>
 
-<style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
-  }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
-}
-</style>
+<style lang="scss" scoped></style>

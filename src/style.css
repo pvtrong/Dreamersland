@@ -9,7 +9,7 @@
 @import '~@/assets/css/jquery-ui.css';
 @import '~@/assets/css/flaticon.css';
 @import '~@/assets/css/flowbite.min.css';
-
+@import '~@/assets/template-style.css';
 
 
 @tailwind base;
@@ -170,7 +170,7 @@
     .black-bg {
         @apply bg-[#0f161b];
     }
-    
+
 }
 
 @layer components{
@@ -204,17 +204,17 @@
     }
 
     .tg-btn-1.-btn-yellow span::after {
-        @apply bg-[#ffbe18] 
+        @apply bg-[#ffbe18]
     }
 
     .tg-btn-1.-btn-yellow:hover span::after {
         @apply bg-[#45f882] ;
     }
-    
+
     .tg-border-btn {
         @apply inline-flex text-white font-extrabold uppercase text-[15px] tracking-[0.8px] relative overflow-hidden justify-center items-center text-center bg-no-repeat bg-cover min-w-[157px] min-h-[48px] z-[1] px-5 py-2.5 font-Barlow bg-[url(assets/img/slider/download.svg)] before:content-[''] before:absolute before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:opacity-0 before:z-[-1] before:inset-0 before:bg-[#45f882] before:clip-path-polygon-[27px_0,_calc(85%_-_3px)_0,_100%_50%,_calc(85%_-_1px)_100%,_24px_100%,_0%_50%] hover:text-[#201f2a]
     }
-    
+
     .tg-border-btn i {
         @apply mr-2.5;
     }
@@ -245,7 +245,7 @@
     .tg-btn-3 .svg-icon svg {
         @apply block transition-all duration-[0.3s] ease-[ease-out] delay-[0s]
     }
-    
+
     .shop__details-cart-btn {
         @apply block w-40 h-[53px] text-center font-extrabold text-[15px] uppercase text-[#0f161b] tracking-[1px] bg-[#45f882] border-[none] hover:text-[#0f161b] hover:bg-[#ffbe18] font-Barlow clip-path-["M8,0H152a8,8,0,0,1,8,8V33.63C160,37.36,140,53,140,53H8a8,8,0,0,1-8-8V8A8,8,0,0,1,8,0Z"]
     }
@@ -272,14 +272,14 @@
         .slider__shapes img:nth-child(4) {
             animation-delay: 0.6s;
         }
-        
+
     .search__active .search__popup-wrap {
         @apply translate-y-[0%] mt-0 after:w-full after:delay-[1200ms]
     }
     .search__active .search__form::after {
         @apply w-full delay-[1200ms];
     }
-    
+
     .offCanvas__wrap::-webkit-scrollbar {
         @apply w-0
     }
@@ -308,7 +308,7 @@
     }
 
     .faq__wrapper .accordion-button[aria-expanded="true"] .count {
-        @apply bg-[#45f882] 
+        @apply bg-[#45f882]
     }
     .tab-pane.active {
         @apply animate-[tgSlideDown_0.5s_ease-in-out];
@@ -339,7 +339,7 @@
     .tgmenu__action .header-btn .btn {
         @apply text-[#201f2a] text-[14px] font-extrabold px-[22px] py-[13px]
     }
-    
+
     .tgmobile__menu .navbar-collapse {
         @apply block
     }
@@ -431,7 +431,7 @@
     }
     .about__content-circle:hover {
         animation-play-state: paused;
-    }  
+    }
     .about__content-circle svg {
     overflow: initial;
     }
@@ -494,7 +494,7 @@ textPath {
     }
 
     .streamers__pagination-dots>*.swiper-pagination-bullet-active {
-        @apply opacity-100 bg-[#45f882] 
+        @apply opacity-100 bg-[#45f882]
     }
     .mfp-iframe-holder .mfp-content {
         @apply max-w-[1200px]
@@ -559,7 +559,7 @@ textPath {
 
     .shop__price-filter .ui-slider-handle {
         @apply w-0 h-0 top-[-5px] -ml-px mr-0 my-0 border-solid
-        border-t-0 border-r-[5px] border-b-[6px] border-l-[5px] bg-transparent        
+        border-t-0 border-r-[5px] border-b-[6px] border-l-[5px] bg-transparent
         border-t-transparent border-x-transparent border-b-[#45f882]
     }
 
@@ -606,7 +606,7 @@ textPath {
 
     .contact__form-wrap .ajax-response.success {
         @apply text-[#45f882]
-    } 
+    }
 .footer__country-name .text {
         -webkit-text-stroke-width: 2px;
         -webkit-text-stroke-color: #fff;
@@ -630,12 +630,12 @@ textPath {
         @apply px-[15px]
     }
 }
-    
+
 .custom-container {
     @apply max-w-[1590px] 2xl:max-w-[1490px] xl:max-w-[1260px] lg:max-w-[960px] md:max-w-[720px] sm:max-w-[540px] xsm:max-w-full
 }
 .tg-sticky-menu {
-    @apply fixed w-full -translate-y-full z-[99] transition-all duration-[0.4s] ease-[ease] opacity-0 m-auto rounded-none left-0 top-0 bg-[#182029]
+    @apply fixed w-full -translate-y-full z-[99] transition-all duration-[0.4s] ease-[ease] opacity-0 m-auto rounded-none left-0 top-0 bg-[#182029] !py-4
 }
 
 .tg-sticky-menu.sticky-menu__show {
@@ -930,7 +930,7 @@ html.show-preloader body {
         opacity: 1;
     }
     }
-    
+
     /* xl screen done */
     @media (max-width: 1500px) {
         .about__three-images .right {
@@ -938,18 +938,9 @@ html.show-preloader body {
           }
     }
 
-    /* lg screen done */
-    @media (max-width: 1199.98px) {
-        .tg-header__area.tg-sticky-menu {
-            @apply px-0 py-[18px];
-          }
-    }
 
     /* md screen done */
     @media (max-width: 991.98px) {
-        .tg-header__area.tg-sticky-menu {
-            @apply px-0 py-[18px];
-          }
           .about__three-images .left {
             mask-image: none !important;
         }
@@ -960,9 +951,6 @@ html.show-preloader body {
 
     /* sm screen done */
     @media (max-width: 767.98px) {
-        .tg-header__area.tg-sticky-menu {
-            @apply px-0 py-[18px];
-          }
           .tg-header__area .mobile-nav-toggler {
             @apply mt-0;
           }

@@ -7,6 +7,8 @@
 <script>
 import { main } from '@/utils/main';
 import jQuery from 'jquery';
+import 'animate.css';
+import WOW from 'wowjs';
 
 export default {
   name: 'App',
@@ -15,10 +17,16 @@ export default {
       activeIndex: '1',
     };
   },
+  created() {
+    new WOW.WOW({
+      live: false
+    }).init();
+  },
   updated: function () {
-    setTimeout(() => {
-      main(jQuery);
-    }, 500);
+    main(jQuery);
+    new WOW.WOW({
+      live: false
+    }).init();
   },
 };
 </script>

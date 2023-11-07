@@ -579,6 +579,14 @@ export const main = function ($) {
   }
   parallaxMouse();
 
+  $('.odometer').appear(function (e) {
+    var odo = $('.odometer');
+    odo.each(function () {
+      var countNumber = $(this).attr('data-count');
+      $(this).html(countNumber);
+    });
+  });
+
   /*=============================================
 	=    		Odometer Active  	       =
 =============================================*/

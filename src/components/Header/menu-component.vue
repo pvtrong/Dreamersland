@@ -1,18 +1,8 @@
 <template>
   <ul class="navigation flex flex-row flex-wrap">
-    <el-menu
-      :default-active="activeIndex"
-      class="bg-transparent !border-b-0"
-      mode="horizontal"
-      @select="handleSelect"
-    >
-      <menu-item
-        v-for="menu in menuItems"
-        :key="menu.itemKey"
-        :pathName="menu.pathName"
-        :itemKey="menu.itemKey"
-        :itemName="menu.itemName"
-      />
+    <el-menu :default-active="activeIndex" class="bg-transparent !border-b-0" mode="horizontal" @select="handleSelect">
+      <menu-item v-for="menu in menuItems" :key="menu.itemKey" :pathName="menu.pathName" :itemKey="menu.itemKey"
+        :itemName="menu.itemName" />
     </el-menu>
   </ul>
 </template>
