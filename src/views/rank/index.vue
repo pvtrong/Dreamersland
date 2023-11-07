@@ -25,12 +25,11 @@
                       </div>
                     </el-option>
                   </el-select>
-                  <!-- <el-date-picker
+                  <el-date-picker
                     v-model="dateRange"
                     type="daterange"
                     :ref="pickerRef"
-                    style="width: 0px; height: 0px; overflow: hidden; opacity: 0;"
-                  ></el-date-picker> -->
+                  ></el-date-picker>
                 </div>
               </div>
             </div>
