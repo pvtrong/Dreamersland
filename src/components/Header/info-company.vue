@@ -8,7 +8,12 @@
         <div
           class="offCanvas__top flex items-center pt-[35px] pb-[25px] px-10 border-b-[#18202a] border-b border-solid"
         >
+          <audio ref="audioElementRemove">
+            <source :src="RemoveSound" type="audio/wav" />
+          </audio>
+
           <div
+            @click="playRemoveAudio()"
             class="offCanvas__toggle w-[50px] h-[50px] flex items-center justify-center text-[20px] text-[#adb0bc] cursor-pointer transition-all duration-[0.3s] ease-[ease-out] delay-[0s] ml-auto rounded-[50%] hover:text-[#0f161b] hover:bg-[#45f882]"
           >
             <i class="flaticon-swords-in-cross-arrangement"></i>
@@ -120,6 +125,7 @@
               Đổi mật khẩu
             </h4>
             <h4
+              id="logout-page"
               @click="logout"
               style="cursor: pointer"
               class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0"
@@ -148,18 +154,25 @@
 </template>
 
 <script>
+import RemoveSound from '@/assets/audio/remove.wav';
+
 export default {
   methods: {
     async logout() {
       await this.$store.dispatch('users/logout');
-      // this.$router.push(`/login?redirect=${this.$route.fullPath}`);
-      window.location.href = '/login?redirect=${this.$route.fullPath}';
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`);
     },
     handleRedirectChangePassword() {
       this.$router.push('/change-password');
-      // window.location.href = '/change-password';
-      // document.getElementsByTagName('body').classList.remove('offCanvas__menu-visible');
-    }
+    },
+    playRemoveAudio() {
+      this.$refs.audioElementRemove.play();
+    },
+  },
+  data() {
+    return {
+      RemoveSound,
+    };
   },
 };
 </script>

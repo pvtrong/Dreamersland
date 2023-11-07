@@ -15,7 +15,7 @@ export default {
       activeIndex: '1',
     };
   },
-  mounted: function () {
+  updated: function () {
     setTimeout(() => {
       main(jQuery);
     }, 500);

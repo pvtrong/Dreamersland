@@ -6,7 +6,11 @@
           ><i class="flaticon-search-1"></i
         ></i>
       </li>
+      <audio ref="audioElementSound">
+        <source :src="ClickSound" type="audio/wav" />
+      </audio>
       <li
+        @click="playAudio"
         class="side-toggle-icon group relative ml-[25px] flex flex-col min-w-[45px] gap-2.5 cursor-pointer md:hidden"
       >
         <span
@@ -23,6 +27,27 @@
   </div>
 </template>
 
-<script></script>
+<script>
+import ClickSound from '@/assets/audio/click.wav';
+export default {
+  methods: {
+    async logout() {
+      await this.$store.dispatch('users/logout');
+      this.$router.push(`/login?redirect=${this.$route.fullPath}`);
+    },
+    handleRedirectChangePassword() {
+      this.$router.push('/change-password');
+    },
+    playAudio() {
+      this.$refs.audioElementSound.play();
+    },
+  },
+  data() {
+    return {
+      ClickSound,
+    };
+  },
+};
+</script>
 
 <style lang="scss" scoped></style>

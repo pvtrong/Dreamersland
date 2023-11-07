@@ -197,13 +197,13 @@ export const main = function ($) {
 =============================================*/
   $(
     '.search a, .tg-btn-1, .side-toggle-icon, .mobile-nav-toggler, .dropdown-btn'
-  ).on('click', () => new Audio('assets/audio/click.wav').play());
+  ).on('click', () => new Audio('../assets/audio/click.wav').play());
   $('.search__close, .offCanvas__toggle, .offCanvas__overlay, .close-btn').on(
     'click',
-    () => new Audio('assets/audio/remove.wav').play()
+    () => new Audio('../assets/audio/remove.wav').play()
   );
   $('.about__tab-wrap ul button').on('click', () =>
-    new Audio('assets/audio/tab.mp3').play()
+    new Audio('../assets/audio/tab.mp3').play()
   );
 
   /*===========================================
@@ -216,7 +216,11 @@ export const main = function ($) {
   $('.offCanvas__overlay, .offCanvas__toggle').on('click', function () {
     $('body').removeClass('offCanvas__menu-visible');
   });
+
   $('#change-password').on('click', function () {
+    $('body').removeClass('offCanvas__menu-visible');
+  });
+  $('#logout-page').on('click', function () {
     $('body').removeClass('offCanvas__menu-visible');
   });
 
