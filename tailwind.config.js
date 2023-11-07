@@ -69,7 +69,7 @@ export default {
             maxWidth: '1300px',
           },
           '@screen 2xl': {
-            maxWidth: '1500px',
+            maxWidth: '1345px',
           },
         },
       });

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <article>
     <breadcrumb :pageTitle="'Ranking'" :thumbImage="breadcrumbImage03" :isUserDetail="false"></breadcrumb>
 
     <section class="rank__list-area pb-[120px] pt-[120px] bg-center bg-cover">
@@ -44,7 +44,7 @@
         </div>
       </div>
     </section>
-  </div>
+  </article>
 </template>
 <script>
 import RankItem from '@/views/rank/rank-item.vue'; // Adjust the path to match your project structure

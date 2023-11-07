@@ -34,7 +34,7 @@ export default {
           itemName: 'Bảng xếp hạng',
         },
         {
-          pathName: '/my-profile',
+          pathName: '/players',
           itemKey: '4',
           itemName: 'NGƯỜI CHƠI',
         },
