@@ -63,14 +63,6 @@ export const constantRoutes = [
         component: () => import('@/views/changePassword/index'),
       },
       {
-        path: '/my-profile',
-        name: 'Users',
-        component: () => import('@/views/users/index'),
-        meta: {
-          title: 'Quản lý nhân viên',
-        },
-      },
-      {
         path: '/rank',
         name: 'Ranking',
         component: () => import('@/views/rank/index'),
@@ -85,6 +77,24 @@ export const constantRoutes = [
         component: () => import('@/views/rank/index'),
         meta: {
           title: 'Chi tiết bảng xếp hạng',
+          guard: GUARD.GUEST,
+        },
+      },
+      {
+        path: '/players',
+        name: 'Players',
+        component: () => import('@/views/players/index'),
+        meta: {
+          title: 'Players',
+          guard: GUARD.GUEST,
+        },
+      },
+      {
+        path: '/players/:id',
+        name: 'Player Detail',
+        component: () => import('@/views/players/player-detail/index'),
+        meta: {
+          title: 'Player Detail',
           guard: GUARD.GUEST,
         },
       },

@@ -79,7 +79,7 @@
         <h5
           class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
         >
-          {{ rank.user.rank.bonus }}
+          {{ rank.bonus }}
         </h5>
       </div>
       <div
