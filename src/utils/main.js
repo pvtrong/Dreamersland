@@ -49,9 +49,9 @@ export const main = function ($) {
 
   $(window).on('load', function () {
     preloader();
-    mainSlider();
+    // mainSlider();
     wowAnimation();
-    splitText();
+    // splitText();
     tg_title_animation();
   });
 
@@ -64,7 +64,7 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=           Mobile Menu          =
+  =           Mobile Menu          =
 =============================================*/
   //SubMenu Dropdown Toggle
   if ($('.tgmenu__wrap li.menu-item-has-children ul').length) {
@@ -113,14 +113,14 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=           Data Color             =
+  =           Data Color             =
 =============================================*/
   $('[data-bg-color]').each(function () {
     $(this).css('background-color', $(this).attr('data-bg-color'));
   });
 
   /*===========================================
-	   =         Sticky Menu     =
+     =         Sticky Menu     =
 =============================================*/
   function stickyHeader() {
     var $window = $(window);
@@ -152,7 +152,7 @@ export const main = function ($) {
   stickyHeader();
 
   /*===========================================
-	=          Scroll to Top      =
+  =          Scroll to Top      =
 =============================================*/
   $(window).on('scroll', function () {
     var scroll = $(window).scrollTop();
@@ -164,7 +164,7 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=    		 Scroll Up  	         =
+  =    		 Scroll Up  	         =
 =============================================*/
   if ($('.scroll-to-target').length) {
     $('.scroll-to-target').on('click', function () {
@@ -180,7 +180,7 @@ export const main = function ($) {
   }
 
   /*===========================================
-	=            Search Active            =
+  =            Search Active            =
 =============================================*/
   if ($('.tgmenu__action .search').length) {
     $('.tgmenu__action .search').on('click', function () {
@@ -193,7 +193,7 @@ export const main = function ($) {
   }
 
   /*===========================================
-	=        Click Sound Active		      =
+  =        Click Sound Active		      =
 =============================================*/
   $(
     '.search a, .tg-btn-1, .side-toggle-icon, .mobile-nav-toggler, .dropdown-btn'
@@ -207,7 +207,7 @@ export const main = function ($) {
   );
 
   /*===========================================
-	=            OffCanvas Active     =
+  =            OffCanvas Active     =
 =============================================*/
 
   $('.side-toggle-icon').on('click', function () {
@@ -225,7 +225,7 @@ export const main = function ($) {
   });
 
   /*==========================================
-	=        Gallery Active		      =
+  =        Gallery Active		      =
 =============================================*/
   var $swiperSelector = $('.gallery-active');
 
@@ -281,7 +281,7 @@ export const main = function ($) {
   });
 
   /*==========================================
-	=        Project Active		      =
+  =        Project Active		      =
 =============================================*/
   var $swiperSelector = $('.project-active');
 
@@ -356,7 +356,7 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=        Third Slider Active		      =
+  =        Third Slider Active		      =
 =============================================*/
   // function mainSlider() {
   //   $('.slider-active')
@@ -380,7 +380,7 @@ export const main = function ($) {
   // }
 
   /*=============================================
-	=        Trending Active		      =
+  =        Trending Active		      =
 =============================================*/
   var trendSwiper = new Swiper('.trendingNft-active', {
     // Optional parameters
@@ -417,7 +417,7 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=        Streamers Active		      =
+  =        Streamers Active		      =
 =============================================*/
   var streamersSwiper = new Swiper('.streamers-active', {
     // Optional parameters
@@ -461,7 +461,7 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=    		Brand Active		      =
+  =    		Brand Active		      =
 =============================================*/
   // $('.brand-active').slick({
   //   dots: false,
@@ -507,7 +507,7 @@ export const main = function ($) {
   // });
 
   /*=============================================
-	=        Intersection Observer         =
+  =        Intersection Observer         =
 =============================================*/
   if (!!window.IntersectionObserver) {
     let observer = new IntersectionObserver(
@@ -534,7 +534,7 @@ export const main = function ($) {
   }
 
   /*=============================================
-	=           Brand effect         =
+  =           Brand effect         =
 =============================================*/
   var democol = $('.brand-active .col, .slider__brand-list li');
   democol.on({
@@ -562,7 +562,7 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=        parallaxMouse Active          =
+  =        parallaxMouse Active          =
 =============================================*/
   function parallaxMouse() {
     if ($('.parallax').length) {
@@ -579,16 +579,8 @@ export const main = function ($) {
   }
   parallaxMouse();
 
-  $('.odometer').appear(function (e) {
-    var odo = $('.odometer');
-    odo.each(function () {
-      var countNumber = $(this).attr('data-count');
-      $(this).html(countNumber);
-    });
-  });
-
   /*=============================================
-	=    		Odometer Active  	       =
+  =    		Odometer Active  	       =
 =============================================*/
   // $('.odometer').appear(function (e) {
   //   var odo = $('.odometer');
@@ -599,7 +591,7 @@ export const main = function ($) {
   // });
 
   /*=============================================
-	=    		Magnific Popup		      =
+  =    		Magnific Popup		      =
 =============================================*/
   // $('.popup-image').magnificPopup({
   //   type: 'image',
@@ -621,29 +613,29 @@ export const main = function ($) {
   // });
 
   /*=============================================
-	=          Jarallax Active         =
+  =          Jarallax Active         =
 =============================================*/
   // $('.tg-jarallax').jarallax({
   //   speed: 0.2,
   // });
 
   /*=============================================
-	=    	  Countdown Active  	         =
+  =    	  Countdown Active  	         =
 =============================================*/
-  $('[data-countdown]').each(function () {
-    var $this = $(this),
-      finalDate = $(this).data('countdown');
-    $this.countdown(finalDate, function (event) {
-      $this.html(
-        event.strftime(
-          '<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'
-        )
-      );
-    });
-  });
+  // $('[data-countdown]').each(function () {
+  //   var $this = $(this),
+  //     finalDate = $(this).data('countdown');
+  //   $this.countdown(finalDate, function (event) {
+  //     $this.html(
+  //       event.strftime(
+  //         '<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'
+  //       )
+  //     );
+  //   });
+  // });
 
   /*=============================================
-	=          Parallax Active         =
+  =          Parallax Active         =
 =============================================*/
   (function () {
     var parallax = $('.tg-parallax');
@@ -666,7 +658,7 @@ export const main = function ($) {
   })();
 
   /*=============================================
-	=    	 Slider Range Active  	         =
+  =    	 Slider Range Active  	         =
 =============================================*/
   // $('#slider-range').slider({
   //   range: true,
@@ -719,7 +711,7 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=        servicesTab Active         =
+  =        servicesTab Active         =
 =============================================*/
   $('.services__wrapper .services__item')
     .on('mouseover', function () {
@@ -755,7 +747,7 @@ export const main = function ($) {
     });
 
   /*===========================================
-	=        FaqTab Active         =
+  =        FaqTab Active         =
 =============================================*/
   $('.faq__wrapper .accordion-item')
     .on('click', function () {
@@ -791,36 +783,36 @@ export const main = function ($) {
     });
 
   /*===========================================
-	=          SplitText Active         =
+  =          SplitText Active         =
 =============================================*/
-  function splitText() {
-    $('.tg__animate-text').each(function () {
-      var a = $(this),
-        d = a.text().split(''),
-        c = a.data('wait');
-      c || (c = 0);
-      var b = a.data('speed');
-      b || (b = 4),
-        (b /= 100),
-        a.html('<em>321...</em>').addClass('ready'),
-        a.waypoint({
-          handler: function () {
-            a.hasClass('stop') ||
-              (a.addClass('stop'),
-              setTimeout(function () {
-                a.text(''),
-                  $.each(d, function (d, e) {
-                    var c = document.createElement('span');
-                    (c.textContent = e),
-                      (c.style.animationDelay = d * b + 's'),
-                      a.append(c);
-                  });
-              }, c));
-          },
-          offset: '90%',
-        });
-    });
-  }
+  // function splitText() {
+  //   $('.tg__animate-text').each(function () {
+  //     var a = $(this),
+  //       d = a.text().split(''),
+  //       c = a.data('wait');
+  //     c || (c = 0);
+  //     var b = a.data('speed');
+  //     b || (b = 4),
+  //       (b /= 100),
+  //       a.html('<em>321...</em>').addClass('ready'),
+  //       a.waypoint({
+  //         handler: function () {
+  //           a.hasClass('stop') ||
+  //             (a.addClass('stop'),
+  //               setTimeout(function () {
+  //                 a.text(''),
+  //                   $.each(d, function (d, e) {
+  //                     var c = document.createElement('span');
+  //                     (c.textContent = e),
+  //                       (c.style.animationDelay = d * b + 's'),
+  //                       a.append(c);
+  //                   });
+  //               }, c));
+  //         },
+  //         offset: '90%',
+  //       });
+  //   });
+  // }
   if ($(window).width() < 768) {
     $('.roadMap__list li')
       .addClass('mobileView')
@@ -828,7 +820,7 @@ export const main = function ($) {
   }
 
   /*=============================================
-	=          GSAP Active         =
+  =          GSAP Active         =
 =============================================*/
   gsap.registerPlugin(ScrollTrigger, SplitText);
   gsap.config({
@@ -898,7 +890,7 @@ export const main = function ($) {
   ScrollTrigger.addEventListener('refresh', tg_title_animation);
 
   /*=============================================
-	=    		 Wow Active  	         =
+  =    		 Wow Active  	         =
 =============================================*/
   function wowAnimation() {
     var wow = new WOW({

@@ -54,7 +54,7 @@ $(window).on('load', function () {
 	preloader();
     mainSlider();
 	wowAnimation();
-    splitText();
+    // splitText();
     tg_title_animation();
 });
 
@@ -565,19 +565,19 @@ $('.odometer').appear(function (e) {
 /*=============================================
 	=    		Magnific Popup		      =
 =============================================*/
-$('.popup-image').magnificPopup({
-	type: 'image',
-	gallery: {
-		enabled: true
-	},
-    zoom: {
-        enabled: false,
-        duration: 300, // don't foget to change the duration also in CSS
-        opener: function(element) {
-            return element.find('img');
-        }
-    }
-});
+// $('.popup-image').magnificPopup({
+// 	type: 'image',
+// 	gallery: {
+// 		enabled: true
+// 	},
+//     zoom: {
+//         enabled: false,
+//         duration: 300, // don't foget to change the duration also in CSS
+//         opener: function(element) {
+//             return element.find('img');
+//         }
+//     }
+// });
 
 /* magnificPopup video view */
 $('.popup-video').magnificPopup({
@@ -596,12 +596,12 @@ $('.tg-jarallax').jarallax({
 /*=============================================
 	=    	  Countdown Active  	         =
 =============================================*/
-$('[data-countdown]').each(function () {
-	var $this = $(this), finalDate = $(this).data('countdown');
-	$this.countdown(finalDate, function (event) {
-		$this.html(event.strftime('<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'));
-	});
-});
+// $('[data-countdown]').each(function () {
+// 	var $this = $(this), finalDate = $(this).data('countdown');
+// 	$this.countdown(finalDate, function (event) {
+// 		$this.html(event.strftime('<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'));
+// 	});
+// });
 
 
 /*=============================================
@@ -741,32 +741,32 @@ $('.faq__wrapper .accordion-item').on('click', function(){
 /*===========================================
 	=          SplitText Active         =
 =============================================*/
-function splitText() {
-    $(".tg__animate-text").each(function () {
-        var a = $(this),
-            d = a.text().split(""),
-            c = a.data("wait");
-        c || (c = 0);
-        var b = a.data("speed");
-        b || (b = 4),
-        (b /= 100),
-        a.html("<em>321...</em>").addClass("ready"),
-        a.waypoint({
-            handler: function () {
-                a.hasClass("stop") ||
-                (a.addClass("stop"),
-                setTimeout(function () {
-                    a.text(""),
-                        $.each(d, function (d, e) {
-                            var c = document.createElement("span");
-                            (c.textContent = e), (c.style.animationDelay = d * b + "s"), a.append(c);
-                        });
-                }, c));
-            },
-            offset: "90%",
-        });
-    });
-};
+// function splitText() {
+//     $(".tg__animate-text").each(function () {
+//         var a = $(this),
+//             d = a.text().split(""),
+//             c = a.data("wait");
+//         c || (c = 0);
+//         var b = a.data("speed");
+//         b || (b = 4),
+//         (b /= 100),
+//         a.html("<em>321...</em>").addClass("ready"),
+//         a.waypoint({
+//             handler: function () {
+//                 a.hasClass("stop") ||
+//                 (a.addClass("stop"),
+//                 setTimeout(function () {
+//                     a.text(""),
+//                         $.each(d, function (d, e) {
+//                             var c = document.createElement("span");
+//                             (c.textContent = e), (c.style.animationDelay = d * b + "s"), a.append(c);
+//                         });
+//                 }, c));
+//             },
+//             offset: "90%",
+//         });
+//     });
+// };
 if($(window).width()<768){
     $(".roadMap__list li").addClass('mobileView').removeClass('tg__animate-text');
 }

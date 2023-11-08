@@ -7,7 +7,6 @@
 <script>
 import { main } from '@/utils/main';
 import jQuery from 'jquery';
-import 'animate.css';
 import WOW from 'wowjs';
 
 export default {
@@ -23,14 +22,16 @@ export default {
     }).init();
   },
   updated: function () {
-    main(jQuery);
-    new WOW.WOW({
-      live: false
-    }).init();
+    setTimeout(() => {
+      main(jQuery);
+      new WOW.WOW({
+        live: false
+      }).init();
+    }, 100);
   },
 };
 </script>
 
 <style lang="css">
-@import '~@/style.css';
+@import './style.css';
 </style>

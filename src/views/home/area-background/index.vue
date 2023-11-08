@@ -1,6 +1,6 @@
 <template>
   <!-- area-background-start done -->
-  <div class="area-background bg-[top_center] bg-no-repeat bg-cover" data-background="assets/img/bg/area_bg02.jpg">
+  <div class="area-background bg-[top_center] bg-no-repeat bg-cover">
     <about-area />
 
     <streamers-area />
@@ -20,4 +20,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.area-background {
+  background-image: url(../../../assets/img/bg/area_bg02.jpg);
+}
+</style>

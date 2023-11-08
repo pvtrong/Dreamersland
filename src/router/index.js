@@ -53,9 +53,9 @@ export const constantRoutes = [
     children: [
       {
         path: '',
-        name: 'Dashboard',
-        component: () => import('@/views/dashboard/index'),
-        meta: { title: 'Dashboard', icon: 'dashboard', guard: GUARD.GUEST },
+        name: 'Home',
+        component: () => import('@/views/home/index'),
+        meta: { title: 'Home', icon: 'Home', guard: GUARD.GUEST },
       },
       {
         path: '/change-password',

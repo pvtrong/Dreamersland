@@ -12,7 +12,8 @@
     <div class="container custom-container">
       <div class="flex flex-wrap mx-[-15px]  justify-center ">
         <div
-          class="w-8/12 basis-8/12 2xl:w-8/12 2xl:basis-8/12 xl:w-8/12 xl:basis-8/12 lg:w-10/12 lg:basis-10/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
+          class="w-8/12 basis-8/12 2xl:w-8/12 2xl:basis-8/12 xl:w-8/12 xl:basis-8/12 lg:w-10/12 lg:basis-10/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]"
+          data-wow-delay=".1s">
           <div class="banner__content slider__content text-center m-0 relative z-[2]">
             <h2 class="title text-[150px] leading-[0.8] mt-0 mb-[21px] mx-0 font-berlin
                             drop-shadow-[-1px_5px_0px_rgba(69,248,130,0.66)] wow bounceInLeft
@@ -27,10 +28,10 @@
                             sm:text-[20px] sm:tracking-[3px]
                             xsm:text-[20px] xsm:tracking-[3px]
                             " data-wow-delay=".4s">video games online</p>
-            <div class="banner__btn mt-[33px] mb-0 mx-0 wow bounceInLeft" data-wow-delay=".6s">
+            <div class="banner__btn mt-[33px] mb-0 mx-0 wow bounceInLeft" data-wow-delay="0.6s">
               <a href="contact.html" class="tg-btn-3 tg-svg mx-auto">
-                <div class="svg-icon" id="svg-1" data-svg-icon="@/assets/img/icons/shape.svg"></div>
-                <span>contact us</span>
+                <div class="svg-icon" id="svg-1"></div>
+                <span class="contactText text-transparent">contact us</span>
               </a>
             </div>
           </div>
@@ -60,5 +61,36 @@ export default {
 <style lang="scss" scoped>
 .banner__bg {
   background-image: url(../../assets/img/slider/banner_bg.jpg);
+}
+
+.svg-icon {
+  animation: showSvg 1s forwards 0.6s;
+
+  @keyframes showSvg {
+    0% {
+      background-image: none;
+    }
+
+    100% {
+      background-image: url(../../assets/img/icons/shape.svg);
+    }
+  }
+
+  &+.contactText {
+    animation: showText 1s forwards 0.6s;
+
+    @keyframes showText {
+      0% {
+        color: transparent;
+        opacity: 0;
+      }
+
+      100% {
+        color: white;
+        opacity: 1;
+      }
+    }
+
+  }
 }
 </style>

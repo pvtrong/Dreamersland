@@ -90,7 +90,7 @@
               dubai</span>
             <div class="grand__final-button mt-8 mb-0 mx-0">
               <a href="contact.html" class="tg-btn-3 tg-svg mx-auto">
-                <div class="svg-icon" id="svg-5" data-svg-icon="@/assets/img/icons/shape.svg"></div>
+                <div class="svg-icon" id="svg-5"></div>
                 <span>read more</span>
               </a>
             </div>
@@ -111,5 +111,9 @@ export default {
 <style lang="scss" scoped>
 .match__result-bg {
   background-image: url(../../assets/img/bg/result_bg.png);
+}
+
+.svg-icon {
+  background-image: url(../../assets/img/icons/shape.svg);
 }
 </style>

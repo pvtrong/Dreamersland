@@ -66,25 +66,26 @@
                 </text>
               </svg>
             </div>
-            <div class="about__funFact-wrap grow">
+            <div ref="funFactRef" v-waypoint="{ active: true, callback: waypointHandler }"
+              class="about__funFact-wrap grow">
               <div class="about__funFact-lists flex items-center flex-wrap gap-[30px_50px]">
                 <div class="about__funFact-item">
                   <h2 class="count flex items-center text-3xl font-semibold leading-none mt-0 mb-2 mx-0">
-                    <span class="odometer" data-count="40"></span>
+                    <span ref="odometer1" class="odometer" data-count="40">{{ odometerValue1 }}</span>
                     <span class="formatting-mark block leading-none ml-[3px]">K</span>
                   </h2>
                   <p class=" leading-none text-center text-[14px] font-medium m-0">Member</p>
                 </div>
                 <div class="about__funFact-item">
                   <h2 class="count flex items-center text-3xl font-semibold leading-none mt-0 mb-2 mx-0">
-                    <span class="odometer" data-count="12"></span>
+                    <span ref="odometer2" class="odometer" data-count="12">{{ odometerValue2 }}</span>
                     <span class="formatting-mark block leading-none ml-[3px]">K</span>
                   </h2>
                   <p class=" leading-none text-center text-[14px] font-medium m-0">NFT</p>
                 </div>
                 <div class="about__funFact-item">
                   <h2 class="count flex items-center text-3xl font-semibold leading-none mt-0 mb-2 mx-0">
-                    <span class="odometer" data-count="30"></span>
+                    <span ref="odometer3" class="odometer" data-count="30">{{ odometerValue3 }}</span>
                     <span class="formatting-mark block leading-none ml-[3px]">K</span>
                   </h2>
                   <p class=" leading-none text-center text-[14px] font-medium m-0">Artist</p>
@@ -93,8 +94,7 @@
               <div class="about__content-btns flex items-center gap-[20px_30px] mt-10 mb-0 mx-0">
                 <a href="contact.html"
                   class="tg-btn-3 tg-svg text-[14px] !text-[#fff] tracking-[0.5px] font-bold w-[158px] h-[55px]">
-                  <div class="svg-icon !fill-transparent !stroke-[#45f882]" id="svg-6"
-                    data-svg-icon="@/assets/img/icons/shape.svg"></div>
+                  <div class="svg-icon !fill-transparent !stroke-[#45f882]" id="svg-6"></div>
                   <span>read more</span>
                 </a>
                 <a href="https://www.youtube.com/watch?v=ssrNcwxALS4"
@@ -112,9 +112,57 @@
 </template>
 
 <script>
-export default {
+import Odometer from 'odometer';
+import 'odometer/themes/odometer-theme-default.css';
 
+export default {
+  data() {
+    return {
+      odometerValue1: 0, // Start value
+      odometerValue2: 0, // Start value
+      odometerValue3: 0, // Start value
+      odometers: []
+    };
+  },
+  mounted() {
+    this.odometers[0] = new Odometer({
+      el: this.$refs.odometer1,
+      value: this.odometerValue1
+    });
+    this.odometers[1] = new Odometer({
+      el: this.$refs.odometer2,
+      value: this.odometerValue2
+    });
+    this.odometers[2] = new Odometer({
+      el: this.$refs.odometer3,
+      value: this.odometerValue3
+    });
+    this.$nextTick(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // for smooth scrolling
+      });
+    });
+  },
+  methods: {
+    waypointHandler({ going, direction }) {
+      if (going === 'in' && direction === 'top') {
+        // Trigger the odometer animation here
+        this.runOdometerAnimation(0, 30);
+        this.runOdometerAnimation(1, 50);
+        this.runOdometerAnimation(2, 40);
+      }
+    },
+    runOdometerAnimation(index, newValue) {
+      this.$set(this, `odometerValue${index}`, newValue);
+      this.odometers[index].update(newValue);
+    },
+  }
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.svg-icon {
+  background-image: url(../../../assets/img/icons/shape.svg);
+}
+</style>

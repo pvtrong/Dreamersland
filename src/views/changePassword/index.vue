@@ -1,13 +1,7 @@
 <template>
   <div class="login-container" :style="{ 'background-image': 'url(' + backgroundImage + ')' }">
-    <el-form
-      ref="changePasswordForm"
-      :model="changePasswordForm"
-      :rules="changePasswordRules"
-      class="login-form"
-      auto-complete="on"
-      label-position="left"
-    >
+    <el-form ref="changePasswordForm" :model="changePasswordForm" :rules="changePasswordRules" class="login-form"
+      auto-complete="on" label-position="left">
       <div class="title-container">
         <h3 class="title">Đổi mật khẩu</h3>
       </div>
@@ -15,52 +9,27 @@
         <span class="svg-container">
           <svg-icon icon-class="password" />
         </span>
-        <el-input
-          :key="newPasswordType"
-          ref="password"
-          v-model="changePasswordForm.new_password"
-          :type="newPasswordType"
-          placeholder="Mật khẩu mới"
-          name="new_password"
-          tabindex="2"
-          auto-complete="on"
-          @keyup.enter.native="handleChangePassword"
-        />
+        <el-input :key="newPasswordType" ref="password" v-model="changePasswordForm.new_password" :type="newPasswordType"
+          placeholder="Mật khẩu mới" name="new_password" tabindex="2" auto-complete="on"
+          @keyup.enter.native="handleChangePassword" />
         <span class="show-pwd" @click="showPwd('new_password')">
-          <svg-icon
-            :icon-class="newPasswordType === 'password' ? 'eye' : 'eye-open'"
-          />
+          <svg-icon :icon-class="newPasswordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
       <el-form-item class="focus:shadow" prop="repeat_new_password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
         </span>
-        <el-input
-          :key="passwordType"
-          ref="password"
-          v-model="changePasswordForm.repeat_new_password"
-          :type="passwordType"
-          placeholder="Nhập lại mật khẩu"
-          name="repeat_new_password"
-          tabindex="2"
-          auto-complete="on"
-          @keyup.enter.native="handleChangePassword"
-        />
+        <el-input :key="passwordType" ref="password" v-model="changePasswordForm.repeat_new_password" :type="passwordType"
+          placeholder="Nhập lại mật khẩu" name="repeat_new_password" tabindex="2" auto-complete="on"
+          @keyup.enter.native="handleChangePassword" />
         <span class="show-pwd" @click="showPwd('repeat_new_password')">
-          <svg-icon
-            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
-          />
+          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
 
-      <el-button
-        :loading="loading"
-        type="primary"
-        style="width: 100%; margin-bottom: 30px"
-        @click.native.prevent="handleChangePassword"
-        >Login</el-button
-      >
+      <el-button :loading="loading" type="primary" style="width: 100%; margin-bottom: 30px"
+        @click.native.prevent="handleChangePassword">Login</el-button>
     </el-form>
   </div>
 </template>
@@ -83,10 +52,6 @@ export default {
     };
 
     const validateConfirmPassword = (rule, value, callback) => {
-      console.log(
-        'this.changePasswordForm.new_password',
-        this.changePasswordForm.new_password
-      );
       if (value !== this.changePasswordForm.new_password) {
         callback(new Error('Mật khẩu xác nhận không khớp với mật khẩu mới.'));
       } else {
@@ -182,6 +147,7 @@ $cursor: #fff;
 /* reset element-ui css */
 .login-container {
   height: 100vh;
+
   .el-input {
     display: inline-block;
     height: 47px;
