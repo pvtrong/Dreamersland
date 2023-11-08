@@ -91,14 +91,13 @@ export const constantRoutes = [
       },
       {
         path: '/players/:id',
-        name: 'Users',
-        component: () => import('@/views/users/index'),
+        name: 'Player Detail',
+        component: () => import('@/views/players/player-detail/index'),
         meta: {
-          title: 'Quản lý nhân viên',
+          title: 'Player Detail',
           guard: GUARD.GUEST,
         },
       },
-
     ],
   },
 
