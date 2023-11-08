@@ -92,7 +92,7 @@ export default {
     return {
       backgroundImage,
       loginForm: {
-        phone_number: '0987816718',
+        phone_number: '0888888888',
         password: '123456',
       },
       loginRules: {
@@ -138,7 +138,7 @@ export default {
               this.loading = false;
             })
             .catch(() => {
-              this.$router.push({ path: this.redirect || '/rank' });
+              this.$router.push({ path: '/login' });
               this.loading = false;
             });
         } else {
