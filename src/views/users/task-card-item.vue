@@ -3,8 +3,8 @@
     class="mt-24 w-4/12 basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-5/12 lg:basis-5/12 md:w-6/12 md:basis-6/12 sm:w-9/12 sm:basis-9/12 xsm:w-full xsm:basis-full relative px-[15px]">
     <div
       :class="isActive
-        ? `before:bg-[radial-gradient(circle,#ffbe18_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mb-[30px] mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`
-        : `before:bg-[radial-gradient(circle,#45F882_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mb-[30px] mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`">
+        ? `task-card-item-status before:bg-[radial-gradient(circle,#ffbe18_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mb-[30px] mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`
+        : `task-card-item-status before:bg-[radial-gradient(circle,#45F882_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mb-[30px] mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`">
       <div class="absolute z-10 -right-2 top-4 bg-[#ecb917] text-white rounded-lg py-1 pr-4 pl-3">
         {{ status }}
       </div>
@@ -86,4 +86,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.task-card-item-status {
+  &::before {
+    filter: blur(50px) !important;
+  }
+}
+</style>
