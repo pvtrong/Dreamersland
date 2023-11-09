@@ -89,7 +89,7 @@
         <h5
           class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
         >
-          {{ rank.amount || 0 }}
+          {{ rank.totalPoint  || 0 }}
         </h5>
       </div>
       <!-- </span> -->
