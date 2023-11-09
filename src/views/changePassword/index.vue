@@ -1,5 +1,8 @@
 <template>
-  <div class="login-container" :style="{ 'background-image': 'url(' + backgroundImage + ')' }">
+  <div
+    class="login-container"
+    :style="{ 'background-image': 'url(' + backgroundImage + ')' }"
+  >
     <el-form
       ref="changePasswordForm"
       :model="changePasswordForm"
@@ -11,6 +14,27 @@
       <div class="title-container">
         <h3 class="title">Đổi mật khẩu</h3>
       </div>
+      <el-form-item class="focus:shadow" prop="old_password">
+        <span class="svg-container">
+          <svg-icon icon-class="password" />
+        </span>
+        <el-input
+          :key="oldPasswordType"
+          ref="password"
+          v-model="changePasswordForm.old_password"
+          :type="oldPasswordType"
+          placeholder="Mật khẩu hiện tại"
+          name="old_password"
+          tabindex="2"
+          auto-complete="on"
+          @keyup.enter.native="handleChangePassword"
+        />
+        <span class="show-pwd" @click="showPwd('old_password')">
+          <svg-icon
+            :icon-class="oldPasswordType === 'password' ? 'eye' : 'eye-open'"
+          />
+        </span>
+      </el-form-item>
       <el-form-item class="focus:shadow" prop="new_password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
@@ -69,26 +93,31 @@
 import { changePassword } from '@/api/user';
 import router from '@/router';
 import { Message } from 'element-ui';
-import backgroundImage from '@/assets/img/slider/slider_bg.jpg'
+import backgroundImage from '@/assets/img/slider/slider_bg.jpg';
+
 
 export default {
   name: 'Change Password',
   data() {
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('Mật khẩu phải có ít nhất 6 ký tự.'));
+        callback(new Error('Mật khẩu mới phải có ít nhất 6 ký tự.'));
       } else {
         callback();
       }
     };
 
     const validateConfirmPassword = (rule, value, callback) => {
-      console.log(
-        'this.changePasswordForm.new_password',
-        this.changePasswordForm.new_password
-      );
       if (value !== this.changePasswordForm.new_password) {
         callback(new Error('Mật khẩu xác nhận không khớp với mật khẩu mới.'));
+      } else {
+        callback();
+      }
+    };
+
+    const validateOldPassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error('Mật khẩu cũ phải có ít nhất 6 ký tự.'));
       } else {
         callback();
       }
@@ -97,10 +126,14 @@ export default {
     return {
       backgroundImage,
       changePasswordForm: {
+        old_password: '',
         new_password: '',
         repeat_new_password: '',
       },
       changePasswordRules: {
+        old_password: [
+          { required: true, trigger: 'blur', validator: validateOldPassword },
+        ],
         new_password: [
           { required: true, trigger: 'blur', validator: validatePassword },
         ],
@@ -113,6 +146,7 @@ export default {
         ],
       },
       loading: false,
+      oldPasswordType: 'password',
       newPasswordType: 'password',
       passwordType: 'password',
       redirect: undefined,
@@ -131,6 +165,9 @@ export default {
       if (key === 'new_password') {
         this.newPasswordType =
           this.newPasswordType === 'password' ? '' : 'password';
+      } else if (key === 'old_password') {
+        this.oldPasswordType =
+          this.oldPasswordType === 'password' ? '' : 'password';
       } else {
         this.passwordType = this.passwordType === 'password' ? '' : 'password';
       }

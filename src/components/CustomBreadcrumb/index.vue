@@ -15,7 +15,7 @@
               class="breadcrumb__content text-left md:text-center sm:text-center xsm:text-center"
             >
               <h2
-                class="title text-[45px] sm:text-[35px] xsm:text-[35px] leading-[0.8] mt-0 mb-[21px] mx-0 font-berlin drop-shadow-[-1px_5px_0px_rgba(69,248,130,0.66)] wow fadeInUp sm:drop-shadow-[-1px_5px_0px_rgba(69,248,130,0.66)] sm:mt-0 sm:mb-[21px] sm:mx-0 xsm:text-[14vw] xsm:drop-shadow-[-1px_5px_0px_rgba(69,248,130,0.66)] xsm:mt-0 xsm:mb-[21px] xsm:mx-0"
+                class="title text-[45px] sm:text-[35px] xsm:text-[35px] leading-[0.8] mt-0 mb-[21px] mx-0 font-berlin wow fadeInUp sm:mt-0 sm:mb-[21px] sm:mx-0 xsm:text-[14vw] xsm:mt-0 xsm:mb-[21px] xsm:mx-0 text-show-title"
               >
                 {{ pageTitle }}
               </h2>
@@ -90,3 +90,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+  .text-show-title {
+    text-shadow: -1px 5px 0px rgba(69,248,130,0.66);
+  }
+</style>
