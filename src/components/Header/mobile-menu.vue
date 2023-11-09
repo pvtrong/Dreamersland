@@ -38,7 +38,7 @@
       </div>
 
       <div class="offCanvas__newsletter flex flex-col gap-[10px] ml-10" v-if="isLogin">
-        <h4 id="change-password" style="cursor: pointer" @click="handleRedirectChangePassword"
+        <h4 id="change-password-mobile" style="cursor: pointer" @click="handleRedirectChangePassword"
           class="small-title text-[16px] tracking-[0.5px] font-semibold mt-0 mb-[22px] mx-0">
           Đổi mật khẩu
         </h4>
