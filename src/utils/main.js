@@ -358,26 +358,26 @@ export const main = function ($) {
   /*=============================================
   =        Third Slider Active		      =
 =============================================*/
-  // function mainSlider() {
-  //   $('.slider-active')
-  //     .slick({
-  //       autoplay: false,
-  //       autoplaySpeed: 10000,
-  //       dots: false,
-  //       fade: true,
-  //       arrows: false,
-  //       responsive: [
-  //         {
-  //           breakpoint: 767,
-  //           settings: {
-  //             dots: false,
-  //             arrows: false,
-  //           },
-  //         },
-  //       ],
-  //     })
-  //     .slickAnimation();
-  // }
+  function mainSlider() {
+    $('.slider-active')
+      .slick({
+        autoplay: false,
+        autoplaySpeed: 10000,
+        dots: false,
+        fade: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              dots: false,
+              arrows: false,
+            },
+          },
+        ],
+      })
+      .slickAnimation();
+  }
 
   /*=============================================
   =        Trending Active		      =
@@ -536,15 +536,15 @@ export const main = function ($) {
   /*=============================================
   =           Brand effect         =
 =============================================*/
-  var democol = $('.brand-active .col, .slider__brand-list li');
-  democol.on({
-    mouseenter: function () {
-      $(this).siblings().stop().fadeTo(300, 0.3);
-    },
-    mouseleave: function () {
-      $(this).siblings().stop().fadeTo(300, 1);
-    },
-  });
+  // var democol = $('.brand-active .col, .slider__brand-list li');
+  // democol.on({
+  //   mouseenter: function () {
+  //     $(this).siblings().stop().fadeTo(300, 0.3);
+  //   },
+  //   mouseleave: function () {
+  //     $(this).siblings().stop().fadeTo(300, 1);
+  //   },
+  // });
 
   /*==================================
           Button Icon Draw

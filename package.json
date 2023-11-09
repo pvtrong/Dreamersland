@@ -58,6 +58,7 @@
     "svgo": "1.2.2",
     "tailwind-clip-path": "^1.0.0",
     "tailwindcss": "^3.3.3",
+    "vue-slick-carousel": "^1.0.6",
     "vue-template-compiler": "2.6.10",
     "vue-waypoint": "3.x.x",
     "wowjs": "^1.1.3"

@@ -146,7 +146,7 @@ export default {
   },
   methods: {
     waypointHandler({ going, direction }) {
-      if (going === 'in' && direction === 'top') {
+      if ((going === 'in' && direction === 'top') || (going === 'out' && direction === 'down')) {
         // Trigger the odometer animation here
         this.runOdometerAnimation(0, 30);
         this.runOdometerAnimation(1, 50);

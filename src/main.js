@@ -8,8 +8,9 @@ import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
 import 'magnific-popup/dist/magnific-popup.css';
 import 'magnific-popup/dist/jquery.magnific-popup.js';
-
 import 'magnific-popup';
+import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
 import App from './App'
 import store from './store'

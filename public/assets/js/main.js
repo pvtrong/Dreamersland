@@ -433,48 +433,48 @@ var streamersSwiper = new Swiper('.streamers-active', {
 /*=============================================
 	=    		Brand Active		      =
 =============================================*/
-$('.brand-active').slick({
-	dots: false,
-	infinite: true,
-	speed: 500,
-	autoplay: true,
-	arrows: false,
-	slidesToShow: 6,
-	slidesToScroll: 2,
-	responsive: [
-		{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 5,
-				slidesToScroll: 1,
-				infinite: true,
-			}
-		},
-		{
-			breakpoint: 992,
-			settings: {
-				slidesToShow: 4,
-				slidesToScroll: 1
-			}
-		},
-		{
-			breakpoint: 767,
-			settings: {
-				slidesToShow: 4,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				arrows: false,
-			}
-		},
-	]
-});
+// $('.brand-active').slick({
+// 	dots: false,
+// 	infinite: true,
+// 	speed: 500,
+// 	autoplay: true,
+// 	arrows: false,
+// 	slidesToShow: 6,
+// 	slidesToScroll: 2,
+// 	responsive: [
+// 		{
+// 			breakpoint: 1200,
+// 			settings: {
+// 				slidesToShow: 5,
+// 				slidesToScroll: 1,
+// 				infinite: true,
+// 			}
+// 		},
+// 		{
+// 			breakpoint: 992,
+// 			settings: {
+// 				slidesToShow: 4,
+// 				slidesToScroll: 1
+// 			}
+// 		},
+// 		{
+// 			breakpoint: 767,
+// 			settings: {
+// 				slidesToShow: 4,
+// 				slidesToScroll: 1,
+// 				arrows: false,
+// 			}
+// 		},
+// 		{
+// 			breakpoint: 575,
+// 			settings: {
+// 				slidesToShow: 3,
+// 				slidesToScroll: 1,
+// 				arrows: false,
+// 			}
+// 		},
+// 	]
+// });
 
 
 /*=============================================
@@ -504,15 +504,15 @@ let observer = new IntersectionObserver((entries, observer) => {
 /*=============================================
 	=           Brand effect         =
 =============================================*/
-var democol = $('.brand-active .col, .slider__brand-list li');
-democol.on({
-	mouseenter: function () {
-		$(this).siblings().stop().fadeTo(300, 0.3);
-	},
-	mouseleave: function () {
-		$(this).siblings().stop().fadeTo(300, 1);
-	}
-});
+// var democol = $('.brand-active .col, .slider__brand-list li');
+// democol.on({
+// 	mouseenter: function () {
+// 		$(this).siblings().stop().fadeTo(300, 0.3);
+// 	},
+// 	mouseleave: function () {
+// 		$(this).siblings().stop().fadeTo(300, 1);
+// 	}
+// });
 
 
 /*==================================

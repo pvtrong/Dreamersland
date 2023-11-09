@@ -7,6 +7,7 @@
       <upcomming-match />
       <project-area />
       <social-area />
+      <branch-area />
     </main>
   </div>
 </template>
@@ -20,6 +21,7 @@ import AreaBackground from './area-background/index.vue';
 import UpcommingMatch from './upcomming-match.vue';
 import ProjectArea from './project-area.vue';
 import SocialArea from './social-area.vue';
+import BranchArea from './branch-area.vue';
 
 export default {
   components: {
@@ -28,7 +30,8 @@ export default {
     AreaBackground,
     UpcommingMatch,
     ProjectArea,
-    SocialArea
+    SocialArea,
+    BranchArea
   },
 };
 </script>
