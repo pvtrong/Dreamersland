@@ -57,10 +57,12 @@ export default {
     };
   },
   created() {
+    const parentPath = this.$router.currentRoute.path.split('/');
     const namePathKey = this.menuItems.find(
-      (item) => item.pathName === this.$router.currentRoute.path
+      (item) => item.pathName === `/${parentPath?.at(1)}`
     )?.itemKey;
-    this.activeIndex = namePathKey;
+
+    this.activeIndex = namePathKey || '1';
   },
   methods: {
     handleSelect(key, keyPath) {

@@ -94,7 +94,7 @@ export const main = function ($) {
     });
 
     //Menu Toggle Btn
-    $('.tgmobile__menu-backdrop, .tgmobile__menu .close-btn').on(
+    $('.tgmobile__menu-backdrop, .tgmobile__menu .close-btn, .menu-item-name, #change-password, #logout-page').on(
       'click',
       function () {
         $('body').removeClass('mobile-menu-visible');

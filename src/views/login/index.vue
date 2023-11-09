@@ -1,16 +1,7 @@
 <template>
-  <div
-    class="login-container"
-    :style="{ 'background-image': 'url(' + backgroundImage + ')' }"
-  >
-    <el-form
-      ref="loginForm"
-      :model="loginForm"
-      :rules="loginRules"
-      class="login-form"
-      auto-complete="on"
-      label-position="left"
-    >
+  <div class="login-container" :style="{ 'background-image': 'url(' + backgroundImage + ')' }">
+    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on"
+      label-position="left">
       <div class="title-container">
         <h3 class="title">Login Form</h3>
       </div>
@@ -19,46 +10,23 @@
         <span class="svg-container">
           <svg-icon icon-class="user" />
         </span>
-        <el-input
-          ref="phone_number"
-          v-model="loginForm.phone_number"
-          placeholder="Phone number"
-          name="phone_number"
-          type="tel"
-          tabindex="1"
-          auto-complete="on"
-        />
+        <el-input ref="phone_number" v-model="loginForm.phone_number" placeholder="Phone number" name="phone_number"
+          type="tel" tabindex="1" auto-complete="on" />
       </el-form-item>
 
       <el-form-item prop="password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
         </span>
-        <el-input
-          :key="passwordType"
-          ref="password"
-          v-model="loginForm.password"
-          :type="passwordType"
-          placeholder="Password"
-          name="password"
-          tabindex="2"
-          auto-complete="on"
-          @keyup.enter.native="handleLogin"
-        />
+        <el-input :key="passwordType" ref="password" v-model="loginForm.password" :type="passwordType"
+          placeholder="Password" name="password" tabindex="2" auto-complete="on" @keyup.enter.native="handleLogin" />
         <span class="show-pwd" @click="showPwd">
-          <svg-icon
-            :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'"
-          />
+          <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
         </span>
       </el-form-item>
 
-      <el-button
-        :loading="loading"
-        type="primary"
-        style="width: 100%; margin-bottom: 30px"
-        @click.native.prevent="handleLogin"
-        >Login</el-button
-      >
+      <el-button :loading="loading" type="primary" style="width: 100%; margin-bottom: 30px"
+        @click.native.prevent="handleLogin">Login</el-button>
 
       <!-- <div class="tips">
         <span style="margin-right: 20px">Phone number: 0123456789</span>
@@ -134,7 +102,7 @@ export default {
           this.$store
             .dispatch('users/login', this.loginForm)
             .then(() => {
-              this.$router.push({ path: '/rank' });
+              this.$router.push({ path: '/' });
               this.loading = false;
             })
             .catch(() => {
@@ -183,6 +151,7 @@ $cursor: #fff;
       caret-color: $cursor;
       -webkit-box-shadow: unset;
       box-shadow: unset;
+
       &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px $bg inset !important;
         -webkit-text-fill-color: $cursor !important;

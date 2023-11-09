@@ -1,6 +1,6 @@
 <template>
   <el-menu-item :index="itemKey"
-    class="hover:!border-b-0 !border-b-0 hover:!text-[#46f780] hover:!bg-transparent focus:!bg-transparent focus:!text-[#46f780] text-[15px] font-bold uppercase block leading-none relative tracking-[0.8px] z-[1] font-Barlow"
+    class="menu-item-name hover:!border-b-0 !border-b-0 hover:!text-[#46f780] hover:!bg-transparent focus:!bg-transparent focus:!text-[#46f780] text-[15px] font-bold uppercase block leading-none relative tracking-[0.8px] z-[1] font-Barlow"
     @click="redirectPage(pathName)">
     <li
       class="text-[#F3F3F3] h-full menu-item-has-children block relative list-none group lg:group-disabled md:group-disabled sm:group-disabled xsm:group-disabled">
