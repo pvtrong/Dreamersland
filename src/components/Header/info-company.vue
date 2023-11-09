@@ -115,7 +115,7 @@
               ></a>
             </li>
           </ul>
-          <div class="offCanvas__newsletter flex gap-[10px]">
+          <div class="offCanvas__newsletter flex gap-[10px]" v-if="isLogin">
             <h4
               id="change-password"
               style="cursor: pointer"
@@ -155,8 +155,13 @@
 
 <script>
 import RemoveSound from '@/assets/audio/remove.wav';
-
+import { mapGetters } from 'vuex'
 export default {
+  computed: {
+    ...mapGetters([
+      'isLogin'
+    ])
+  },
   methods: {
     async logout() {
       await this.$store.dispatch('users/logout');

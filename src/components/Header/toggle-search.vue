@@ -1,7 +1,7 @@
 <template>
   <div class="tgmenu__action block lg:mr-10 md:mr-10 sm:hidden xsm:hidden">
     <ul class="list-wrap m-0 p-0 flex items-center ml-2.5">
-      <li class="cursor-pointer header-btn relative ml-[25px] pl-[25px]">
+      <li class="cursor-pointer header-btn relative ml-[25px] pl-[25px]" v-if="!isLogin">
         <div @click="handleRedirectLogin" class="tg-border-btn text-[#fff]">
           <i class="flaticon-edit"></i> ~sing in
         </div>
@@ -29,7 +29,13 @@
 
 <script>
 import ClickSound from '@/assets/audio/click.wav';
+import { mapGetters } from 'vuex'
 export default {
+  computed: {
+    ...mapGetters([
+      'isLogin'
+    ])
+  },
   methods: {
     async logout() {
       await this.$store.dispatch('users/logout');
