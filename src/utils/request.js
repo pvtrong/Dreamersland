@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Message } from 'element-ui';
 import store from '@/store';
 import { getToken } from '@/utils/auth';
+import ERROR_MESSAGE from '@/constants/errorMessage';
 
 // create an axios instance
 const service = axios.create({
@@ -67,10 +68,9 @@ service.interceptors.response.use(
     // }
     // return Promise.reject(new Error(res.message || 'Error'))
   },
-  (error) => {
-    console.log('err' + error); // for debug
+  (error, ...rest) => {
     Message({
-      message: error.message,
+      message: ERROR_MESSAGE[error.response.data?.message] || error.response.data?.message,
       type: 'error',
       duration: 5 * 1000,
     });

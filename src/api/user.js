@@ -29,3 +29,11 @@ export function changePassword(data) {
     data
   })
 }
+
+export function getListPlayers(params) {
+  return request({
+    url: '/admin/list_user',
+    method: 'get',
+    params
+  })
+}

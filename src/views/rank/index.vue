@@ -19,7 +19,7 @@
                 <div
                   class="shop__ordering flex gap-5 relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]"
                 >
-                  <el-select
+                  <!-- <el-select
                     v-model="sortBy"
                     placeholder="Sắp xếp theo"
                     @change="handleSortBy"
@@ -50,7 +50,7 @@
                         {{ itemFilter.label }}
                       </div>
                     </el-option>
-                  </el-select>
+                  </el-select> -->
                   <el-date-picker
                     v-model="filterBy"
                     type="daterange"
@@ -93,18 +93,11 @@ import { RANK_SORT_BY, DATE_FORMAT } from '@/constants';
 import { getStartAndEndOfWeek, getStartAndEndOfMonth } from '@/utils';
 import moment from 'moment';
 
-const filterByDate = {
-  from: moment().format(DATE_FORMAT),
-  to: moment().format(DATE_FORMAT),
-};
-const filterByWeek = {
-  from: moment(getStartAndEndOfWeek().startDate).format(DATE_FORMAT),
-  to: moment(getStartAndEndOfWeek().endDate).format(DATE_FORMAT),
-};
-const filterByMonth = {
-  from: moment(getStartAndEndOfMonth().startDate).format(DATE_FORMAT),
-  to: moment(getStartAndEndOfMonth().endDate).format(DATE_FORMAT),
-};
+const end = new Date();
+const start = new Date();
+
+start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+const defaultDate = [start, end];
 
 export default {
   components: {
@@ -123,7 +116,6 @@ export default {
       typeDate: 'daterange',
       rankTitle: 'Active rank',
       animateText: false, // Set to true for animation
-      rankSortBy: RANK_SORT_BY,
       selectedSeason: null,
       seasonOptions: [],
       listRanks: [],
@@ -137,8 +129,8 @@ export default {
           value: RANK_SORT_BY.AMOUNT,
         },
       ],
-      sortBy: RANK_SORT_BY.AMOUNT,
-      filterBy: [filterByDate.from, filterByDate.to],
+      sortBy: RANK_SORT_BY.POINT,
+      filterBy: defaultDate,
       breadcrumbImage03,
       pickerRef: 'datePickerRef', // Reference for the date range picker
       pickerOptions: {
@@ -187,7 +179,7 @@ export default {
     async getData(params) {
       this.isLoading = true;
       try {
-        const { data } = await getListRanks({ ...params, season_id: 1 });
+        const { data } = await getListRanks({ ...params });
         this.listRanks = data;
       } catch (error) {}
       this.isLoading = false;

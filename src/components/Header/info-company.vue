@@ -109,7 +109,7 @@ export default {
   methods: {
     async logout() {
       await this.$store.dispatch('users/logout');
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`);
+      this.$router.push(`/`);
     },
     handleRedirectChangePassword() {
       this.$router.push('/change-password');
