@@ -76,7 +76,7 @@
               class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0">
               Đổi mật khẩu
             </h4>
-            <h4 id="logout-page" @click="logout" style="cursor: pointer"
+            <h4 id="logout-page-pc" @click="logout" style="cursor: pointer"
               class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0">
               Đăng xuất
             </h4>
