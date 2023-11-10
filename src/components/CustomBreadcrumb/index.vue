@@ -49,8 +49,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
-
 import breadcrumbBgImage03 from '@/assets/img/bg/breadcrumb_bg03.jpg';
 
 export default {

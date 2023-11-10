@@ -1,7 +1,7 @@
 <template>
   <main class="main--area overflow-x-hidden">
-    <breadcrumb :page-title="currentUser.last_name + ' ' + currentUser.first_name" :thumb-image="win02Img"
-      :isUserDetail="true" :createdDate="createdAt" />
+    <breadcrumb :page-title="currentUser.last_name + ' ' + currentUser.first_name"
+      :thumb-image="currentUser.avatar_url || win02Img" :isUserDetail="true" :createdDate="createdAt" />
     <!-- services-area done -->
     <section class="services-area services__bg-color pt-[120px] pb-[120px] bg-[#11171D]">
       <div class="container">
@@ -12,8 +12,9 @@
               <div
                 class="section__title text-left mb-6 relative after:content-[''] after:block after:bg-[url(./assets/img/bg/title\_shape.svg)] after:w-[65px] after:h-[5px] after:mt-5 after:mb-0 after:mx-0 lg:w-[calc(100%_+_200px)] sm:w-full sm:text-center sm:after:m-[19px_auto_0] xsm:w-full xsm:text-center xsm:after:m-[19px_auto_0]">
                 <span
-                  class="sub-title tg__animate-text block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0">DREAMERS
-                  LAND</span>
+                  class="sub-title tg__animate-text block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0">\
+                  DREAMERS LAND
+                </span>
                 <h3 class="title text-[45px] font-extrabold tracking-[1px] m-0 sm:text-[35px] xsm:text-[35px]">
                   ABOUT THE PLAYER
                 </h3>
@@ -24,7 +25,9 @@
               </div>
             </div>
 
-            <rank-info />
+            <rank-info :rankImg="currentUser.rank.image_url" :currentSeasonPoint="currentUser.current_season_point"
+              :currentSeasonBonus="currentUser.current_season_bonus"
+              :currentSeasonTotalPoint="currentUser.current_season_total_point" :rankName="currentUser.rank.rank_name" />
           </div>
 
           <div class="services-row flex flex-wrap mx-[-15px] items-center align-items-xl-start mt-28">
@@ -33,8 +36,9 @@
               <div
                 class="section__title text-left mb-6 relative after:content-[''] after:block after:bg-[url(./assets/img/bg/title\_shape.svg)] after:w-[65px] after:h-[5px] after:mt-5 after:mb-0 after:mx-0 lg:w-[calc(100%_+_200px)] sm:w-full sm:text-center sm:after:m-[19px_auto_0] xsm:w-full xsm:text-center xsm:after:m-[19px_auto_0]">
                 <span
-                  class="sub-title tg__animate-text block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0">DREAMERS
-                  LAND</span>
+                  class="sub-title tg__animate-text block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0">
+                  DREAMERS LAND
+                </span>
                 <h3 class="title text-[45px] font-extrabold tracking-[1px] m-0 sm:text-[35px] xsm:text-[35px]">
                   ACHIVEMENTS
                 </h3>
@@ -60,9 +64,9 @@ import Breadcrumb from '@/components/CustomBreadcrumb/index.vue';
 import RankInfo from './rank-info.vue';
 import TaskCardItem from './task-card-item.vue';
 import win02Img from '@/assets/img/team/team02.png';
-import store from '@/store';
 import ItemCardImg from '@/assets/item-card.png';
 import ItemCardImg2 from '@/assets/img/others/breadcrumb_img03.png';
+import { getUserDetail } from '@/api/user';
 
 export default {
   name: 'Users',
@@ -71,15 +75,15 @@ export default {
     RankInfo,
     TaskCardItem,
   },
-  computed: {
-    createdAt() {
-      return moment(this.currentUser.createdAt).format('DD/MM/YYYY')
-    }
+  created() {
+    const idParams = this.$router.currentRoute.params;
+    this.getData(idParams?.id);
   },
   data() {
     return {
       win02Img,
-      currentUser: store.getters.currentUser,
+      currentUser: {},
+      isLoading: false,
       tasks: [
         {
           id: 1,
@@ -88,7 +92,7 @@ export default {
           taskName: 'KỶ LỤC GIA NGÀY',
           image: ItemCardImg,
           point: 40,
-          isActive: false
+          isActive: false,
         },
         {
           id: 2,
@@ -97,7 +101,7 @@ export default {
           taskName: 'KỶ LỤC GIA Tháng',
           image: ItemCardImg2,
           point: 20,
-          isActive: true
+          isActive: true,
         },
         {
           id: 3,
@@ -106,7 +110,7 @@ export default {
           taskName: 'KỶ LỤC',
           image: ItemCardImg,
           point: 40,
-          isActive: false
+          isActive: false,
         },
         {
           id: 4,
@@ -115,13 +119,26 @@ export default {
           taskName: 'KỶ LỤC GIA',
           image: ItemCardImg2,
           point: 30,
-          isActive: false
+          isActive: false,
         },
       ],
     };
   },
-  method: {
-
-  }
+  methods: {
+    async getData(params) {
+      this.isLoading = true;
+      try {
+        console.log({ params });
+        const { data } = await getUserDetail(params);
+        this.currentUser = data.currentUser;
+      } catch (error) { }
+      this.isLoading = false;
+    },
+  },
+  computed: {
+    createdAt() {
+      return moment(this.currentUser.createdAt).format('DD/MM/YYYY');
+    },
+  },
 };
 </script>

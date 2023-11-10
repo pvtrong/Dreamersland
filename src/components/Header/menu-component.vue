@@ -62,7 +62,6 @@ export default {
   },
   created() {
     const parentPath = this.$router.currentRoute.path.split('/');
-    console.log({ parentPath });
     const namePathKey = this.menuItems.find(
       (item) => item.pathName === `/${parentPath?.at(1)}`
     )?.itemKey;
