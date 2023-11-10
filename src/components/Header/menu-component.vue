@@ -1,6 +1,6 @@
 <template>
   <ul class="navigation flex flex-row flex-wrap">
-    <el-menu :default-active="activeIndex" class="bg-transparent !border-b-0" mode="horizontal" @select="handleSelect">
+    <el-menu :default-active="activeMenuItem" class="bg-transparent !border-b-0" mode="horizontal" @select="handleSelect">
       <menu-item v-for="menu in menuItems" :key="menu.itemKey" :pathName="menu.pathName" :itemKey="menu.itemKey"
         :itemName="menu.itemName" />
     </el-menu>
@@ -8,15 +8,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import MenuItem from './menu-item.vue';
 
 export default {
   components: {
     MenuItem,
   },
+  computed: {
+    ...mapGetters(['activeMenuItem']),
+  },
   data() {
     return {
-      activeIndex: '1',
+      // activeIndex: '1',
       menuItems: [
         {
           pathName: '/',
@@ -58,15 +62,18 @@ export default {
   },
   created() {
     const parentPath = this.$router.currentRoute.path.split('/');
+    console.log({ parentPath });
     const namePathKey = this.menuItems.find(
       (item) => item.pathName === `/${parentPath?.at(1)}`
     )?.itemKey;
 
-    this.activeIndex = namePathKey || '1';
+    this.$store
+      .dispatch('app/setActiveMenuItem', namePathKey);
   },
   methods: {
     handleSelect(key, keyPath) {
-      this.activeIndex = keyPath?.at(0);
+      this.$store
+        .dispatch('app/setActiveMenuItem', keyPath?.at(0));
     },
   },
 };

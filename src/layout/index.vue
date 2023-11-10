@@ -24,6 +24,12 @@ export default {
     FooterComponent
   },
   mixins: [ResizeMixin],
+  created() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Optional: for smooth scrolling
+    });
+  },
 };
 </script>
 

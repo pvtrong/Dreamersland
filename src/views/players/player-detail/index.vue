@@ -20,11 +20,7 @@
               </div>
 
               <div>
-                Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
-                Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.
-                Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-                ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
-                Maecenas tempus, tellus eget.
+                {{ currentUser.bio }}
               </div>
             </div>
 
@@ -61,8 +57,8 @@
 import moment from 'moment';
 
 import Breadcrumb from '@/components/CustomBreadcrumb/index.vue';
-import RankInfo from '@/views/users/rank-info.vue';
-import TaskCardItem from '@/views/users/task-card-item.vue';
+import RankInfo from './rank-info.vue';
+import TaskCardItem from './task-card-item.vue';
 import win02Img from '@/assets/img/team/team02.png';
 import store from '@/store';
 import ItemCardImg from '@/assets/item-card.png';

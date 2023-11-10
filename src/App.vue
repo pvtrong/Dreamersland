@@ -10,11 +10,6 @@ import jQuery from 'jquery';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      activeIndex: '1',
-    };
-  },
   updated: function () {
     setTimeout(() => {
       main(jQuery);
