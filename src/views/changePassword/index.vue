@@ -83,7 +83,7 @@
         type="primary"
         style="width: 100%; margin-bottom: 30px"
         @click.native.prevent="handleChangePassword"
-        >Login</el-button
+        >Đổi mật khẩu</el-button
       >
     </el-form>
   </div>
@@ -187,7 +187,9 @@ export default {
                 type: 'success',
                 duration: 5 * 1000,
               });
-              router.push({ path: 'rank' });
+              this.$store.dispatch('users/logout').then(() => {
+                router.push({ path: 'login' });
+              })
             })
             .finally(() => {
               this.loading = false;

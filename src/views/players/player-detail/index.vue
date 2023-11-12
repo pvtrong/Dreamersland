@@ -27,7 +27,7 @@
 
             <rank-info :rankImg="currentUser.rank.image_url" :currentSeasonPoint="currentUser.current_season_point"
               :currentSeasonBonus="currentUser.current_season_bonus"
-              :currentSeasonTotalPoint="currentUser.current_season_total_point" :rankName="currentUser.rank.rank_name" />
+              :currentSeasonTotalPoint="currentUser.all_season_sales" :rankName="currentUser.rank.rank_name" />
           </div>
 
           <div class="services-row flex flex-wrap mx-[-15px] items-center align-items-xl-start mt-28">
