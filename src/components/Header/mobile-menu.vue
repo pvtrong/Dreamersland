@@ -5,27 +5,19 @@
     <nav
       class="tgmobile__menu-box absolute w-full h-full max-h-full overflow-y-auto overflow-x-hidden z-[5] shadow-[-9px_0_14px_0px_rgba(0,0,0,0.06)] p-0 left-0 top-0 bg-[#0f161b]"
     >
+      <audio ref="audioElementRemove">
+        <source :src="RemoveSound" type="audio/wav" />
+      </audio>
+
       <div
+        @click="playRemoveAudio"
         class="close-btn absolute leading-[30px] w-[35px] text-center text-[20px] text-[#45f882] cursor-pointer z-10 transition-all duration-[0.5s] ease-[ease] right-[15px] top-7"
       >
         <i class="flaticon-swords-in-cross-arrangement"></i>
       </div>
-      <div class="tgmobile__search pl-[25px] pr-5 pt-0 pb-[25px]">
-        <form action="#" class="relative">
-          <input
-            type="text"
-            placeholder="Search here..."
-            class="block w-full text-[14px] h-[45px] text-[#fff] pl-5 pr-[45px] py-2.5 border-none bg-[#182029] placeholder:text-[14px] placeholder:text-[#c7c7c7] focus:!ring-[none] focus:!border-none"
-          />
-          <button
-            class="absolute -translate-y-2/4 leading-none text-[#fff] p-0 border-[none] right-5 top-2/4 bg-transparent"
-          >
-            <i class="flaticon-loupe"></i>
-          </button>
-        </form>
-      </div>
-      <div class="tgmobile__menu-outer">
-        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+
+      <div class="mt-14">
+        <menu-component />
       </div>
       <div class="social-links">
         <ul
@@ -68,12 +60,68 @@
           </li>
         </ul>
       </div>
+
+      <div
+        class="offCanvas__newsletter flex flex-col gap-[10px] ml-10"
+        v-if="isLogin"
+      >
+        <h4
+          id="change-password-mobile"
+          style="cursor: pointer"
+          @click="handleRedirectChangePassword"
+          class="small-title text-[16px] tracking-[0.5px] font-semibold mt-0 mb-[22px] mx-0"
+        >
+          Đổi mật khẩu
+        </h4>
+        <h4
+          id="logout-page-mobile"
+          @click="logout"
+          style="cursor: pointer"
+          class="small-title text-[16px] tracking-[0.5px] font-semibold mt-0 mb-[22px] mx-0"
+        >
+          Đăng xuất
+        </h4>
+      </div>
     </nav>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from 'vuex';
+
+import MenuComponent from './menu-component.vue';
+import RemoveSound from '@/assets/audio/remove.wav';
+
+export default {
+  name: 'Mobile Menu',
+  computed: {
+    ...mapGetters(['isLogin']),
+  },
+  components: {
+    MenuComponent,
+  },
+  methods: {
+    async logout() {
+      await this.$store.dispatch('users/logout');
+      this.$router.push(`/`);
+      this.$store.dispatch('app/setActiveMenuItem', '1');
+    },
+    handleRedirectChangePassword() {
+      this.$router.push('/change-password');
+    },
+    handleRedirectLogin() {
+      this.$router.push('/login');
+    },
+    playRemoveAudio() {
+      this.$refs.audioElementRemove.play();
+    },
+  },
+  data() {
+    return {
+      RemoveSound,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>

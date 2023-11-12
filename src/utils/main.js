@@ -37,7 +37,7 @@ export const main = function ($) {
       31. SplitText Active
       32. GSAP Active
       33. Wow Active
-  
+
   ================================*/
 
   /*==========================================
@@ -94,12 +94,11 @@ export const main = function ($) {
     });
 
     //Menu Toggle Btn
-    $('.tgmobile__menu-backdrop, .tgmobile__menu .close-btn').on(
-      'click',
-      function () {
-        $('body').removeClass('mobile-menu-visible');
-      }
-    );
+    $(
+      '.tgmobile__menu-backdrop, .tgmobile__menu .close-btn, .menu-item-name, #change-password-mobile, #logout-page-mobile'
+    ).on('click', function () {
+      $('body').removeClass('mobile-menu-visible');
+    });
   }
 
   /*===========================================
@@ -197,13 +196,13 @@ export const main = function ($) {
 =============================================*/
   $(
     '.search a, .tg-btn-1, .side-toggle-icon, .mobile-nav-toggler, .dropdown-btn'
-  ).on('click', () => new Audio('assets/audio/click.wav').play());
+  ).on('click', () => new Audio('../assets/audio/click.wav').play());
   $('.search__close, .offCanvas__toggle, .offCanvas__overlay, .close-btn').on(
     'click',
-    () => new Audio('assets/audio/remove.wav').play()
+    () => new Audio('../assets/audio/remove.wav').play()
   );
   $('.about__tab-wrap ul button').on('click', () =>
-    new Audio('assets/audio/tab.mp3').play()
+    new Audio('../assets/audio/tab.mp3').play()
   );
 
   /*===========================================
@@ -213,7 +212,9 @@ export const main = function ($) {
   $('.side-toggle-icon').on('click', function () {
     $('body').addClass('offCanvas__menu-visible');
   });
-  $('.offCanvas__overlay, .offCanvas__toggle').on('click', function () {
+  $(
+    '.offCanvas__overlay, .offCanvas__toggle, #change-password-pc, #logout-page-pc'
+  ).on('click', function () {
     $('body').removeClass('offCanvas__menu-visible');
   });
 
@@ -351,26 +352,26 @@ export const main = function ($) {
   /*=============================================
 	=        Third Slider Active		      =
 =============================================*/
-  function mainSlider() {
-    $('.slider-active')
-      .slick({
-        autoplay: false,
-        autoplaySpeed: 10000,
-        dots: false,
-        fade: true,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 767,
-            settings: {
-              dots: false,
-              arrows: false,
-            },
-          },
-        ],
-      })
-      .slickAnimation();
-  }
+  // function mainSlider() {
+  //   $('.slider-active')
+  //     .slick({
+  //       autoplay: false,
+  //       autoplaySpeed: 10000,
+  //       dots: false,
+  //       fade: true,
+  //       arrows: false,
+  //       responsive: [
+  //         {
+  //           breakpoint: 767,
+  //           settings: {
+  //             dots: false,
+  //             arrows: false,
+  //           },
+  //         },
+  //       ],
+  //     })
+  //     .slickAnimation();
+  // }
 
   /*=============================================
 	=        Trending Active		      =
@@ -456,48 +457,48 @@ export const main = function ($) {
   /*=============================================
 	=    		Brand Active		      =
 =============================================*/
-  $('.brand-active').slick({
-    dots: false,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    arrows: false,
-    slidesToShow: 6,
-    slidesToScroll: 2,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 5,
-          slidesToScroll: 1,
-          infinite: true,
-        },
-      },
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 1,
-          arrows: false,
-        },
-      },
-      {
-        breakpoint: 575,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          arrows: false,
-        },
-      },
-    ],
-  });
+  // $('.brand-active').slick({
+  //   dots: false,
+  //   infinite: true,
+  //   speed: 500,
+  //   autoplay: true,
+  //   arrows: false,
+  //   slidesToShow: 6,
+  //   slidesToScroll: 2,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1200,
+  //       settings: {
+  //         slidesToShow: 5,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 992,
+  //       settings: {
+  //         slidesToShow: 4,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 767,
+  //       settings: {
+  //         slidesToShow: 4,
+  //         slidesToScroll: 1,
+  //         arrows: false,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 575,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //         arrows: false,
+  //       },
+  //     },
+  //   ],
+  // });
 
   /*=============================================
 	=        Intersection Observer         =
@@ -575,42 +576,42 @@ export const main = function ($) {
   /*=============================================
 	=    		Odometer Active  	       =
 =============================================*/
-  $('.odometer').appear(function (e) {
-    var odo = $('.odometer');
-    odo.each(function () {
-      var countNumber = $(this).attr('data-count');
-      $(this).html(countNumber);
-    });
-  });
+  // $('.odometer').appear(function (e) {
+  //   var odo = $('.odometer');
+  //   odo.each(function () {
+  //     var countNumber = $(this).attr('data-count');
+  //     $(this).html(countNumber);
+  //   });
+  // });
 
   /*=============================================
 	=    		Magnific Popup		      =
 =============================================*/
-  $('.popup-image').magnificPopup({
-    type: 'image',
-    gallery: {
-      enabled: true,
-    },
-    zoom: {
-      enabled: false,
-      duration: 300, // don't foget to change the duration also in CSS
-      opener: function (element) {
-        return element.find('img');
-      },
-    },
-  });
+  // $('.popup-image').magnificPopup({
+  //   type: 'image',
+  //   gallery: {
+  //     enabled: true,
+  //   },
+  //   zoom: {
+  //     enabled: false,
+  //     duration: 300, // don't foget to change the duration also in CSS
+  //     opener: function (element) {
+  //       return element.find('img');
+  //     },
+  //   },
+  // });
 
   /* magnificPopup video view */
-  $('.popup-video').magnificPopup({
-    type: 'iframe',
-  });
+  // $('.popup-video').magnificPopup({
+  //   type: 'iframe',
+  // });
 
   /*=============================================
 	=          Jarallax Active         =
 =============================================*/
-  $('.tg-jarallax').jarallax({
-    speed: 0.2,
-  });
+  // $('.tg-jarallax').jarallax({
+  //   speed: 0.2,
+  // });
 
   /*=============================================
 	=    	  Countdown Active  	         =
@@ -653,21 +654,21 @@ export const main = function ($) {
   /*=============================================
 	=    	 Slider Range Active  	         =
 =============================================*/
-  $('#slider-range').slider({
-    range: true,
-    min: 10,
-    max: 500,
-    values: [80, 380],
-    slide: function (event, ui) {
-      $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
-    },
-  });
-  $('#amount').val(
-    '$' +
-      $('#slider-range').slider('values', 0) +
-      ' - $' +
-      $('#slider-range').slider('values', 1)
-  );
+  // $('#slider-range').slider({
+  //   range: true,
+  //   min: 10,
+  //   max: 500,
+  //   values: [80, 380],
+  //   slide: function (event, ui) {
+  //     $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
+  //   },
+  // });
+  // $('#amount').val(
+  //   '$' +
+  //     $('#slider-range').slider('values', 0) +
+  //     ' - $' +
+  //     $('#slider-range').slider('values', 1)
+  // );
 
   /*===========================================
      =           Cart Active            =

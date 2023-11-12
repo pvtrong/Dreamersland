@@ -2,14 +2,17 @@
   <div>
     <header-component />
 
-    <div :class="classObj" class="app-wrapper">
+    <div class="app-wrapper">
       <app-main />
     </div>
+
+    <footer-component />
   </div>
 </template>
 
 <script>
 import { AppMain } from './components';
+import FooterComponent from './components/Footer/index.vue';
 import ResizeMixin from './mixin/ResizeHandler';
 import HeaderComponent from '@/components/Header/index.vue';
 
@@ -18,31 +21,14 @@ export default {
   components: {
     AppMain,
     HeaderComponent,
+    FooterComponent
   },
   mixins: [ResizeMixin],
-  computed: {
-    sidebar() {
-      return this.$store.state.app.sidebar;
-    },
-    device() {
-      return this.$store.state.app.device;
-    },
-    fixedHeader() {
-      return this.$store.state.settings.fixedHeader;
-    },
-    classObj() {
-      return {
-        hideSidebar: !this.sidebar.opened,
-        openSidebar: this.sidebar.opened,
-        withoutAnimation: this.sidebar.withoutAnimation,
-        mobile: this.device === 'mobile',
-      };
-    },
-  },
-  methods: {
-    handleClickOutside() {
-      this.$store.dispatch('app/closeSideBar', { withoutAnimation: false });
-    },
+  created() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Optional: for smooth scrolling
+    });
   },
 };
 </script>
@@ -56,11 +42,13 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
+
   &.mobile.openSidebar {
     position: fixed;
     top: 0;
   }
 }
+
 .drawer-bg {
   background: #000;
   opacity: 0.3;

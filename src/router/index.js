@@ -30,6 +30,11 @@ import Layout from '@/layout';
  * a base page that does not have permission requirements
  * all roles can be accessed
  */
+
+export const GUARD = {
+  GUEST: 'GUEST',
+  AUTH: 'AUTH',
+};
 export const constantRoutes = [
   {
     path: '/login',
@@ -50,47 +55,20 @@ export const constantRoutes = [
         path: '',
         name: 'Dashboard',
         component: () => import('@/views/dashboard/index'),
-        meta: { title: 'Dashboard', icon: 'dashboard' },
+        meta: { title: 'Dashboard', icon: 'dashboard', guard: GUARD.GUEST },
       },
       {
         path: '/change-password',
         name: 'Change Password',
         component: () => import('@/views/changePassword/index'),
       },
-    ],
-  },
-
-  {
-    path: '/my-profile',
-    component: Layout,
-    meta: {
-      title: 'Quản lý nhân viên',
-    },
-    children: [
-      {
-        path: '/my-profile',
-        name: 'Users',
-        component: () => import('@/views/users/index'),
-        meta: {
-          title: 'Quản lý nhân viên',
-        },
-      },
-    ],
-  },
-
-  {
-    path: '/rank',
-    component: Layout,
-    meta: {
-      title: 'Bảng xếp hạng',
-    },
-    children: [
       {
         path: '/rank',
         name: 'Ranking',
         component: () => import('@/views/rank/index'),
         meta: {
           title: 'Bảng xếp hạng',
+          guard: GUARD.GUEST,
         },
       },
       {
@@ -99,6 +77,25 @@ export const constantRoutes = [
         component: () => import('@/views/rank/index'),
         meta: {
           title: 'Chi tiết bảng xếp hạng',
+          guard: GUARD.GUEST,
+        },
+      },
+      {
+        path: '/players',
+        name: 'Players',
+        component: () => import('@/views/players/index'),
+        meta: {
+          title: 'Players',
+          guard: GUARD.GUEST,
+        },
+      },
+      {
+        path: '/players/:id',
+        name: 'Player Detail',
+        component: () => import('@/views/players/player-detail/index'),
+        meta: {
+          title: 'Player Detail',
+          guard: GUARD.GUEST,
         },
       },
     ],

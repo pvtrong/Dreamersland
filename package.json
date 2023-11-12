@@ -5,7 +5,8 @@
   "author": "Pan <panfree23@gmail.com>",
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build:prod": "vue-cli-service build",
+    "build:prod": "env-cmd -f ./.env.production vue-cli-service build",
+    "build:dev": "env-cmd -f ./.env.development vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
     "preview": "node build/index.js --preview",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
@@ -16,6 +17,7 @@
   "dependencies": {
     "axios": "0.18.1",
     "element-ui": "2.13.2",
+    "env-cmd": "^10.1.0",
     "jquery": "^3.7.1",
     "js-cookie": "2.2.0",
     "moment": "^2.29.4",
@@ -36,6 +38,7 @@
     "babel-jest": "23.6.0",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "chalk": "2.4.2",
+    "classnames": "^2.3.2",
     "connect": "3.6.6",
     "eslint": "6.7.2",
     "eslint-plugin-vue": "6.2.2",
