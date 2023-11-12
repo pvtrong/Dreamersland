@@ -60,8 +60,8 @@ export default {
     return {
       backgroundImage,
       loginForm: {
-        phone_number: '0888888888',
-        password: '123456',
+        phone_number: '',
+        password: '',
       },
       loginRules: {
         phone_number: [
