@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mt-24 w-4/12 basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-5/12 lg:basis-5/12 md:w-6/12 md:basis-6/12 sm:w-9/12 sm:basis-9/12 xsm:w-full xsm:basis-full relative px-[15px]">
+    class="mt-6 w-4/12 basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-5/12 lg:basis-5/12 md:w-6/12 md:basis-6/12 sm:w-9/12 sm:basis-9/12 xsm:w-full xsm:basis-full relative px-[15px]">
     <div
       :class="isActive
         ? `task-card-item-status before:bg-[radial-gradient(circle,#ffbe18_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mb-[30px] mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`
@@ -24,18 +24,19 @@
       </svg>
       <div
         class="tournament__box-price absolute flex items-center gap-[7px] font-extrabold text-[#0f161b] text-[20px] leading-none tracking-[1px] z-[2] p-[17px] left-0 top-0 font-Barlow">
-        <i class="fas fa-trophy text-[18px] tracking-[0]"></i>
+        <!-- <i class="text-[18px] tracking-[0] diamond-icon"></i> -->
+        <img src="@/assets/img/icons/diamond_icon.svg" class="text-[18px] tracking-[0] " alt="diamond">
         <span>{{ bloodCount }}</span>
       </div>
       <div class="tournament__box-countdown mt-0 mb-20 mx-0">
         <div class="coming-time flex justify-end gap-[15px] leading-none text-center" data-countdown="2023/5/16"></div>
       </div>
       <div class="h-32 tournament__box-caption text-center mt-10 mb-7 mx-0">
-        <span
-          class="sub block text-[16px] leading-none text-[#fff] font-extrabold tracking-[1px] mt-0 mb-[5px] mx-0 font-Barlow">NHIỆM
-          VỤ</span>
+        <span class="sub block text-[16px] leading-none text-[#fff] tracking-[1px] mt-0 mb-[5px] mx-0 font-Barlow">
+          NHIỆM VỤ
+        </span>
         <h4
-          :class="isActive ? 'text-[#ffbe18]' : 'text-[#45F882]' + ' title text-[30px] font-extrabold  tracking-[1px] m-0'">
+          :class="{ 'title text-[30px] tracking-[1px] m-0': true, 'text-[#ffbe18]': isActive, 'text-[#45F882]': !isActive }">
           {{ taskName }}
         </h4>
       </div>
@@ -91,5 +92,15 @@ export default {
   &::before {
     filter: blur(50px) !important;
   }
+}
+
+.sub,
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+.diamond-icon {
+  background-image: url('../../../assets/img/icons/diamond_icon.svg');
 }
 </style>

@@ -1,27 +1,22 @@
 <template>
-  <div class="tgmenu__action block lg:mr-10 md:mr-10 sm:hidden xsm:hidden lg:!hidden">
+  <div class="tgmenu__action block lg:mr-10 md:mr-10 sm:hidden xsm:hidden lg:!hidden md:hidden">
     <ul class="list-wrap m-0 p-0 flex items-center ml-2.5">
       <li class="cursor-pointer header-btn relative ml-[25px] pl-[25px]" v-if="!isLogin">
         <div @click="handleRedirectLogin" class="tg-border-btn text-[#fff]">
-          <i class="flaticon-edit"></i> ~sing in
+          <i class="flaticon-edit"></i> ~sign in
         </div>
       </li>
       <audio ref="audioElementSound">
         <source :src="ClickSound" type="audio/wav" />
       </audio>
-      <li
-        @click="playAudio"
-        class="side-toggle-icon group relative ml-[25px] flex flex-col min-w-[45px] gap-2.5 cursor-pointer md:hidden"
-      >
+      <li @click="playAudio"
+        class="side-toggle-icon group relative ml-[25px] flex flex-col min-w-[45px] gap-2.5 cursor-pointer md:hidden">
         <span
-          class="block h-[3px] bg-[#fff] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] w-[26px] group-hover:w-[45px]"
-        ></span>
+          class="block h-[3px] bg-[#fff] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] w-[26px] group-hover:w-[45px]"></span>
         <span
-          class="block h-[3px] bg-[#fff] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] w-[45px] group-hover:w-[45px]"
-        ></span>
+          class="block h-[3px] bg-[#fff] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] w-[45px] group-hover:w-[45px]"></span>
         <span
-          class="block h-[3px] bg-[#fff] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] w-[26px] self-end group-hover:w-[45px]"
-        ></span>
+          class="block h-[3px] bg-[#fff] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] w-[26px] self-end group-hover:w-[45px]"></span>
       </li>
     </ul>
   </div>
