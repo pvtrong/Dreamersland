@@ -8,7 +8,7 @@
             class="w-4/12 basis-4/12 2xl:w-4/12 2xl:basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-5/12 lg:basis-5/12 md:w-7/12 md:basis-7/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
             <div class="footer-widget mt-0 mb-[50px] mx-0 ">
               <div class="footer-logo logo mt-0 mb-[30px] mx-0">
-                <a href="index.html"><img class="max-w-[177px]" src="assets/img/logo/logo.png" alt="Logo"></a>
+                <a href="index.html"><img class="max-w-[177px]" src="@/assets/img/logo/logo.png" alt="Logo"></a>
               </div>
               <div class="footer-text mr-[30px] sm:mr-0 xsm:mr-0">
                 <p class="desc text-[15px] mt-0 mb-[25px] mx-0">Lorem ipsum dolor sitamet consectur adipiscing Duis
@@ -17,13 +17,13 @@
                   class="social-title text-[16px] font-semibold uppercase text-[#ecebeb] leading-none mt-0 mb-[25px] mx-0">
                   Active <span class=" text-[#45f882]">With Us <i class="fas fa-angle-double-right"></i></span></p>
                 <div class="footer-social flex flex-wrap gap-[10px_20px]">
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="assets/img/icons/social_icon01.png"
+                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon01.png"
                       alt="iocn"></a>
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="assets/img/icons/social_icon02.png"
+                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon02.png"
                       alt="iocn"></a>
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="assets/img/icons/social_icon03.png"
+                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon03.png"
                       alt="iocn"></a>
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="assets/img/icons/social_icon04.png"
+                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon04.png"
                       alt="iocn"></a>
                 </div>
               </div>
@@ -115,7 +115,7 @@
             class="w-5/12 basis-5/12 2xl:w-5/12 2xl:basis-5/12 xl:w-5/12 xl:basis-5/12 lg:w-5/12 lg:basis-5/12 md:w-5/12 md:basis-5/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
             <div
               class="copyright__card float-right sm:float-none sm:text-center sm:mt-[10px] sm:m-[0_auto] xsm:float-none xsm:text-center xsm:mt-[10px] xsm:m-[0_auto]">
-              <img class="sm:inline-block xsm:inline-block" src="assets/img/others/payment_card.png" alt="img">
+              <img class="sm:inline-block xsm:inline-block" src="@/assets/img/others/payment_card.png" alt="img">
             </div>
           </div>
         </div>

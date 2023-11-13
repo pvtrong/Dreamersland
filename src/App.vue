@@ -11,16 +11,6 @@ import WOW from 'wowjs';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      activeIndex: '1',
-    };
-  },
-  created() {
-    new WOW.WOW({
-      live: false
-    }).init();
-  },
   updated: function () {
     setTimeout(() => {
       main(jQuery);

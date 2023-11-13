@@ -5,6 +5,17 @@
       <div class="title-container">
         <h3 class="title">Đổi mật khẩu</h3>
       </div>
+      <el-form-item class="focus:shadow" prop="old_password">
+        <span class="svg-container">
+          <svg-icon icon-class="password" />
+        </span>
+        <el-input :key="oldPasswordType" ref="password" v-model="changePasswordForm.old_password" :type="oldPasswordType"
+          placeholder="Mật khẩu hiện tại" name="old_password" tabindex="2" auto-complete="on"
+          @keyup.enter.native="handleChangePassword" />
+        <span class="show-pwd" @click="showPwd('old_password')">
+          <svg-icon :icon-class="oldPasswordType === 'password' ? 'eye' : 'eye-open'" />
+        </span>
+      </el-form-item>
       <el-form-item class="focus:shadow" prop="new_password">
         <span class="svg-container">
           <svg-icon icon-class="password" />
@@ -29,7 +40,7 @@
       </el-form-item>
 
       <el-button :loading="loading" type="primary" style="width: 100%; margin-bottom: 30px"
-        @click.native.prevent="handleChangePassword">Login</el-button>
+        @click.native.prevent="handleChangePassword">Đổi mật khẩu</el-button>
     </el-form>
   </div>
 </template>
@@ -38,14 +49,15 @@
 import { changePassword } from '@/api/user';
 import router from '@/router';
 import { Message } from 'element-ui';
-import backgroundImage from '@/assets/img/slider/slider_bg.jpg'
+import backgroundImage from '@/assets/img/slider/slider_bg.jpg';
+
 
 export default {
   name: 'Change Password',
   data() {
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error('Mật khẩu phải có ít nhất 6 ký tự.'));
+        callback(new Error('Mật khẩu mới phải có ít nhất 6 ký tự.'));
       } else {
         callback();
       }
@@ -59,13 +71,25 @@ export default {
       }
     };
 
+    const validateOldPassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error('Mật khẩu cũ phải có ít nhất 6 ký tự.'));
+      } else {
+        callback();
+      }
+    };
+
     return {
       backgroundImage,
       changePasswordForm: {
+        old_password: '',
         new_password: '',
         repeat_new_password: '',
       },
       changePasswordRules: {
+        old_password: [
+          { required: true, trigger: 'blur', validator: validateOldPassword },
+        ],
         new_password: [
           { required: true, trigger: 'blur', validator: validatePassword },
         ],
@@ -78,6 +102,7 @@ export default {
         ],
       },
       loading: false,
+      oldPasswordType: 'password',
       newPasswordType: 'password',
       passwordType: 'password',
       redirect: undefined,
@@ -96,6 +121,9 @@ export default {
       if (key === 'new_password') {
         this.newPasswordType =
           this.newPasswordType === 'password' ? '' : 'password';
+      } else if (key === 'old_password') {
+        this.oldPasswordType =
+          this.oldPasswordType === 'password' ? '' : 'password';
       } else {
         this.passwordType = this.passwordType === 'password' ? '' : 'password';
       }
@@ -115,7 +143,9 @@ export default {
                 type: 'success',
                 duration: 5 * 1000,
               });
-              router.push({ path: 'rank' });
+              this.$store.dispatch('users/logout').then(() => {
+                router.push({ path: 'login' });
+              })
             })
             .finally(() => {
               this.loading = false;

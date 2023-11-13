@@ -94,12 +94,11 @@ export const main = function ($) {
     });
 
     //Menu Toggle Btn
-    $('.tgmobile__menu-backdrop, .tgmobile__menu .close-btn').on(
-      'click',
-      function () {
-        $('body').removeClass('mobile-menu-visible');
-      }
-    );
+    $(
+      '.tgmobile__menu-backdrop, .tgmobile__menu .close-btn, .menu-item-name, #change-password-mobile, #logout-page-mobile'
+    ).on('click', function () {
+      $('body').removeClass('mobile-menu-visible');
+    });
   }
 
   /*===========================================
@@ -213,14 +212,9 @@ export const main = function ($) {
   $('.side-toggle-icon').on('click', function () {
     $('body').addClass('offCanvas__menu-visible');
   });
-  $('.offCanvas__overlay, .offCanvas__toggle').on('click', function () {
-    $('body').removeClass('offCanvas__menu-visible');
-  });
-
-  $('#change-password').on('click', function () {
-    $('body').removeClass('offCanvas__menu-visible');
-  });
-  $('#logout-page').on('click', function () {
+  $(
+    '.offCanvas__overlay, .offCanvas__toggle, #change-password-pc, #logout-page-pc'
+  ).on('click', function () {
     $('body').removeClass('offCanvas__menu-visible');
   });
 

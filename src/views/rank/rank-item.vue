@@ -24,8 +24,8 @@
       >
         <div @click="handleUserDetail()">
           <img
-            class="w-[134px] h-[134px] lg:max-w-[80px] lg:max-h-[75px] md:max-w-[80px] md:max-h-[75px] sm:max-w-[80px] sm:max-h-[75px] xsm:max-w-[80px] xsm:max-h-[75px]"
-            :src="thumbImage"
+            class="w-[134px] rounded-[50%] h-[134px] lg:max-w-[80px] lg:max-h-[75px] md:max-w-[80px] md:max-h-[75px] sm:max-w-[80px] sm:max-h-[75px] xsm:max-w-[80px] xsm:max-h-[75px]"
+            :src="rank.user.avatar_url || thumbImage"
             alt="thumb"
           />
         </div>
@@ -48,7 +48,7 @@
         <h5
           class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
         >
-          {{ rank.user.rank.rank_name }}
+          {{ rank.user.nickname }}
         </h5>
       </div>
       <!-- <span v-for="(character, key) in listCharacters" :key="key"> -->
@@ -59,7 +59,7 @@
         <h5
           class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
         >
-          {{ rank.user.rank.rank_name }}
+          {{ rank.user.rank.rank_name || 'Không có hạng'}}
         </h5>
       </div>
       <div
@@ -69,7 +69,7 @@
         <h5
           class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
         >
-          {{ rank.point }}
+          {{ rank.point || 0 }}
         </h5>
       </div>
       <div
@@ -79,7 +79,7 @@
         <h5
           class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
         >
-          {{ rank.user.rank.bonus }}
+          {{ rank.bonus || 0}}
         </h5>
       </div>
       <div
@@ -89,7 +89,7 @@
         <h5
           class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
         >
-          {{ rank.amount }}
+          {{ rank.totalPoint  || 0 }}
         </h5>
       </div>
       <!-- </span> -->

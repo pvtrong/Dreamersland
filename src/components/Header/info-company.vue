@@ -13,7 +13,7 @@
           </audio>
 
           <div
-            @click="playRemoveAudio()"
+            @click="playRemoveAudio"
             class="offCanvas__toggle w-[50px] h-[50px] flex items-center justify-center text-[20px] text-[#adb0bc] cursor-pointer transition-all duration-[0.3s] ease-[ease-out] delay-[0s] ml-auto rounded-[50%] hover:text-[#0f161b] hover:bg-[#45f882]"
           >
             <i class="flaticon-swords-in-cross-arrangement"></i>
@@ -115,9 +115,9 @@
               ></a>
             </li>
           </ul>
-          <div class="offCanvas__newsletter flex gap-[10px]">
+          <div class="offCanvas__newsletter flex gap-[10px]" v-if="isLogin">
             <h4
-              id="change-password"
+              id="change-password-pc"
               style="cursor: pointer"
               @click="handleRedirectChangePassword"
               class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0"
@@ -125,7 +125,7 @@
               Đổi mật khẩu
             </h4>
             <h4
-              id="logout-page"
+              id="logout-page-pc"
               @click="logout"
               style="cursor: pointer"
               class="small-title text-[16px] tracking-[0.5px] font-semibold text-[#45f882] mt-0 mb-[22px] mx-0"
@@ -154,13 +154,19 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 import RemoveSound from '@/assets/audio/remove.wav';
 
 export default {
+  computed: {
+    ...mapGetters(['isLogin']),
+  },
   methods: {
     async logout() {
       await this.$store.dispatch('users/logout');
-      this.$router.push(`/login?redirect=${this.$route.fullPath}`);
+      this.$router.push(`/`);
+      this.$store.dispatch('app/setActiveMenuItem', '1');
     },
     handleRedirectChangePassword() {
       this.$router.push('/change-password');

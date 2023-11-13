@@ -6,11 +6,7 @@
       <div class="flex absolute px-4 py-6 h-full w-full">
         <div class="flex flex-wrap justify-evenly items-center">
           <div class="basis-1/5 xsm:!basis-full flex justify-center">
-            <img
-              :src="currentUser.rank.image_url"
-              alt="image"
-              class="w-28 h-24"
-            />
+            <img :src="rankImg" alt="image" class="w-28 h-24" />
           </div>
           <div class="text-center basis-1/5 xsm:!basis-1/3">
             <div class="text-[#a0a4b1] font-bold text-base xsm:text-xs">
@@ -19,7 +15,7 @@
             <span
               class="text-[#3CF777] text-3xl xsm:text-2xl font-bold text-center"
             >
-              {{ currentUser.current_season_point || 0 }}
+              {{ currentSeasonPoint || 0 }}
             </span>
           </div>
 
@@ -28,16 +24,18 @@
               BONUS
             </div>
             <span class="text-[#3CF777] text-3xl font-bold xsm:text-2xl">
-              0
+              {{ currentSeasonBonus || 0 }}
             </span>
           </div>
 
           <div class="text-center basis-1/4 xsm:!basis-1/3">
-            <div class="text-[#a0a4b1] font-bold text-base xsm:text-xs whitespace-pre">
+            <div
+              class="text-[#a0a4b1] font-bold text-base xsm:text-xs whitespace-pre"
+            >
               TỔNG DOANH SÔ
             </div>
             <span class="text-[#3CF777] text-3xl font-bold xsm:text-2xl">
-              {{ currentUser.all_season_sales || 0 }}
+              {{ currentSeasonTotalPoint || 0 }}
             </span>
           </div>
 
@@ -46,7 +44,7 @@
               HẠNG HIỆN TẠI
             </div>
             <span class="text-[#3CF777] text-3xl xsm:text-2xl font-bold">
-              {{ currentUser.rank.rank_name }}
+              {{ rankName }}
             </span>
           </div>
 
@@ -72,13 +70,13 @@
 </template>
 
 <script>
-import store from '@/store';
-
 export default {
-  data() {
-    return {
-      currentUser: store.getters.currentUser,
-    };
+  props: {
+    currentSeasonPoint: 0,
+    currentSeasonBonus: 0,
+    currentSeasonTotalPoint: 0,
+    rankName: '',
+    rankImg: '',
   },
 };
 </script>

@@ -7,6 +7,7 @@ const getDefaultState = () => {
     token: getToken(),
     name: '',
     avatar: '',
+    isLogin: false,
   };
 };
 
@@ -27,7 +28,10 @@ const mutations = {
   },
   SET_CURRENT_USER: (state, currentUser) => {
     state.currentUser = currentUser
-  }
+  },
+  SET_IS_LOGIN: (state, isLogin) => {
+    state.isLogin = isLogin;
+  },
 };
 
 const actions = {
@@ -40,6 +44,7 @@ const actions = {
           const { data } = response;
           commit('SET_TOKEN', data.token);
           setToken(data.token);
+          commit('SET_IS_LOGIN', true);
           resolve();
         })
         .catch((error) => {
@@ -63,6 +68,7 @@ const actions = {
           commit('SET_NAME', currentUser.first_name + ' ' + currentUser.last_name);
           commit('SET_CURRENT_USER', currentUser)
           // commit('SET_AVATAR', avatar)
+          commit('SET_IS_LOGIN', true);
           resolve(data);
         })
         .catch((error) => {

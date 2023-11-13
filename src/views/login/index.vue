@@ -60,8 +60,8 @@ export default {
     return {
       backgroundImage,
       loginForm: {
-        phone_number: '0326598745',
-        password: '123456789',
+        phone_number: '',
+        password: '',
       },
       loginRules: {
         phone_number: [
@@ -106,7 +106,7 @@ export default {
               this.loading = false;
             })
             .catch(() => {
-              this.$router.push({ path: this.redirect || '/' });
+              this.$router.push({ path: '/login' });
               this.loading = false;
             });
         } else {
