@@ -1,25 +1,51 @@
 <template>
   <!-- brand-area done -->
-  <section class="brand-area  bg-[#050506] pt-[110px] pb-[120px] px-0">
+  <section class="brand-area bg-[#050506] pt-[110px] pb-[120px] px-0">
     <div class="container">
       <div class="flex flex-wrap mx-[-15px]">
         <div class="w-full basis-full">
-          <div class="brand__title text-center  mt-0 mb-[70px] mx-0">
+          <div class="brand__title text-center mt-0 mb-[70px] mx-0">
             <h2
-              class="title text-[45px] font-medium leading-none tracking-[3px] m-0 sm:text-4xl sm:tracking-[2px] xsm:text-4xl xsm:tracking-[2px]">
-              they trust us</h2>
+              class="title text-[45px] font-medium leading-none tracking-[3px] m-0 sm:text-4xl sm:tracking-[2px] xsm:text-4xl xsm:tracking-[2px]"
+            >
+              they trust us
+            </h2>
           </div>
         </div>
       </div>
-      <vue-slick-carousel v-if="images.length > 0" :autoplay="true" :dots="false" :infinite="true" :speed="500"
-        :slidesToShow="6" :slidesToScroll="1" :arrows="false" :responsive="responsiveCa">
-        <div class="brand-active px-[15px]" v-for="(image, index) in images" :key="index">
+      <vue-slick-carousel
+        v-if="images.length > 0"
+        :autoplay="true"
+        :dots="false"
+        :infinite="true"
+        :speed="500"
+        :slidesToShow="6"
+        :slidesToScroll="1"
+        :arrows="false"
+        :responsive="responsiveCa"
+      >
+        <div
+          class="brand-active px-[15px]"
+          v-for="(image, index) in images"
+          :key="index"
+        >
           <div
-            :class="hoverActive === null ? 'col hover-active' : hoverActive === index ? 'col hover-active' : 'col hover-not-active'"
-            @mouseenter="fadeToEnter(index)" @mouseleave="fadeToLeave(index)">
+            :class="
+              hoverActive === null
+                ? 'col hover-active'
+                : hoverActive === index
+                ? 'col hover-active'
+                : 'col hover-not-active'
+            "
+            @mouseenter="fadeToEnter(index)"
+            @mouseleave="fadeToLeave(index)"
+          >
             <div class="brand__item">
-              <a href="#" class="brand__link flex items-center justify-center h-[57px] sm:h-[35px] xsm:h-[35px]">
-                <img :src="image" alt="Carousel Image" class=" max-h-full">
+              <a
+                href="#"
+                class="brand__link flex items-center justify-center h-[57px] sm:h-[35px] xsm:h-[35px]"
+              >
+                <img :src="image" alt="Carousel Image" class="max-h-full" />
               </a>
             </div>
           </div>
@@ -33,6 +59,17 @@
 <script>
 import VueSlickCarousel from 'vue-slick-carousel';
 
+import Brand_Logo01 from '@/assets/img/brand/brand_logo01.png';
+import Brand_Logo02 from '@/assets/img/brand/brand_logo02.png';
+import Brand_Logo03 from '@/assets/img/brand/brand_logo03.png';
+import Brand01 from '@/assets/img/brand/brand01.png';
+import Brand02 from '@/assets/img/brand/brand02.png';
+import Brand03 from '@/assets/img/brand/brand03.png';
+import Brand04 from '@/assets/img/brand/brand04.png';
+import Brand05 from '@/assets/img/brand/brand05.png';
+import Brand06 from '@/assets/img/brand/brand06.png';
+import Brand07 from '@/assets/img/brand/brand07.png';
+
 export default {
   components: {
     VueSlickCarousel,
@@ -40,13 +77,16 @@ export default {
   data() {
     return {
       images: [
-        'https://i.ibb.co/tBvpXTn/brand01.png',
-        'https://i.ibb.co/3MV9z3g/brand02.png',
-        'https://i.ibb.co/18MXCCh/brand-logo01.png',
-        'https://i.ibb.co/6Rfnxs7/brand04.png',
-        'https://i.ibb.co/DCtGfP5/brand05.png',
-        'https://i.ibb.co/7ytPDBW/brand-logo03.png',
-        'https://i.ibb.co/9hDgFCc/brand07.png',
+        Brand_Logo01,
+        Brand_Logo02,
+        Brand_Logo03,
+        Brand01,
+        Brand02,
+        Brand03,
+        Brand04,
+        Brand05,
+        Brand06,
+        Brand07,
       ],
       responsiveCa: [
         {
@@ -81,7 +121,7 @@ export default {
           },
         },
       ],
-      hoverActive: null
+      hoverActive: null,
     };
   },
   methods: {
@@ -92,7 +132,7 @@ export default {
       this.hoverActive = null;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
