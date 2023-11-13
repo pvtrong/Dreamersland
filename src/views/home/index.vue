@@ -13,8 +13,6 @@
 </template>
 
 <script>
-import $ from 'jquery';
-
 import BannerArea from './banner-area.vue';
 import MatchResultArea from './match-result-area.vue';
 import AreaBackground from './area-background/index.vue';

@@ -1,16 +1,14 @@
 <template>
   <!-- upcoming-match done -->
-  <section class="upcoming-match__area pt-[120px] pb-[85px]  bg-[bottom_center] bg-cover">
-    <!--  data-background="assets/img/bg/match_bg.jpg" -->
+  <section class="upcoming-match__area pt-[120px] bg-[bottom_center] bg-cover">
     <div class="container">
       <div class="flex flex-wrap mx-[-15px]  justify-center ">
         <div
           class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-7/12 lg:basis-7/12 md:w-10/12 md:basis-10/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
           <div
             class="section__title text-center mb-[60px]  relative after:content-[''] after:block after:w-[65px] after:h-[5px] after:mt-5 after:mb-0 after:mx-auto">
-            <span
-              class="sub-title tg__animate-text  block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0">MATCHES
-              list</span>
+            <show-text-animation :text="'MATCHES LIST'" />
+
             <h3
               class="title text-[45px] font-extrabold tracking-[1px] m-0 sm:text-[35px] sm:leading-[1.1] xsm:text-[35px] xsm:leading-[1.1]">
               upcoming MATCHES</h3>
@@ -196,32 +194,36 @@
 </template>
 
 <script>
-export default {
+import ShowTextAnimation from '@/components/ShowTextAnimation/index.vue';
 
-}
+export default {
+  components: {
+    ShowTextAnimation,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
 .upcoming-match__item {
   &::before {
-    background-image: url(../../assets/img/bg/line.png);
+    background-image: url('../../assets/img/bg/line.png');
   }
 }
 
 .section__title {
   &::after {
-    background-image: url(../../assets/img/bg/title_shape.svg);
+    background-image: url('../../assets/img/bg/title_shape.svg');
     background-repeat: no-repeat;
   }
 }
 
 .upcoming-match__area {
   background-repeat: no-repeat;
-  background-image: url(../../assets/img/bg/match_bg.jpg);
+  background-image: url('../../assets/img/bg/match_bg.jpg');
 }
 
 .svg-icon {
   background-repeat: no-repeat;
-  background-image: url(../../assets/img/icons/match.svg);
+  background-image: url('../../assets/img/icons/match.svg');
 }
 </style>

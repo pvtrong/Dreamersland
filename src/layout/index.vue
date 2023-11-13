@@ -33,7 +33,9 @@ export default {
   },
   mixins: [ResizeMixin],
   created() {
-    this.handleToTopScreen();
+    setTimeout(() => {
+      this.handleToTopScreen();
+    })
   },
   methods: {
     handleToTopScreen() {

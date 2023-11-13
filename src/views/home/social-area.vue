@@ -8,9 +8,8 @@
           class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-7/12 lg:basis-7/12 md:w-10/12 md:basis-10/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
           <div
             class="section__title text-center mb-[60px]  relative after:content-[''] after:block after:w-[65px] after:h-[5px] after:mt-5 after:mb-0 after:mx-auto">
-            <span
-              class="sub-title tg__animate-text  block uppercase text-[14px] tracking-[2px] font-semibold text-[#45f882] leading-none mt-0 mb-[7px] mx-0">connect
-              with us</span>
+            <show-text-animation :text="'connect with us'" />
+
             <h3
               class="title text-[45px] font-extrabold tracking-[1px] m-0 sm:text-[35px] sm:leading-[1.1] xsm:text-[35px] xsm:leading-[1.1]">
               stay connected</h3>
@@ -121,8 +120,12 @@
 </template>
 
 <script>
-export default {
+import ShowTextAnimation from '@/components/ShowTextAnimation/index.vue';
 
+export default {
+  components: {
+    ShowTextAnimation,
+  },
 }
 </script>
 

@@ -11,12 +11,14 @@ import WOW from 'wowjs';
 
 export default {
   name: 'App',
-  updated: function () {
+  created() {
+    setTimeout(() => {
+      new WOW.WOW().init();
+    })
+  },
+  updated() {
     setTimeout(() => {
       main(jQuery);
-      new WOW.WOW({
-        live: false
-      }).init();
     }, 100);
   },
 };
