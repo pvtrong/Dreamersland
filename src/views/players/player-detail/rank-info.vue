@@ -1,14 +1,14 @@
 <template>
   <div
     class="mt-8 flex justify-end w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-6/12 lg:basis-6/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative md:justify-center">
-    <div class="octagonBox md:!w-full xsm:!w-full sm:!w-full">
+    <div class="octagonBox lg:w-full md:!w-full xsm:!w-full sm:!w-full">
       <div class="flex absolute px-4 py-6 h-full w-full">
         <div class="flex flex-wrap justify-evenly items-center">
           <div class="basis-1/5 xsm:!basis-full flex justify-center">
             <img :src="rankImg" alt="image" class="w-28 h-24" />
           </div>
           <div class="text-center basis-1/5 xsm:!basis-1/3">
-            <div class="text-[#a0a4b1] font-bold text-base xsm:text-xs">
+            <div class="text-[#a0a4b1] font-bold text-base xsm:text-xs whitespace-pre">
               SỐ ĐIỂM
             </div>
             <span class="text-[#3CF777] text-3xl xsm:text-2xl font-bold text-center">
@@ -17,7 +17,7 @@
           </div>
 
           <div class="text-center basis-1/5 xsm:!basis-1/3">
-            <div class="text-[#a0a4b1] font-bold text-base xsm:text-xs">
+            <div class="text-[#a0a4b1] font-bold text-base xsm:text-xs whitespace-pre">
               BONUS
             </div>
             <span class="text-[#3CF777] text-3xl font-bold xsm:text-2xl">
@@ -35,7 +35,7 @@
           </div>
 
           <div class="text-center basis-1/4 xsm:!basis-1/3">
-            <div class="text-[#a0a4b1] font-bold xsm:text-xs">
+            <div class="text-[#a0a4b1] font-bold xsm:text-xs whitespace-pre">
               HẠNG HIỆN TẠI
             </div>
             <span class="text-[#3CF777] text-3xl xsm:text-2xl font-bold">
@@ -44,7 +44,7 @@
           </div>
 
           <div class="text-center basis-1/4 xsm:!basis-1/3">
-            <div class="color-[#a0a4b1] font-bold xsm:text-xs">
+            <div class="color-[#a0a4b1] font-bold xsm:text-xs whitespace-pre">
               SỐ TRẬN DUAL
             </div>
             <span class="text-[#3CF777] text-3xl font-bold xsm:text-2xl">
@@ -53,7 +53,9 @@
           </div>
 
           <div class="text-center basis-1/4 xsm:!basis-1/3">
-            <div class="color-[#a0a4b1] font-bold xsm:text-xs">TỈ LỆ THẮNG</div>
+            <div class="color-[#a0a4b1] font-bold xsm:text-xs whitespace-pre">
+              TỈ LỆ THẮNG
+            </div>
             <span class="text-[#3CF777] text-3xl xsm:text-2xl font-bold">
               0%
             </span>
