@@ -7,60 +7,26 @@
     ></breadcrumb>
 
     <section class="rank__list-area pb-[120px] pt-[120px] bg-center bg-cover">
-      <div class="container">
+      <div class="container md:px-[0rem] xsm:px-[1.5rem]">
         <custom-title :title="'Top of dreamers'"></custom-title>
 
         <div
           class="sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative lg:p-0 md:p-0 sm:p-0 xsm:p-0"
         >
           <div class="shop__top-wrap mt-0 mb-[30px] mx-0">
-            <div class="flex flex-wrap mx-[-15px] items-center">
-              <div class="relative px-[15px] flex">
-                <div
-                  class="shop__ordering flex gap-5 relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]"
+            <div class="flex justify-end items-center">
+              <div
+                class="shop__ordering flex gap-5 relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]"
+              >
+                <el-date-picker
+                  v-model="filterBy"
+                  type="daterange"
+                  :ref="pickerRef"
+                  :picker-options="pickerOptions"
+                  @change="handleFilterBy"
                 >
-                  <!-- <el-select
-                    v-model="sortBy"
-                    placeholder="Sắp xếp theo"
-                    @change="handleSortBy"
-                  >
-                    <el-option
-                      v-for="itemSort in rankSortByOptions"
-                      :key="itemSort.value"
-                      :label="itemSort.label"
-                      :value="itemSort.value"
-                    >
-                    </el-option>
-                  </el-select>
-                  <el-select
-                    v-model="selectedSeason"
-                    placeholder="Lọc theo"
-                    @change="handleFilterBy"
-                  >
-                    <el-option
-                      v-for="season in seasonOptions"
-                      :key="season.value"
-                      :label="season.label"
-                      :value="season.value"
-                    >
-                      <div
-                        style="width: 100%"
-                        @mouseenter="handleOptionHover(itemFilter.label)"
-                      >
-                        {{ itemFilter.label }}
-                      </div>
-                    </el-option>
-                  </el-select> -->
-                  <el-date-picker
-                    v-model="filterBy"
-                    type="daterange"
-                    :ref="pickerRef"
-                    :picker-options="pickerOptions"
-                    @change="handleFilterBy"
-                  >
-                    ></el-date-picker
-                  >
-                </div>
+                  ></el-date-picker
+                >
               </div>
             </div>
           </div>
@@ -68,7 +34,9 @@
         <div
           class="rank__wrapper py-0 xl:px-[60px] xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0"
         >
-          <div class="flex flex-wrap mx-[-15px]">
+          <div
+            class="flex flex-col md:gap-[1.5rem] sm:gap-[1.5rem] xsm:gap-[1.5rem]"
+          >
             <rank-item
               v-for="(rank, index) in listRanks"
               :key="index"

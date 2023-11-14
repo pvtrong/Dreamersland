@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative z-[1]  mt-0 mb-[25px] mx-0 last:m-0 xsm:bg-[#19222b] wow fadeInUp"
+    class="relative z-[1]  mt-0 mb-[25px] mx-0 last:m-0 xsm:bg-[#19222b] wow fadeInUp xsm:w-[80%]"
     data-wow-delay=".2s"
   >
     <div
@@ -11,7 +11,7 @@
       >
         <router-link :to="`/players/${player.id || 1}`"
           ><img
-            class="border w-[232px] h-[357px] rounded-md border-solid border-[#383c4e]"
+            class="border w-[232px] h-[357px] xsm:w-[100%] xsm:h-[auto] xsm:aspect-[232/357] rounded-md border-solid border-[#383c4e]"
             :src="player.avatar_url ||avatar"
             alt="img"
         /></router-link>

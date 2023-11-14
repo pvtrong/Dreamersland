@@ -1,11 +1,11 @@
 <template>
-  <article>
+  <section>
     <breadcrumb
       :pageTitle="'Players'"
       :thumbImage="breadcrumbImage"
       :isUserDetail="false"
     ></breadcrumb>
-    <section class="pb-[120px] pt-[120px] bg-center bg-cover">
+    <div class="pb-[120px] pt-[120px] bg-center bg-cover">
       <div class="container">
         <custom-title :title="'Players'"></custom-title>
 
@@ -16,9 +16,19 @@
             :player="player"
           ></player-info>
         </div>
+        <div class="block text-end mt-[2rem]">
+          <el-pagination
+            layout="prev, pager, next"
+            :page-size="pageSize"
+            :current-page.sync="pageIndex"
+            :total="total"
+            @current-change="handleCurrentChange"
+          >
+          </el-pagination>
+        </div>
       </div>
-    </section>
-  </article>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -40,10 +50,13 @@ export default {
       breadcrumbImage,
       listPlayers: [],
       isLoading: false,
+      total: 0,
+      pageSize: 16,
+      pageIndex: 1,
     };
   },
   created() {
-    this.getData({});
+    this.getData({ page: this.pageIndex, limit: this.pageSize });
   },
   methods: {
     async getData(params) {
@@ -51,8 +64,20 @@ export default {
       try {
         const { data } = await getListPlayers(params);
         this.listPlayers = data.data;
+        this.total = data.total;
       } catch (error) {}
       this.isLoading = false;
+    },
+
+    handleCurrentChange(val) {
+      this.pageIndex = val;
+
+      this.getData({ page: val, limit: this.pageSize }).then(() => {
+        window.scrollTo({
+          top: 300,
+          behavior: 'smooth',
+        });
+      });
     },
   },
 };

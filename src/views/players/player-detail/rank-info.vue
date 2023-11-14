@@ -26,8 +26,10 @@
           </div>
 
           <div class="text-center basis-1/4 xsm:!basis-1/3">
-            <div class="text-[#a0a4b1] font-bold text-base xsm:text-xs whitespace-pre">
-              Tổng điểm
+            <div
+              class="text-[#a0a4b1] font-bold text-base xsm:text-xs whitespace-pre"
+            >
+              TỔNG ĐIỂM
             </div>
             <span class="text-[#3CF777] text-3xl font-bold xsm:text-2xl">
               {{ currentSeasonTotalPoint || 0 }}
