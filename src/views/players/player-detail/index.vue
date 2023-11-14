@@ -26,9 +26,11 @@
               </div>
             </div>
 
-            <rank-info :rankImg="currentUser.rank.image_url" :currentSeasonPoint="currentUser.current_season_point"
+            <rank-info v-if="currentUser" :rankImg="currentUser.rank && currentUser.rank.image_url"
+              :currentSeasonPoint="currentUser.current_season_point"
               :currentSeasonBonus="currentUser.current_season_bonus"
-              :currentSeasonTotalPoint="currentUser.current_season_total_point" :rankName="currentUser.rank.rank_name" />
+              :currentSeasonTotalPoint="currentUser.current_season_total_point"
+              :rankName="currentUser.rank && currentUser.rank.rank_name" />
           </div>
 
           <div class="services-row flex flex-wrap items-center align-items-xl-start mt-28">
@@ -46,7 +48,8 @@
               </div>
             </div>
 
-            <div class="flex flex-wrap justify-center gutter-25 w-full">
+            <div
+              class="flex flex-wrap justify-start w-full lg:justify-between md:justify-between sm:justify-center xsm:justify-center">
               <task-card-item v-for="task in tasks" :key="task.id" :blood-count="task.bloodCount" :status="task.status"
                 :task-name="task.taskName" :point="task.point" :image="task.image" :isActive="task.isActive" />
             </div>

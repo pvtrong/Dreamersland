@@ -49,10 +49,10 @@ export const main = function ($) {
 
   $(window).on('load', function () {
     preloader();
-    mainSlider();
-    wowAnimation();
-    splitText();
-    tg_title_animation();
+    // mainSlider();
+    // wowAnimation();
+    // splitText();
+    // tg_title_animation();
   });
 
   //navtabs active class add & remove
@@ -376,83 +376,83 @@ export const main = function ($) {
   /*=============================================
 	=        Trending Active		      =
 =============================================*/
-  var trendSwiper = new Swiper('.trendingNft-active', {
-    // Optional parameters
-    observer: true,
-    observeParents: true,
-    loop: true,
-    slidesPerView: 3,
-    spaceBetween: 30,
-    breakpoints: {
-      1500: {
-        slidesPerView: 3,
-      },
-      1200: {
-        slidesPerView: 3,
-      },
-      992: {
-        slidesPerView: 2,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: '.slider-button-next',
-      prevEl: '.slider-button-prev',
-    },
-  });
+  // var trendSwiper = new Swiper('.trendingNft-active', {
+  //   // Optional parameters
+  //   observer: true,
+  //   observeParents: true,
+  //   loop: true,
+  //   slidesPerView: 3,
+  //   spaceBetween: 30,
+  //   breakpoints: {
+  //     1500: {
+  //       slidesPerView: 3,
+  //     },
+  //     1200: {
+  //       slidesPerView: 3,
+  //     },
+  //     992: {
+  //       slidesPerView: 2,
+  //     },
+  //     768: {
+  //       slidesPerView: 2,
+  //     },
+  //     576: {
+  //       slidesPerView: 1,
+  //     },
+  //     0: {
+  //       slidesPerView: 1,
+  //     },
+  //   },
+  //   // Navigation arrows
+  //   navigation: {
+  //     nextEl: '.slider-button-next',
+  //     prevEl: '.slider-button-prev',
+  //   },
+  // });
 
   /*=============================================
 	=        Streamers Active		      =
 =============================================*/
-  var streamersSwiper = new Swiper('.streamers-active', {
-    // Optional parameters
-    observer: true,
-    observeParents: true,
-    loop: true,
-    slidesPerView: 5,
-    spaceBetween: 20,
-    breakpoints: {
-      1500: {
-        slidesPerView: 5,
-      },
-      1200: {
-        slidesPerView: 4,
-      },
-      992: {
-        slidesPerView: 4,
-      },
-      768: {
-        slidesPerView: 3,
-      },
-      576: {
-        slidesPerView: 2,
-      },
-      0: {
-        slidesPerView: 1.5,
-        centeredSlides: true,
-        centeredSlidesBounds: true,
-      },
-    },
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: '.slider-button-next',
-      prevEl: '.slider-button-prev',
-    },
-  });
+  // var streamersSwiper = new Swiper('.streamers-active', {
+  //   // Optional parameters
+  //   observer: true,
+  //   observeParents: true,
+  //   loop: true,
+  //   slidesPerView: 5,
+  //   spaceBetween: 20,
+  //   breakpoints: {
+  //     1500: {
+  //       slidesPerView: 5,
+  //     },
+  //     1200: {
+  //       slidesPerView: 4,
+  //     },
+  //     992: {
+  //       slidesPerView: 4,
+  //     },
+  //     768: {
+  //       slidesPerView: 3,
+  //     },
+  //     576: {
+  //       slidesPerView: 2,
+  //     },
+  //     0: {
+  //       slidesPerView: 1.5,
+  //       centeredSlides: true,
+  //       centeredSlidesBounds: true,
+  //     },
+  //   },
+  //   // If we need pagination
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     clickable: true,
+  //   },
+  //   // Navigation arrows
+  //   navigation: {
+  //     nextEl: '.slider-button-next',
+  //     prevEl: '.slider-button-prev',
+  //   },
+  // });
 
   /*=============================================
 	=    		Brand Active		      =
@@ -616,17 +616,17 @@ export const main = function ($) {
   /*=============================================
 	=    	  Countdown Active  	         =
 =============================================*/
-  $('[data-countdown]').each(function () {
-    var $this = $(this),
-      finalDate = $(this).data('countdown');
-    $this.countdown(finalDate, function (event) {
-      $this.html(
-        event.strftime(
-          '<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'
-        )
-      );
-    });
-  });
+  // $('[data-countdown]').each(function () {
+  //   var $this = $(this),
+  //     finalDate = $(this).data('countdown');
+  //   $this.countdown(finalDate, function (event) {
+  //     $this.html(
+  //       event.strftime(
+  //         '<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'
+  //       )
+  //     );
+  //   });
+  // });
 
   /*=============================================
 	=          Parallax Active         =
@@ -779,34 +779,34 @@ export const main = function ($) {
   /*===========================================
 	=          SplitText Active         =
 =============================================*/
-  function splitText() {
-    $('.tg__animate-text').each(function () {
-      var a = $(this),
-        d = a.text().split(''),
-        c = a.data('wait');
-      c || (c = 0);
-      var b = a.data('speed');
-      b || (b = 4),
-        (b /= 100),
-        a.html('<em>321...</em>').addClass('ready'),
-        a.waypoint({
-          handler: function () {
-            a.hasClass('stop') ||
-              (a.addClass('stop'),
-              setTimeout(function () {
-                a.text(''),
-                  $.each(d, function (d, e) {
-                    var c = document.createElement('span');
-                    (c.textContent = e),
-                      (c.style.animationDelay = d * b + 's'),
-                      a.append(c);
-                  });
-              }, c));
-          },
-          offset: '90%',
-        });
-    });
-  }
+  // function splitText() {
+  //   $('.tg__animate-text').each(function () {
+  //     var a = $(this),
+  //       d = a.text().split(''),
+  //       c = a.data('wait');
+  //     c || (c = 0);
+  //     var b = a.data('speed');
+  //     b || (b = 4),
+  //       (b /= 100),
+  //       a.html('<em>321...</em>').addClass('ready'),
+  //       a.waypoint({
+  //         handler: function () {
+  //           a.hasClass('stop') ||
+  //             (a.addClass('stop'),
+  //             setTimeout(function () {
+  //               a.text(''),
+  //                 $.each(d, function (d, e) {
+  //                   var c = document.createElement('span');
+  //                   (c.textContent = e),
+  //                     (c.style.animationDelay = d * b + 's'),
+  //                     a.append(c);
+  //                 });
+  //             }, c));
+  //         },
+  //         offset: '90%',
+  //       });
+  //   });
+  // }
   if ($(window).width() < 768) {
     $('.roadMap__list li')
       .addClass('mobileView')
@@ -816,84 +816,84 @@ export const main = function ($) {
   /*=============================================
 	=          GSAP Active         =
 =============================================*/
-  gsap.registerPlugin(ScrollTrigger, SplitText);
-  gsap.config({
-    nullTargetWarn: false,
-    trialWarn: false,
-  });
+  // gsap.registerPlugin(ScrollTrigger, SplitText);
+  // gsap.config({
+  //   nullTargetWarn: false,
+  //   trialWarn: false,
+  // });
 
-  function tg_title_animation() {
-    var tg_var = jQuery('.tg__heading-wrapper');
-    if (!tg_var.length) {
-      return;
-    }
-    const quotes = document.querySelectorAll(
-      '.tg__heading-wrapper .tg-element-title'
-    );
+  // function tg_title_animation() {
+  //   var tg_var = jQuery('.tg__heading-wrapper');
+  //   if (!tg_var.length) {
+  //     return;
+  //   }
+  //   const quotes = document.querySelectorAll(
+  //     '.tg__heading-wrapper .tg-element-title'
+  //   );
 
-    quotes.forEach((quote) => {
-      //Reset if needed
-      if (quote.animation) {
-        quote.animation.progress(1).kill();
-        quote.split.revert();
-      }
+  //   quotes.forEach((quote) => {
+  //     //Reset if needed
+  //     if (quote.animation) {
+  //       quote.animation.progress(1).kill();
+  //       quote.split.revert();
+  //     }
 
-      var getclass = quote.closest('.tg__heading-wrapper').className;
-      var animation = getclass.split('animation-');
-      if (animation[1] == 'style4') return;
+  //     var getclass = quote.closest('.tg__heading-wrapper').className;
+  //     var animation = getclass.split('animation-');
+  //     if (animation[1] == 'style4') return;
 
-      quote.split = new SplitText(quote, {
-        type: 'lines,words,chars',
-        linesClass: 'split-line',
-      });
-      gsap.set(quote, { perspective: 400 });
+  //     quote.split = new SplitText(quote, {
+  //       type: 'lines,words,chars',
+  //       linesClass: 'split-line',
+  //     });
+  //     gsap.set(quote, { perspective: 400 });
 
-      if (animation[1] == 'style1') {
-        gsap.set(quote.split.chars, {
-          opacity: 0,
-          y: '90%',
-          rotateX: '-40deg',
-        });
-      }
-      if (animation[1] == 'style2') {
-        gsap.set(quote.split.chars, {
-          opacity: 0,
-          x: '50',
-        });
-      }
-      if (animation[1] == 'style3') {
-        gsap.set(quote.split.chars, {
-          opacity: 0,
-        });
-      }
-      quote.animation = gsap.to(quote.split.chars, {
-        scrollTrigger: {
-          trigger: quote,
-          start: 'top 90%',
-        },
-        x: '0',
-        y: '0',
-        rotateX: '0',
-        opacity: 1,
-        duration: 1,
-        ease: Back.easeOut,
-        stagger: 0.02,
-      });
-    });
-  }
-  ScrollTrigger.addEventListener('refresh', tg_title_animation);
+  //     if (animation[1] == 'style1') {
+  //       gsap.set(quote.split.chars, {
+  //         opacity: 0,
+  //         y: '90%',
+  //         rotateX: '-40deg',
+  //       });
+  //     }
+  //     if (animation[1] == 'style2') {
+  //       gsap.set(quote.split.chars, {
+  //         opacity: 0,
+  //         x: '50',
+  //       });
+  //     }
+  //     if (animation[1] == 'style3') {
+  //       gsap.set(quote.split.chars, {
+  //         opacity: 0,
+  //       });
+  //     }
+  //     quote.animation = gsap.to(quote.split.chars, {
+  //       scrollTrigger: {
+  //         trigger: quote,
+  //         start: 'top 90%',
+  //       },
+  //       x: '0',
+  //       y: '0',
+  //       rotateX: '0',
+  //       opacity: 1,
+  //       duration: 1,
+  //       ease: Back.easeOut,
+  //       stagger: 0.02,
+  //     });
+  //   });
+  // }
+  // ScrollTrigger.addEventListener('refresh', tg_title_animation);
 
   /*=============================================
 	=    		 Wow Active  	         =
 =============================================*/
-  function wowAnimation() {
-    var wow = new WOW({
-      boxClass: 'wow',
-      animateClass: 'animated',
-      offset: 0,
-      mobile: false,
-      live: true,
-    });
-    wow.init();
-  }
+  // function wowAnimation() {
+  //   var wow = new WOW({
+  //     boxClass: 'wow',
+  //     animateClass: 'animated',
+  //     offset: 0,
+  //     mobile: false,
+  //     live: true,
+  //   });
+  //   wow.init();
+  // }
 };
