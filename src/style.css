@@ -9,7 +9,7 @@
 @import '~@/assets/css/jquery-ui.css';
 @import '~@/assets/css/flaticon.css';
 @import '~@/assets/css/flowbite.min.css';
-@import '~@/assets/template-style.css';
+@import '~@/template-style.css';
 
 
 
@@ -18,9 +18,11 @@
 @tailwind utilities;
 
 @layer base{
+    /* src @/assets/fonts/berlin_sans_fb_demi_bold-webfont.woff2 */
 @font-face {
     font-family: "berlin_sans_fb_demibold";
-    src: url("./assets/fonts/berlin_sans_fb_demi_bold-webfont.woff2") format("woff2"), url("./assets/fonts/berlin_sans_fb_demi_bold-webfont.woff") format("woff");
+    src: url("./assets/fonts/berlin_sans_fb_demi_bold-webfont.woff2") format("woff2"),
+        url("./assets/fonts/berlin_sans_fb_demi_bold-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
   }

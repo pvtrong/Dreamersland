@@ -93,7 +93,7 @@ import MenuComponent from './menu-component.vue';
 import RemoveSound from '@/assets/audio/remove.wav';
 
 export default {
-  name: 'Mobile Menu',
+  name: 'MobileMenu',
   computed: {
     ...mapGetters(['isLogin']),
   },
