@@ -1365,12 +1365,18 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import { main } from '@/assets/js/main';
 
 export default {
   name: 'Dashboard',
   computed: {
     ...mapGetters(['name']),
   },
+  mounted() {
+    setTimeout(() => {
+      main(window.jQuery); 
+    });
+  }
 };
 </script>
 
