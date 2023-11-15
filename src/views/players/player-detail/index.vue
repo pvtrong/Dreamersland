@@ -63,7 +63,7 @@
 
 <script>
 import moment from 'moment';
-
+import { main } from '@/assets/js/main';
 import Breadcrumb from '@/components/CustomBreadcrumb/index.vue';
 import RankInfo from './rank-info.vue';
 import TaskCardItem from './task-card-item.vue';
@@ -143,6 +143,11 @@ export default {
       return moment(this.currentUser.createdAt).format('DD/MM/YYYY');
     },
   },
+  mounted() {
+    setTimeout(() => {
+      main(window.jQuery); 
+    });
+  }
 };
 </script>
 
