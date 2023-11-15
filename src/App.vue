@@ -5,14 +5,14 @@
 </template>
 
 <script>
-import { main } from '@/utils/main';
-import jQuery from 'jquery';
+import { main } from '@/assets/js/main';
+
 
 export default {
   name: 'App',
-  updated: function () {
+  mounted() {
     setTimeout(() => {
-      main(jQuery);
+      main(window.jQuery); 
     }, 500);
   },
 };
