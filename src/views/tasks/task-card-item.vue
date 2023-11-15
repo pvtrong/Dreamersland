@@ -28,7 +28,7 @@
         <img src="@/assets/img/icons/diamond_icon.svg" class="text-[18px] tracking-[0]" alt="diamond" />
         <span>{{ bloodCount }}</span>
       </div>
-      <div class="h-24 tournament__box-caption text-center mt-12 mx-0">
+      <div class="h-20 tournament__box-caption text-center mt-12 mx-0">
         <span class="sub block text-[14px] leading-none text-[#fff] tracking-[1px] mt-0 mb-[5px] mx-0 font-Barlow">
           NHIỆM VỤ
         </span>
@@ -43,10 +43,6 @@
       <div class="h-[140px] w-[140px] m-auto">
         <img class="w-full h-full object-cover" :src="image" alt="" />
       </div>
-
-      <div class="text-white h-16">
-      </div>
-
       <div
         class="tournament__box-prize text-center uppercase font-bold tracking-[1px] flex items-center justify-center gap-[0_13px] border rounded-[10px] border-solid border-[#1e2933] bg-[#10181f] font-Barlow py-2 mt-4 mb-2">
         <span class="flex items-center">
@@ -57,6 +53,13 @@
         </span>
       </div>
 
+      <div class="text-white h-28">
+        <strong>Điều kiện mở khoá:</strong>
+
+        <p>
+          Để mở khoá danh hiệu này, bạn cần vượt qua kỷ lục ngày của hệ thống.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -128,6 +131,6 @@ export default {
 }
 
 .diamond-icon {
-  background-image: url('../../../assets/img/icons/diamond_icon.svg');
+  background-image: url('../../assets/img/icons/diamond_icon.svg');
 }
 </style>

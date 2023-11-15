@@ -5,7 +5,7 @@
     <!-- services-area done -->
     <section class="services-area services__bg-color pt-[120px] pb-[120px] bg-[#11171D]">
       <div class="container">
-        <div class="py-0 xl:px-[60px] xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0">
+        <div class="py-0 xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0">
           <div class="services-row flex flex-wrap items-center align-items-xl-start">
             <div
               class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-6/12 lg:basis-6/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative">
@@ -49,7 +49,7 @@
             </div>
 
             <div
-              class="flex flex-wrap justify-start w-full lg:justify-between md:justify-between sm:justify-center xsm:justify-center">
+              class="flex flex-wrap justify-start w-full xl:gap-[20px] xxl:gap-[20px] 2xl:gap-[20px] lg:gap-[15px] md:justify-between sm:justify-center xsm:justify-center">
               <task-card-item v-for="task in tasks" :key="task.id" :blood-count="task.bloodCount" :status="task.status"
                 :task-name="task.taskName" :point="task.point" :image="task.image" :isActive="task.isActive" />
             </div>
@@ -118,6 +118,33 @@ export default {
         },
         {
           id: 4,
+          bloodCount: 30,
+          status: 'Đã nhận',
+          taskName: 'KỶ LỤC GIA',
+          image: ItemCardImg2,
+          point: 30,
+          isActive: false,
+        },
+        {
+          id: 5,
+          bloodCount: 30,
+          status: 'Đã nhận',
+          taskName: 'KỶ LỤC GIA',
+          image: ItemCardImg2,
+          point: 30,
+          isActive: false,
+        },
+        {
+          id: 6,
+          bloodCount: 30,
+          status: 'Đã nhận',
+          taskName: 'KỶ LỤC GIA',
+          image: ItemCardImg2,
+          point: 30,
+          isActive: false,
+        },
+        {
+          id: 7,
           bloodCount: 30,
           status: 'Đã nhận',
           taskName: 'KỶ LỤC GIA',

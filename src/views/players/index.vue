@@ -1,29 +1,16 @@
 <template>
   <section>
-    <breadcrumb
-      :pageTitle="'Players'"
-      :thumbImage="breadcrumbImage"
-      :isUserDetail="false"
-    ></breadcrumb>
+    <breadcrumb :pageTitle="'Players'" :thumbImage="breadcrumbImage" :isUserDetail="false"></breadcrumb>
     <div class="pb-[120px] pt-[120px] bg-center bg-cover">
       <div class="container">
         <custom-title :title="'Players'"></custom-title>
 
         <div class="flex gap-[20px] justify-center flex-wrap">
-          <player-info
-            v-for="(player, index) in listPlayers"
-            :key="index"
-            :player="player"
-          ></player-info>
+          <player-info v-for="(player, index) in listPlayers" :key="index" :player="player"></player-info>
         </div>
         <div class="block text-end mt-[2rem]">
-          <el-pagination
-            layout="prev, pager, next"
-            :page-size="pageSize"
-            :current-page.sync="pageIndex"
-            :total="total"
-            @current-change="handleCurrentChange"
-          >
+          <el-pagination layout="prev, pager, next" :page-size="pageSize" :current-page.sync="pageIndex" :total="total"
+            @current-change="handleCurrentChange">
           </el-pagination>
         </div>
       </div>
@@ -42,7 +29,6 @@ export default {
   components: {
     PlayerInfo,
     Breadcrumb,
-    breadcrumbImage,
     CustomTitle,
   },
   data() {
@@ -65,7 +51,7 @@ export default {
         const { data } = await getListPlayers(params);
         this.listPlayers = data.data;
         this.total = data.total;
-      } catch (error) {}
+      } catch (error) { }
       this.isLoading = false;
     },
 
