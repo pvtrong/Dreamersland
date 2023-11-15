@@ -145,7 +145,7 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      main(window.jQuery); 
+      main(window.jQuery);
     });
   }
 };
