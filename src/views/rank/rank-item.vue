@@ -1,6 +1,6 @@
 <template>
   <div
-    class="tournament__list-item relative z-[1] mt-0 mb-[25px] mx-0 last:m-0 before:content-[''] before:absolute before:w-[200px] before:h-[60px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-[13%] before:top-[19px] group before:bg-[#45f882] hover:before:bg-[#ffbe18] md:border md:m-0 md:p-[30px] md:rounded-[10px] md:border-solid md:border-[#212d38] md:before:hidden md:bg-[#19222b] sm:border sm:m-0 sm:p-[30px] sm:rounded-[10px] sm:border-solid sm:border-[#212d38] sm:before:hidden sm:bg-[#19222b] xsm:border xsm:m-0 xsm:p-[30px] xsm:rounded-[10px] xsm:border-solid xsm:border-[#212d38] xsm:before:hidden xsm:bg-[#19222b] wow fadeInUp"
+    class="tournament__list-item relative z-[1] mt-0 md:flex-1 sm:flex-1 xsm:flex-1 mb-[25px] mx-0 last:m-0 before:content-[''] before:absolute before:w-[200px] before:h-[60px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-[13%] before:top-[19px] group before:bg-[#45f882] hover:before:bg-[#ffbe18] md:border md:m-0 md:p-[1rem] md:rounded-[10px] md:border-solid md:border-[#212d38] md:before:hidden md:bg-[#19222b] sm:border sm:m-0 sm:p-[1rem] sm:rounded-[10px] sm:border-solid sm:border-[#212d38] sm:before:hidden sm:bg-[#19222b] xsm:border xsm:m-0 xsm:p-[1rem] xsm:rounded-[10px] xsm:border-solid xsm:border-[#212d38] xsm:before:hidden xsm:bg-[#19222b] wow fadeInUp"
     data-wow-delay=".2s"
   >
     <svg
@@ -17,11 +17,9 @@
       />
     </svg>
     <div
-      class="tournament__list-content absolute -translate-y-2/4 flex items-center left-[60px] right-[50px] top-2/4 lg:left-[50px] lg:right-[45px] md:relative md:translate-y-0 md:flex-wrap md:gap-[40px_0] md:top-0 md:inset-x-0 sm:relative sm:translate-y-0 sm:flex-wrap sm:gap-[40px_0] sm:top-0 sm:inset-x-0 xsm:relative xsm:translate-y-0 xsm:flex-wrap xsm:gap-[40px_0] xsm:top-0 xsm:inset-x-0"
+      class="tournament__list-content absolute -translate-y-2/4 flex items-center md:flex-col md:flex-1 left-[60px] right-[50px] top-2/4 lg:left-[50px] lg:right-[45px] md:relative md:translate-y-0 md:flex-wrap md:gap-[40px_0] md:top-0 md:inset-x-0 sm:relative sm:translate-y-0 sm:flex-wrap sm:gap-[40px_0] sm:top-0 sm:inset-x-0 xsm:relative xsm:translate-y-0 xsm:flex-wrap xsm:gap-[40px_0] xsm:top-0 xsm:inset-x-0"
     >
-      <div
-        class="tournament__list-thumb w-[150px] flex-[0_0_auto] lg:w-[115px] md:w-6/12 sm:w-6/12 xsm:w-6/12"
-      >
+      <div class="flex items-center justify-between md:w-[60%]" style="flex: 1">
         <div @click="handleUserDetail()">
           <img
             class="w-[134px] rounded-[50%] h-[134px] lg:max-w-[80px] lg:max-h-[75px] md:max-w-[80px] md:max-h-[75px] sm:max-w-[80px] sm:max-h-[75px] xsm:max-w-[80px] xsm:max-h-[75px]"
@@ -29,80 +27,102 @@
             alt="thumb"
           />
         </div>
+        <div class="relative z-[1] pl-[0.5rem] pr-[0.5rem]">
+          <h5
+            class="status block uppercase text-[24px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
+          >
+            0{{ index }}
+          </h5>
+        </div>
+        <div class="w-[205px] md:w- relative z-[1]">
+          <h5
+            class="text-[21px] xl:text-[18px] md:text-[18px] sm:text-[18px] xsm:text-[18px] font-bold mt-0 mb-[1.125rem] mx-0 leading-[25.2px]"
+          >
+            {{ rank.user.first_name }} {{ rank.user.last_name }}
+          </h5>
+          <h5
+            class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
+          >
+            {{ rank.user.nickname }}
+          </h5>
+        </div>
       </div>
       <div
-        class="tournament__list-name flex-[0_0_auto] relative z-[1] pl-[0.5rem] pr-[0.5rem]"
+        class="flex items-center justify-between xsm:flex-col xsm:gap-[20px]"
+        style="flex: 2"
       >
-        <h5
-          class="status block uppercase text-[24px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
-        >
-          0{{ index }}
-        </h5>
-      </div>
-      <div
-        class="tournament__list-name w-[205px] flex-[0_0_auto] relative z-[1] pl-[35px]"
-      >
-        <h5 class="text-[21px] font-bold mt-0 mb-[1.125rem] mx-0 leading-[25.2px]">
-          {{ rank.user.first_name }} {{ rank.user.last_name }}
-        </h5>
-        <h5
-          class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
-        >
-          {{ rank.user.nickname }}
-        </h5>
-      </div>
-      <!-- <span v-for="(character, key) in listCharacters" :key="key"> -->
-      <div
-        class="2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[100px] md:w-[81px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-['']"
-      >
-        <h5 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0">Hạng</h5>
-        <h5
-          class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
-        >
-          {{ rank.user.rank.rank_name || 'Không có hạng'}}
-        </h5>
-      </div>
-      <div
-        class="2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[100px] md:w-[81px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px  before:z-[1] before:left-px before:bg-[#CBCBCB] "
-      >
-        <h5 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0">Số điểm</h5>
-        <h5
-          class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
-        >
-          {{ rank.point || 0 }}
-        </h5>
-      </div>
-      <div
-        class="2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[100px] md:w-[81px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px  before:z-[1] before:left-px before:bg-[#CBCBCB] "
-      >
-        <h5 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0">Bonus</h5>
-        <h5
-          class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
-        >
-          {{ rank.bonus || 0}}
-        </h5>
-      </div>
-      <div
-        class="2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[100px] md:w-[81px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px  before:z-[1] before:left-px before:bg-[#CBCBCB]  "
-      >
-        <h5 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0">Tổng Điểm</h5>
-        <h5
-          class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
-        >
-          {{ rank.totalPoint  || 0 }}
-        </h5>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between">
+            <div
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-['']"
+            >
+              <h5
+                class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"
+              >
+                Hạng
+              </h5>
+              <h5
+                class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
+              >
+                {{ rank.user.rank.rank_name || 'Không có hạng' }}
+              </h5>
+            </div>
+            <div
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
+            >
+              <h5
+                class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"
+              >
+                Số điểm
+              </h5>
+              <h5
+                class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
+              >
+                {{ rank.point || 0 }}
+              </h5>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
+            >
+              <h5
+                class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"
+              >
+                Bonus
+              </h5>
+              <h5
+                class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
+              >
+                {{ rank.bonus || 0 }}
+              </h5>
+            </div>
+            <div
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
+            >
+              <h5
+                class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"
+              >
+                Tổng Điểm
+              </h5>
+              <h5
+                class="status block uppercase text-[16px] leading-[19.2px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
+              >
+                {{ rank.totalPoint || 0 }}
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1">
+          <img
+            width="60"
+            class="h-[66px] w-[66px] group-hover:animate-[breadcrumbShake_0.82s_cubic-bezier(0.36,0.07,0.19,0.97)_both] lg:max-h-[260px] lg:max-w-[255px] xl:max-h-80 xl:max-w-[310px]"
+            :src="rank.user.rank.image_url"
+            alt="img"
+          />
+        </div>
       </div>
       <!-- </span> -->
-      <div
-        class="tournament__list-live ml-auto flex-[0_0_auto] md:mx-auto md:my-0 sm:mx-auto sm:my-0 xsm:mx-auto xsm:my-0"
-      >
-        <img
-          width="60"
-          class="h-[66px] w-[66px] group-hover:animate-[breadcrumbShake_0.82s_cubic-bezier(0.36,0.07,0.19,0.97)_both] lg:max-h-[260px] lg:max-w-[255px] xl:max-h-80 xl:max-w-[310px]"
-          :src="rank.user.rank.image_url"
-          alt="img"
-        />
-      </div>
     </div>
   </div>
 </template>

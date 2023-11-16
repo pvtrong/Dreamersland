@@ -5,16 +5,11 @@
 </template>
 
 <script>
-import { main } from '@/utils/main';
-import jQuery from 'jquery';
+
+
 
 export default {
   name: 'App',
-  updated: function () {
-    setTimeout(() => {
-      main(jQuery);
-    }, 500);
-  },
 };
 </script>
 

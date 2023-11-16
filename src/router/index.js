@@ -98,6 +98,15 @@ export const constantRoutes = [
           guard: GUARD.GUEST,
         },
       },
+      // {
+      //   path: '/tasks',
+      //   name: 'Tasks',
+      //   component: () => import('@/views/tasks/index'),
+      //   meta: {
+      //     title: 'Player Detail',
+      //     guard: GUARD.GUEST,
+      //   },
+      // },
     ],
   },
 

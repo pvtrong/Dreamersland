@@ -41,7 +41,7 @@ export const main = function ($) {
   ================================*/
 
   /*==========================================
-      =           Preloader          =
+    =           Preloader          =
   ============================================*/
   function preloader() {
     $('.tg-preloader').delay(0).fadeOut();
@@ -64,8 +64,8 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=           Mobile Menu          =
-=============================================*/
+    =           Mobile Menu          =
+  =============================================*/
   //SubMenu Dropdown Toggle
   if ($('.tgmenu__wrap li.menu-item-has-children ul').length) {
     $('.tgmenu__wrap .navigation li.menu-item-has-children').append(
@@ -102,8 +102,8 @@ export const main = function ($) {
   }
 
   /*===========================================
-     =          Data Background        =
-=============================================*/
+       =          Data Background        =
+  =============================================*/
   $('[data-background]').each(function () {
     $(this).css(
       'background-image',
@@ -112,15 +112,15 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=           Data Color             =
-=============================================*/
+    =           Data Color             =
+  =============================================*/
   $('[data-bg-color]').each(function () {
     $(this).css('background-color', $(this).attr('data-bg-color'));
   });
 
   /*===========================================
-	   =         Sticky Menu     =
-=============================================*/
+       =         Sticky Menu     =
+  =============================================*/
   function stickyHeader() {
     var $window = $(window);
     var lastScrollTop = 0;
@@ -151,8 +151,8 @@ export const main = function ($) {
   stickyHeader();
 
   /*===========================================
-	=          Scroll to Top      =
-=============================================*/
+    =          Scroll to Top      =
+  =============================================*/
   $(window).on('scroll', function () {
     var scroll = $(window).scrollTop();
     if (scroll < 245) {
@@ -163,8 +163,8 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=    		 Scroll Up  	         =
-=============================================*/
+    =    		 Scroll Up  	         =
+  =============================================*/
   if ($('.scroll-to-target').length) {
     $('.scroll-to-target').on('click', function () {
       var target = $(this).attr('data-target');
@@ -179,8 +179,8 @@ export const main = function ($) {
   }
 
   /*===========================================
-	=            Search Active            =
-=============================================*/
+    =            Search Active            =
+  =============================================*/
   if ($('.tgmenu__action .search').length) {
     $('.tgmenu__action .search').on('click', function () {
       $('body').addClass('search__active');
@@ -192,23 +192,22 @@ export const main = function ($) {
   }
 
   /*===========================================
-	=        Click Sound Active		      =
-=============================================*/
+    =        Click Sound Active		      =
+  =============================================*/
   $(
     '.search a, .tg-btn-1, .side-toggle-icon, .mobile-nav-toggler, .dropdown-btn'
-  ).on('click', () => new Audio('../assets/audio/click.wav').play());
+  ).on('click', () => new Audio('assets/audio/click.wav').play());
   $('.search__close, .offCanvas__toggle, .offCanvas__overlay, .close-btn').on(
     'click',
-    () => new Audio('../assets/audio/remove.wav').play()
+    () => new Audio('assets/audio/remove.wav').play()
   );
   $('.about__tab-wrap ul button').on('click', () =>
-    new Audio('../assets/audio/tab.mp3').play()
+    new Audio('assets/audio/tab.mp3').play()
   );
 
   /*===========================================
-	=            OffCanvas Active     =
-=============================================*/
-
+    =            OffCanvas Active     =
+  =============================================*/
   $('.side-toggle-icon').on('click', function () {
     $('body').addClass('offCanvas__menu-visible');
   });
@@ -219,8 +218,8 @@ export const main = function ($) {
   });
 
   /*==========================================
-	=        Gallery Active		      =
-=============================================*/
+    =        Gallery Active		      =
+  =============================================*/
   var $swiperSelector = $('.gallery-active');
 
   $swiperSelector.each(function (index) {
@@ -275,8 +274,8 @@ export const main = function ($) {
   });
 
   /*==========================================
-	=        Project Active		      =
-=============================================*/
+    =        Project Active		      =
+  =============================================*/
   var $swiperSelector = $('.project-active');
 
   $swiperSelector.each(function (index) {
@@ -350,32 +349,32 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=        Third Slider Active		      =
-=============================================*/
-  // function mainSlider() {
-  //   $('.slider-active')
-  //     .slick({
-  //       autoplay: false,
-  //       autoplaySpeed: 10000,
-  //       dots: false,
-  //       fade: true,
-  //       arrows: false,
-  //       responsive: [
-  //         {
-  //           breakpoint: 767,
-  //           settings: {
-  //             dots: false,
-  //             arrows: false,
-  //           },
-  //         },
-  //       ],
-  //     })
-  //     .slickAnimation();
-  // }
+    =        Third Slider Active		      =
+  =============================================*/
+  function mainSlider() {
+    $('.slider-active')
+      .slick({
+        autoplay: false,
+        autoplaySpeed: 10000,
+        dots: false,
+        fade: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              dots: false,
+              arrows: false,
+            },
+          },
+        ],
+      })
+      .slickAnimation();
+  }
 
   /*=============================================
-	=        Trending Active		      =
-=============================================*/
+    =        Trending Active		      =
+  =============================================*/
   var trendSwiper = new Swiper('.trendingNft-active', {
     // Optional parameters
     observer: true,
@@ -411,8 +410,8 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=        Streamers Active		      =
-=============================================*/
+    =        Streamers Active		      =
+  =============================================*/
   var streamersSwiper = new Swiper('.streamers-active', {
     // Optional parameters
     observer: true,
@@ -455,54 +454,56 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=    		Brand Active		      =
-=============================================*/
-  // $('.brand-active').slick({
-  //   dots: false,
-  //   infinite: true,
-  //   speed: 500,
-  //   autoplay: true,
-  //   arrows: false,
-  //   slidesToShow: 6,
-  //   slidesToScroll: 2,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1200,
-  //       settings: {
-  //         slidesToShow: 5,
-  //         slidesToScroll: 1,
-  //         infinite: true,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 992,
-  //       settings: {
-  //         slidesToShow: 4,
-  //         slidesToScroll: 1,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 767,
-  //       settings: {
-  //         slidesToShow: 4,
-  //         slidesToScroll: 1,
-  //         arrows: false,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 575,
-  //       settings: {
-  //         slidesToShow: 3,
-  //         slidesToScroll: 1,
-  //         arrows: false,
-  //       },
-  //     },
-  //   ],
-  // });
+    =    		Brand Active		      =
+  =============================================*/
+  try {
+    $('.brand-active').slick({
+      dots: false,
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      arrows: false,
+      slidesToShow: 6,
+      slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            infinite: true,
+          },
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: false,
+          },
+        },
+      ],
+    });
+  } catch (error) {}
 
   /*=============================================
-	=        Intersection Observer         =
-=============================================*/
+    =        Intersection Observer         =
+  =============================================*/
   if (!!window.IntersectionObserver) {
     let observer = new IntersectionObserver(
       (entries, observer) => {
@@ -528,8 +529,8 @@ export const main = function ($) {
   }
 
   /*=============================================
-	=           Brand effect         =
-=============================================*/
+    =           Brand effect         =
+  =============================================*/
   var democol = $('.brand-active .col, .slider__brand-list li');
   democol.on({
     mouseenter: function () {
@@ -541,23 +542,25 @@ export const main = function ($) {
   });
 
   /*==================================
-          Button Icon Draw
-====================================*/
-  var $svgIconBox = $('.tg-svg');
-  $svgIconBox.each(function () {
-    var $this = $(this),
-      $svgIcon = $this.find('.svg-icon'),
-      $id = $svgIcon.attr('id'),
-      $icon = $svgIcon.data('svg-icon');
-    var $vivus = new Vivus($id, { duration: 180, file: $icon });
-    $this.on('mouseenter', function () {
-      $vivus.reset().play();
+            Button Icon Draw
+  ====================================*/
+  try {
+    var $svgIconBox = $('.tg-svg');
+    $svgIconBox.each(function () {
+      var $this = $(this),
+        $svgIcon = $this.find('.svg-icon'),
+        $id = $svgIcon.attr('id'),
+        $icon = $svgIcon.data('svg-icon');
+      var $vivus = new Vivus($id, { duration: 180, file: $icon });
+      $this.on('mouseenter', function () {
+        $vivus.reset().play();
+      });
     });
-  });
+  } catch (error) {}
 
   /*=============================================
-	=        parallaxMouse Active          =
-=============================================*/
+    =        parallaxMouse Active          =
+  =============================================*/
   function parallaxMouse() {
     if ($('.parallax').length) {
       var scene = document.querySelectorAll('.parallax');
@@ -574,48 +577,48 @@ export const main = function ($) {
   parallaxMouse();
 
   /*=============================================
-	=    		Odometer Active  	       =
-=============================================*/
-  // $('.odometer').appear(function (e) {
-  //   var odo = $('.odometer');
-  //   odo.each(function () {
-  //     var countNumber = $(this).attr('data-count');
-  //     $(this).html(countNumber);
-  //   });
-  // });
+    =    		Odometer Active  	       =
+  =============================================*/
+  $('.odometer').appear(function (e) {
+    var odo = $('.odometer');
+    odo.each(function () {
+      var countNumber = $(this).attr('data-count');
+      $(this).html(countNumber);
+    });
+  });
 
   /*=============================================
-	=    		Magnific Popup		      =
-=============================================*/
-  // $('.popup-image').magnificPopup({
-  //   type: 'image',
-  //   gallery: {
-  //     enabled: true,
-  //   },
-  //   zoom: {
-  //     enabled: false,
-  //     duration: 300, // don't foget to change the duration also in CSS
-  //     opener: function (element) {
-  //       return element.find('img');
-  //     },
-  //   },
-  // });
+    =    		Magnific Popup		      =
+  =============================================*/
+  $('.popup-image').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true,
+    },
+    zoom: {
+      enabled: false,
+      duration: 300, // don't foget to change the duration also in CSS
+      opener: function (element) {
+        return element.find('img');
+      },
+    },
+  });
 
   /* magnificPopup video view */
-  // $('.popup-video').magnificPopup({
-  //   type: 'iframe',
-  // });
+  $('.popup-video').magnificPopup({
+    type: 'iframe',
+  });
 
   /*=============================================
-	=          Jarallax Active         =
-=============================================*/
-  // $('.tg-jarallax').jarallax({
-  //   speed: 0.2,
-  // });
+    =          Jarallax Active         =
+  =============================================*/
+  $('.tg-jarallax').jarallax({
+    speed: 0.2,
+  });
 
   /*=============================================
-	=    	  Countdown Active  	         =
-=============================================*/
+    =    	  Countdown Active  	         =
+  =============================================*/
   $('[data-countdown]').each(function () {
     var $this = $(this),
       finalDate = $(this).data('countdown');
@@ -629,8 +632,8 @@ export const main = function ($) {
   });
 
   /*=============================================
-	=          Parallax Active         =
-=============================================*/
+    =          Parallax Active         =
+  =============================================*/
   (function () {
     var parallax = $('.tg-parallax');
 
@@ -652,27 +655,27 @@ export const main = function ($) {
   })();
 
   /*=============================================
-	=    	 Slider Range Active  	         =
-=============================================*/
-  // $('#slider-range').slider({
-  //   range: true,
-  //   min: 10,
-  //   max: 500,
-  //   values: [80, 380],
-  //   slide: function (event, ui) {
-  //     $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
-  //   },
-  // });
-  // $('#amount').val(
-  //   '$' +
-  //     $('#slider-range').slider('values', 0) +
-  //     ' - $' +
-  //     $('#slider-range').slider('values', 1)
-  // );
+    =    	 Slider Range Active  	         =
+  =============================================*/
+  $('#slider-range').slider({
+    range: true,
+    min: 10,
+    max: 500,
+    values: [80, 380],
+    slide: function (event, ui) {
+      $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
+    },
+  });
+  $('#amount').val(
+    '$' +
+      $('#slider-range').slider('values', 0) +
+      ' - $' +
+      $('#slider-range').slider('values', 1)
+  );
 
   /*===========================================
-     =           Cart Active            =
-=============================================*/
+       =           Cart Active            =
+  =============================================*/
   $('.qtybutton-box span').on('click', function () {
     var $input = $(this).parents('.num-block').find('input.in-num');
     if ($(this).hasClass('minus')) {
@@ -696,8 +699,8 @@ export const main = function ($) {
   });
 
   /*===========================================
-    =          Click to Active        =
-=============================================*/
+      =          Click to Active        =
+  =============================================*/
   $('.shop__details-model li').on('click', function (event) {
     $(this).siblings('.active').removeClass('active');
     $(this).addClass('active');
@@ -705,8 +708,8 @@ export const main = function ($) {
   });
 
   /*===========================================
-	=        servicesTab Active         =
-=============================================*/
+    =        servicesTab Active         =
+  =============================================*/
   $('.services__wrapper .services__item')
     .on('mouseover', function () {
       var li = $(this),
@@ -741,8 +744,8 @@ export const main = function ($) {
     });
 
   /*===========================================
-	=        FaqTab Active         =
-=============================================*/
+    =        FaqTab Active         =
+  =============================================*/
   $('.faq__wrapper .accordion-item')
     .on('click', function () {
       var li = $(this),
@@ -777,8 +780,8 @@ export const main = function ($) {
     });
 
   /*===========================================
-	=          SplitText Active         =
-=============================================*/
+    =          SplitText Active         =
+  =============================================*/
   function splitText() {
     $('.tg__animate-text').each(function () {
       var a = $(this),
@@ -814,8 +817,8 @@ export const main = function ($) {
   }
 
   /*=============================================
-	=          GSAP Active         =
-=============================================*/
+    =          GSAP Active         =
+  =============================================*/
   gsap.registerPlugin(ScrollTrigger, SplitText);
   gsap.config({
     nullTargetWarn: false,
@@ -884,8 +887,8 @@ export const main = function ($) {
   ScrollTrigger.addEventListener('refresh', tg_title_animation);
 
   /*=============================================
-	=    		 Wow Active  	         =
-=============================================*/
+    =    		 Wow Active  	         =
+  =============================================*/
   function wowAnimation() {
     var wow = new WOW({
       boxClass: 'wow',
