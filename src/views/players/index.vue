@@ -31,7 +31,6 @@ export default {
   components: {
     PlayerInfo,
     Breadcrumb,
-    breadcrumbImage,
     CustomTitle,
   },
   data() {

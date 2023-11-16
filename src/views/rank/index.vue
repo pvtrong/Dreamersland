@@ -18,7 +18,7 @@
             </div>
           </div>
         </div>
-        <div class="rank__wrapper py-0 xl:px-[60px] xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0">
+        <div class="rank__wrapper py-0 xl:py-0 lg:p-0 md:p-0 sm:p-0 xsm:p-0">
           <div class="flex flex-col md:gap-[1.5rem] sm:gap-[1.5rem] xsm:gap-[1.5rem]">
             <rank-item v-for="(rank, index) in listRanks" :key="index" :index="index + 1" :rank="rank"
               :animate="animateText"></rank-item>

@@ -1,9 +1,8 @@
 <template>
-  <div
-    class="card-item-container mt-6 basis-[30%] lg:basis-[46%] md:basis-[46%] sm:basis-[80%] xsm:w-full xsm:basis-full relative">
+  <div class="card-item-container mt-6 md:basis-[46%] sm:basis-[80%] xsm:w-full xsm:basis-full relative">
     <div :class="isActive
-      ? `task-card-item-status before:bg-[radial-gradient(circle,#ffbe18_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mb-[30px] mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`
-      : `task-card-item-status before:bg-[radial-gradient(circle,#45F882_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mb-[30px] mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`
+      ? `task-card-item-status before:bg-[radial-gradient(circle,#ffbe18_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`
+      : `task-card-item-status before:bg-[radial-gradient(circle,#45F882_0%,transparent_100%)] tournament__box-wrap relative transition-[0.4s] duration-500 z-[1] mt-0 mx-0 pt-[25px] pb-[10px] px-[30px] rounded-[0_0_17px_17px] hover:translate-y-[-7px] before:content-[''] before:absolute before:-translate-x-2/4 before:w-[90px] before:h-[90px] before:blur-[50px] before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-2/4 before:top-[20%] md:border md:pt-[25px] md:pb-10 md:px-[30px] md:rounded-[17px] md:border-solid md:border-[#212d38] md:bg-[#19222b] sm:border sm:pt-[25px] sm:pb-10 sm:px-[30px] sm:rounded-[17px] sm:border-solid sm:border-[#212d38] sm:bg-[#19222b] xsm:border xsm:pt-[25px] xsm:pb-10 xsm:px-[30px] xsm:rounded-[17px] xsm:border-solid xsm:border-[#212d38] xsm:bg-[#19222b] active`
       ">
       <div class="absolute z-10 -right-2 top-4 bg-[#ecb917] text-white rounded-lg py-1 pr-4 pl-3">
         {{ status }}
@@ -16,8 +15,8 @@
           fill="#19222B" stroke="#4C4C4C" stroke-width="0.25" />
       </svg>
       <svg :class="isActive
-        ? 'text-[#ffbe18] price-bg absolute w-[166px] h-14 z-[-1] pointer-events-none left-0 top-0'
-        : 'text-[#45F882] price-bg absolute w-[166px] h-14 z-[-1] pointer-events-none left-0 top-0'
+        ? 'text-[#ffbe18] price-bg absolute w-[136px] xl:w-[130px] h-14 z-[-1] pointer-events-none left-0 top-0'
+        : 'text-[#45F882] price-bg absolute w-[136px] xl:w-[130px] h-14 z-[-1] pointer-events-none left-0 top-0'
         " viewBox="0 0 166 56" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill-rule="evenodd" clip-rule="evenodd"
           d="M0.00792892 55V11C0.00792892 11 -0.729072 0.988 12.0079 1C24.7449 1.012 160.008 0 160.008 0C160.008 0 172.491 1.863 161.008 10C148.995 18.512 115.008 48 115.008 48C115.008 48 110.021 55.238 90.0079 55C69.9949 54.762 0.00792892 55 0.00792892 55Z"
@@ -29,26 +28,27 @@
         <img src="@/assets/img/icons/diamond_icon.svg" class="text-[18px] tracking-[0]" alt="diamond" />
         <span>{{ bloodCount }}</span>
       </div>
-      <div class="tournament__box-countdown mt-0 mb-20 mx-0">
-        <div class="coming-time flex justify-end gap-[15px] leading-none text-center" data-countdown="2023/5/16"></div>
-      </div>
-      <div class="h-32 tournament__box-caption text-center mt-10 mb-7 mx-0">
-        <span class="sub block text-[16px] leading-none text-[#fff] tracking-[1px] mt-0 mb-[5px] mx-0 font-Barlow">
+      <div class="h-24 tournament__box-caption text-center mt-12 mx-0">
+        <span class="sub block text-[14px] leading-none text-[#fff] tracking-[1px] mt-0 mb-[5px] mx-0 font-Barlow">
           NHIỆM VỤ
         </span>
         <h4 :class="{
-          'title text-[30px] tracking-[1px] m-0': true,
+          'title text-2xl tracking-[1px] m-0': true,
           'text-[#ffbe18]': isActive,
           'text-[#45F882]': !isActive,
         }">
           {{ taskName }}
         </h4>
       </div>
-      <div class="h-[200px] w-[200px] m-auto">
-        <img class="w-full h-full" :src="image" alt="" />
+      <div class="h-[140px] w-[140px] m-auto">
+        <img class="w-full h-full object-cover" :src="image" alt="" />
       </div>
+
+      <div class="text-white h-16">
+      </div>
+
       <div
-        class="tournament__box-prize text-center uppercase font-bold tracking-[1px] flex items-center justify-center gap-[0_13px] border rounded-[10px] border-solid border-[#1e2933] bg-[#10181f] font-Barlow py-2 mt-8">
+        class="tournament__box-prize text-center uppercase font-bold tracking-[1px] flex items-center justify-center gap-[0_13px] border rounded-[10px] border-solid border-[#1e2933] bg-[#10181f] font-Barlow py-2 mt-4 mb-2">
         <span class="flex items-center">
           SỐ ĐIỂM / NGÀY:
           <span class="text-4xl inline-block ml-2 text-[#3CF777]">
@@ -56,6 +56,7 @@
           </span>
         </span>
       </div>
+
     </div>
   </div>
 </template>
@@ -93,10 +94,23 @@ export default {
 
 <style lang="scss" scoped>
 .card-item-container {
+  @media only screen and (min-width: 768px) {
+    flex-basis: calc(50% - 12px);
+  }
+
+  @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+    flex-basis: calc(100% / 3 - 10px);
+
+    &:nth-child(n + 4) {
+      margin-top: 0;
+    }
+  }
+
   @media only screen and (min-width: 1200px) {
-    &:nth-child(3n - 1) {
-      margin-left: 5%;
-      margin-right: 5%;
+    flex-basis: calc(25% - 15px);
+
+    &:nth-child(n + 5) {
+      margin-top: 0;
     }
   }
 }
