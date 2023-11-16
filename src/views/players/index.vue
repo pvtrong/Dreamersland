@@ -2,13 +2,13 @@
   <section>
     <breadcrumb :pageTitle="'Players'" :thumbImage="breadcrumbImage" :isUserDetail="false"></breadcrumb>
     <div class="pb-[120px] pt-[120px] bg-center bg-cover">
-      <div class="container">
+      <div class="container 2xl:px-[3.5rem]">
         <custom-title :title="'Players'"></custom-title>
 
         <div class="flex gap-[20px] justify-center flex-wrap">
           <player-info v-for="(player, index) in listPlayers" :key="index" :player="player"></player-info>
         </div>
-        <div class="block text-end mt-[2rem]">
+        <div class="block text-center mt-[2rem]">
           <el-pagination layout="prev, pager, next" :page-size="pageSize" :current-page.sync="pageIndex" :total="total"
             @current-change="handleCurrentChange">
           </el-pagination>
