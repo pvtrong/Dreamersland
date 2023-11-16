@@ -1,6 +1,5 @@
 export const main = function ($) {
-  "use strict";
-
+  'use strict';
 
   /*==============================
       Nested jQuery Active List
@@ -38,17 +37,15 @@ export const main = function ($) {
       31. SplitText Active
       32. GSAP Active
       33. Wow Active
-  
+
   ================================*/
-
-
 
   /*==========================================
     =           Preloader          =
   ============================================*/
   function preloader() {
     $('.tg-preloader').delay(0).fadeOut();
-  };
+  }
 
   $(window).on('load', function () {
     preloader();
@@ -58,8 +55,6 @@ export const main = function ($) {
     tg_title_animation();
   });
 
-
-
   //navtabs active class add & remove
   $('ul.nav-tabs li button').on('click', function () {
     $('.tab-content .tab-pane').removeClass('active');
@@ -68,58 +63,65 @@ export const main = function ($) {
     $('.tab-content .tab-pane').addClass('active');
   });
 
-
   /*===========================================
     =           Mobile Menu          =
   =============================================*/
   //SubMenu Dropdown Toggle
   if ($('.tgmenu__wrap li.menu-item-has-children ul').length) {
-    $('.tgmenu__wrap .navigation li.menu-item-has-children').append('<div class="dropdown-btn"><span class="plus-line"></span></div>');
+    $('.tgmenu__wrap .navigation li.menu-item-has-children').append(
+      '<div class="dropdown-btn"><span class="plus-line"></span></div>'
+    );
   }
 
   //Mobile Nav Hide Show
   if ($('.tgmobile__menu').length) {
-
     var mobileMenuContent = $('.tgmenu__wrap .tgmenu__main-menu').html();
-    $('.tgmobile__menu .tgmobile__menu-box .tgmobile__menu-outer').append(mobileMenuContent);
+    $('.tgmobile__menu .tgmobile__menu-box .tgmobile__menu-outer').append(
+      mobileMenuContent
+    );
 
     //Dropdown Button
-    $('.tgmobile__menu li.menu-item-has-children .dropdown-btn').on('click', function () {
-      $(this).toggleClass('open');
-      $(this).prev('ul').slideToggle(300);
-    });
+    $('.tgmobile__menu li.menu-item-has-children .dropdown-btn').on(
+      'click',
+      function () {
+        $(this).toggleClass('open');
+        $(this).prev('ul').slideToggle(300);
+      }
+    );
     //Menu Toggle Btn
     $('.mobile-nav-toggler').on('click', function () {
       $('body').addClass('mobile-menu-visible');
     });
 
     //Menu Toggle Btn
-    $('.tgmobile__menu-backdrop, .tgmobile__menu .close-btn').on('click', function () {
+    $(
+      '.tgmobile__menu-backdrop, .tgmobile__menu .close-btn, .menu-item-name, #change-password-mobile, #logout-page-mobile'
+    ).on('click', function () {
       $('body').removeClass('mobile-menu-visible');
     });
   }
 
-
   /*===========================================
        =          Data Background        =
   =============================================*/
-  $("[data-background]").each(function () {
-    $(this).css("background-image", "url(" + $(this).attr("data-background") + ")")
-  })
+  $('[data-background]').each(function () {
+    $(this).css(
+      'background-image',
+      'url(' + $(this).attr('data-background') + ')'
+    );
+  });
 
   /*===========================================
     =           Data Color             =
   =============================================*/
-  $("[data-bg-color]").each(function () {
-    $(this).css("background-color", $(this).attr("data-bg-color"));
+  $('[data-bg-color]').each(function () {
+    $(this).css('background-color', $(this).attr('data-bg-color'));
   });
-
 
   /*===========================================
        =         Sticky Menu     =
   =============================================*/
   function stickyHeader() {
-
     var $window = $(window);
     var lastScrollTop = 0;
     var $headerID = $('#sticky-header');
@@ -145,9 +147,8 @@ export const main = function ($) {
 
       lastScrollTop = windowTop;
     });
-  };
+  }
   stickyHeader();
-
 
   /*===========================================
     =          Scroll to Top      =
@@ -156,24 +157,24 @@ export const main = function ($) {
     var scroll = $(window).scrollTop();
     if (scroll < 245) {
       $('.scroll-to-target').removeClass('open');
-
     } else {
       $('.scroll-to-target').addClass('open');
     }
   });
 
-
   /*===========================================
     =    		 Scroll Up  	         =
   =============================================*/
   if ($('.scroll-to-target').length) {
-    $(".scroll-to-target").on('click', function () {
+    $('.scroll-to-target').on('click', function () {
       var target = $(this).attr('data-target');
       // animate
-      $('html, body').animate({
-        scrollTop: $(target).offset().top
-      }, 0);
-
+      $('html, body').animate(
+        {
+          scrollTop: $(target).offset().top,
+        },
+        0
+      );
     });
   }
 
@@ -183,21 +184,26 @@ export const main = function ($) {
   if ($('.tgmenu__action .search').length) {
     $('.tgmenu__action .search').on('click', function () {
       $('body').addClass('search__active');
-      return false
+      return false;
     });
     $('.search__close').on('click', function () {
       $('body').removeClass('search__active');
     });
   }
 
-
   /*===========================================
     =        Click Sound Active		      =
   =============================================*/
-  $('.search a, .tg-btn-1, .side-toggle-icon, .mobile-nav-toggler, .dropdown-btn').on('click', () => new Audio('assets/audio/click.wav').play());
-  $('.search__close, .offCanvas__toggle, .offCanvas__overlay, .close-btn').on('click', () => new Audio('assets/audio/remove.wav').play());
-  $('.about__tab-wrap ul button').on('click', () => new Audio('assets/audio/tab.mp3').play());
-
+  $(
+    '.search a, .tg-btn-1, .side-toggle-icon, .mobile-nav-toggler, .dropdown-btn'
+  ).on('click', () => new Audio('assets/audio/click.wav').play());
+  $('.search__close, .offCanvas__toggle, .offCanvas__overlay, .close-btn').on(
+    'click',
+    () => new Audio('assets/audio/remove.wav').play()
+  );
+  $('.about__tab-wrap ul button').on('click', () =>
+    new Audio('assets/audio/tab.mp3').play()
+  );
 
   /*===========================================
     =            OffCanvas Active     =
@@ -205,10 +211,11 @@ export const main = function ($) {
   $('.side-toggle-icon').on('click', function () {
     $('body').addClass('offCanvas__menu-visible');
   });
-  $('.offCanvas__overlay, .offCanvas__toggle').on('click', function () {
+  $(
+    '.offCanvas__overlay, .offCanvas__toggle, #change-password-pc, #logout-page-pc'
+  ).on('click', function () {
     $('body').removeClass('offCanvas__menu-visible');
   });
-
 
   /*==========================================
     =        Gallery Active		      =
@@ -222,10 +229,18 @@ export const main = function ($) {
     var dragSize = $this.data('drag-size') ? $this.data('drag-size') : 200;
     var freeMode = $this.data('free-mode') ? $this.data('free-mode') : false;
     var loop = $this.data('loop') ? $this.data('loop') : true;
-    var slidesDesktop = $this.data('slides-desktop') ? $this.data('slides-desktop') : 1;
-    var slidesTablet = $this.data('slides-tablet') ? $this.data('slides-tablet') : 1;
-    var slidesMobile = $this.data('slides-mobile') ? $this.data('slides-mobile') : 1;
-    var spaceBetween = $this.data('space-between') ? $this.data('space-between') : 1;
+    var slidesDesktop = $this.data('slides-desktop')
+      ? $this.data('slides-desktop')
+      : 1;
+    var slidesTablet = $this.data('slides-tablet')
+      ? $this.data('slides-tablet')
+      : 1;
+    var slidesMobile = $this.data('slides-mobile')
+      ? $this.data('slides-mobile')
+      : 1;
+    var spaceBetween = $this.data('space-between')
+      ? $this.data('space-between')
+      : 1;
 
     var swiper = new Swiper('.swiper-slider-' + index, {
       direction: 'horizontal',
@@ -237,27 +252,26 @@ export const main = function ($) {
       observeParents: true,
       breakpoints: {
         1920: {
-          slidesPerView: slidesDesktop
+          slidesPerView: slidesDesktop,
         },
         992: {
-          slidesPerView: slidesTablet
+          slidesPerView: slidesTablet,
         },
         320: {
-          slidesPerView: slidesMobile
-        }
+          slidesPerView: slidesMobile,
+        },
       },
       navigation: {
         nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
+        prevEl: '.swiper-button-prev',
       },
       scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
-        dragSize: dragSize
-      }
+        dragSize: dragSize,
+      },
     });
   });
-
 
   /*==========================================
     =        Project Active		      =
@@ -271,13 +285,25 @@ export const main = function ($) {
     var dragSize = $this.data('drag-size') ? $this.data('drag-size') : 24;
     var freeMode = $this.data('free-mode') ? $this.data('free-mode') : false;
     var loop = $this.data('loop') ? $this.data('loop') : true;
-    var slidesDesktop = $this.data('slides-desktop') ? $this.data('slides-desktop') : 4;
-    var slidesLaptop = $this.data('slides-laptop') ? $this.data('slides-laptop') : 4;
-    var slidesTablet = $this.data('slides-tablet') ? $this.data('slides-tablet') : 3;
-    var slidesSmall = $this.data('slides-small') ? $this.data('slides-small') : 3;
-    var slidesMobile = $this.data('slides-mobile') ? $this.data('slides-mobile') : 2;
+    var slidesDesktop = $this.data('slides-desktop')
+      ? $this.data('slides-desktop')
+      : 4;
+    var slidesLaptop = $this.data('slides-laptop')
+      ? $this.data('slides-laptop')
+      : 4;
+    var slidesTablet = $this.data('slides-tablet')
+      ? $this.data('slides-tablet')
+      : 3;
+    var slidesSmall = $this.data('slides-small')
+      ? $this.data('slides-small')
+      : 3;
+    var slidesMobile = $this.data('slides-mobile')
+      ? $this.data('slides-mobile')
+      : 2;
     var slidesXs = $this.data('slides-xs') ? $this.data('slides-xs') : 1.5;
-    var spaceBetween = $this.data('space-between') ? $this.data('space-between') : 15;
+    var spaceBetween = $this.data('space-between')
+      ? $this.data('space-between')
+      : 15;
 
     var swiper = new Swiper('.swiper-slider-' + index, {
       direction: 'horizontal',
@@ -288,16 +314,16 @@ export const main = function ($) {
       observeParents: true,
       breakpoints: {
         1920: {
-          slidesPerView: slidesDesktop
+          slidesPerView: slidesDesktop,
         },
         1200: {
-          slidesPerView: slidesLaptop
+          slidesPerView: slidesLaptop,
         },
         992: {
-          slidesPerView: slidesTablet
+          slidesPerView: slidesTablet,
         },
         768: {
-          slidesPerView: slidesSmall
+          slidesPerView: slidesSmall,
         },
         576: {
           slidesPerView: slidesMobile,
@@ -308,44 +334,43 @@ export const main = function ($) {
           slidesPerView: slidesXs,
           centeredSlides: true,
           centeredSlidesBounds: true,
-        }
+        },
       },
       navigation: {
         nextEl: '.slider-button-next',
-        prevEl: '.slider-button-prev'
+        prevEl: '.slider-button-prev',
       },
       scrollbar: {
         el: '.swiper-scrollbar',
         draggable: true,
-        dragSize: dragSize
-      }
+        dragSize: dragSize,
+      },
     });
   });
-
 
   /*=============================================
     =        Third Slider Active		      =
   =============================================*/
   function mainSlider() {
-    $('.slider-active').slick({
-      autoplay: false,
-      autoplaySpeed: 10000,
-      dots: false,
-      fade: true,
-      arrows: false,
-      responsive: [
-        {
-          breakpoint: 767,
-          settings: {
-            dots: false,
-            arrows: false
-          }
-        },
-      ]
-    })
+    $('.slider-active')
+      .slick({
+        autoplay: false,
+        autoplaySpeed: 10000,
+        dots: false,
+        fade: true,
+        arrows: false,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              dots: false,
+              arrows: false,
+            },
+          },
+        ],
+      })
       .slickAnimation();
   }
-
 
   /*=============================================
     =        Trending Active		      =
@@ -358,32 +383,31 @@ export const main = function ($) {
     slidesPerView: 3,
     spaceBetween: 30,
     breakpoints: {
-      '1500': {
+      1500: {
         slidesPerView: 3,
       },
-      '1200': {
+      1200: {
         slidesPerView: 3,
       },
-      '992': {
+      992: {
         slidesPerView: 2,
       },
-      '768': {
+      768: {
         slidesPerView: 2,
       },
-      '576': {
+      576: {
         slidesPerView: 1,
       },
-      '0': {
+      0: {
         slidesPerView: 1,
       },
     },
     // Navigation arrows
     navigation: {
-      nextEl: ".slider-button-next",
-      prevEl: ".slider-button-prev",
+      nextEl: '.slider-button-next',
+      prevEl: '.slider-button-prev',
     },
   });
-
 
   /*=============================================
     =        Streamers Active		      =
@@ -396,22 +420,22 @@ export const main = function ($) {
     slidesPerView: 5,
     spaceBetween: 20,
     breakpoints: {
-      '1500': {
+      1500: {
         slidesPerView: 5,
       },
-      '1200': {
+      1200: {
         slidesPerView: 4,
       },
-      '992': {
+      992: {
         slidesPerView: 4,
       },
-      '768': {
+      768: {
         slidesPerView: 3,
       },
-      '576': {
+      576: {
         slidesPerView: 2,
       },
-      '0': {
+      0: {
         slidesPerView: 1.5,
         centeredSlides: true,
         centeredSlidesBounds: true,
@@ -424,11 +448,10 @@ export const main = function ($) {
     },
     // Navigation arrows
     navigation: {
-      nextEl: ".slider-button-next",
-      prevEl: ".slider-button-prev",
+      nextEl: '.slider-button-next',
+      prevEl: '.slider-button-prev',
     },
   });
-
 
   /*=============================================
     =    		Brand Active		      =
@@ -449,14 +472,14 @@ export const main = function ($) {
             slidesToShow: 5,
             slidesToScroll: 1,
             infinite: true,
-          }
+          },
         },
         {
           breakpoint: 992,
           settings: {
             slidesToShow: 4,
-            slidesToScroll: 1
-          }
+            slidesToScroll: 1,
+          },
         },
         {
           breakpoint: 767,
@@ -464,7 +487,7 @@ export const main = function ($) {
             slidesToShow: 4,
             slidesToScroll: 1,
             arrows: false,
-          }
+          },
         },
         {
           breakpoint: 575,
@@ -472,39 +495,38 @@ export const main = function ($) {
             slidesToShow: 3,
             slidesToScroll: 1,
             arrows: false,
-          }
+          },
         },
-      ]
+      ],
     });
-  } catch (error) {
-
-  }
-
+  } catch (error) {}
 
   /*=============================================
     =        Intersection Observer         =
   =============================================*/
   if (!!window.IntersectionObserver) {
-    let observer = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active-footer");
-          //entry.target.src = entry.target.dataset.src;
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      rootMargin: "0px 0px -100px 0px"
-    });
-    document.querySelectorAll('.has-footer-animation').forEach(block => {
-      observer.observe(block)
+    let observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active-footer');
+            //entry.target.src = entry.target.dataset.src;
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: '0px 0px -100px 0px',
+      }
+    );
+    document.querySelectorAll('.has-footer-animation').forEach((block) => {
+      observer.observe(block);
     });
   } else {
-    document.querySelectorAll('.has-footer-animation').forEach(block => {
-      block.classList.remove('has-footer-animation')
+    document.querySelectorAll('.has-footer-animation').forEach((block) => {
+      block.classList.remove('has-footer-animation');
     });
   }
-
 
   /*=============================================
     =           Brand effect         =
@@ -516,9 +538,8 @@ export const main = function ($) {
     },
     mouseleave: function () {
       $(this).siblings().stop().fadeTo(300, 1);
-    }
+    },
   });
-
 
   /*==================================
             Button Icon Draw
@@ -535,10 +556,7 @@ export const main = function ($) {
         $vivus.reset().play();
       });
     });
-  } catch (error) {
-
-  }
-
+  } catch (error) {}
 
   /*=============================================
     =        parallaxMouse Active          =
@@ -554,22 +572,20 @@ export const main = function ($) {
           pointerEvents: true,
         });
       }
-    };
-  };
+    }
+  }
   parallaxMouse();
-
 
   /*=============================================
     =    		Odometer Active  	       =
   =============================================*/
   $('.odometer').appear(function (e) {
-    var odo = $(".odometer");
+    var odo = $('.odometer');
     odo.each(function () {
-      var countNumber = $(this).attr("data-count");
+      var countNumber = $(this).attr('data-count');
       $(this).html(countNumber);
     });
   });
-
 
   /*=============================================
     =    		Magnific Popup		      =
@@ -577,22 +593,21 @@ export const main = function ($) {
   $('.popup-image').magnificPopup({
     type: 'image',
     gallery: {
-      enabled: true
+      enabled: true,
     },
     zoom: {
       enabled: false,
       duration: 300, // don't foget to change the duration also in CSS
       opener: function (element) {
         return element.find('img');
-      }
-    }
+      },
+    },
   });
 
   /* magnificPopup video view */
   $('.popup-video').magnificPopup({
-    type: 'iframe'
+    type: 'iframe',
   });
-
 
   /*=============================================
     =          Jarallax Active         =
@@ -601,17 +616,20 @@ export const main = function ($) {
     speed: 0.2,
   });
 
-
   /*=============================================
     =    	  Countdown Active  	         =
   =============================================*/
   $('[data-countdown]').each(function () {
-    var $this = $(this), finalDate = $(this).data('countdown');
+    var $this = $(this),
+      finalDate = $(this).data('countdown');
     $this.countdown(finalDate, function (event) {
-      $this.html(event.strftime('<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'));
+      $this.html(
+        event.strftime(
+          '<div class="time-count day"><span>%D</span>Day</div><div class="time-count hour"><span>%H</span>hour</div><div class="time-count min"><span>%M</span>min</div><div class="time-count sec"><span>%S</span>sec</div>'
+        )
+      );
     });
   });
-
 
   /*=============================================
     =          Parallax Active         =
@@ -630,49 +648,50 @@ export const main = function ($) {
           orientation: orientation,
           delay: 1,
           overflow: true,
-          transition: 'cubic-bezier(0,0,0,1)'
+          transition: 'cubic-bezier(0,0,0,1)',
         });
       });
     }
   })();
 
-
   /*=============================================
     =    	 Slider Range Active  	         =
   =============================================*/
-  $("#slider-range").slider({
+  $('#slider-range').slider({
     range: true,
     min: 10,
     max: 500,
     values: [80, 380],
     slide: function (event, ui) {
-      $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-    }
+      $('#amount').val('$' + ui.values[0] + ' - $' + ui.values[1]);
+    },
   });
-  $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-
+  $('#amount').val(
+    '$' +
+      $('#slider-range').slider('values', 0) +
+      ' - $' +
+      $('#slider-range').slider('values', 1)
+  );
 
   /*===========================================
        =           Cart Active            =
   =============================================*/
-  $('.qtybutton-box span').on("click", function () {
+  $('.qtybutton-box span').on('click', function () {
     var $input = $(this).parents('.num-block').find('input.in-num');
     if ($(this).hasClass('minus')) {
       var count = parseFloat($input.val()) - 1;
       count = count < 1 ? 1 : count;
       if (count < 2) {
         $(this).addClass('dis');
-      }
-      else {
+      } else {
         $(this).removeClass('dis');
       }
       $input.val(count);
-    }
-    else {
-      var count = parseFloat($input.val()) + 1
+    } else {
+      var count = parseFloat($input.val()) + 1;
       $input.val(count);
       if (count > 1) {
-        $(this).parents('.num-block').find(('.minus')).removeClass('dis');
+        $(this).parents('.num-block').find('.minus').removeClass('dis');
       }
     }
     $input.change();
@@ -688,98 +707,114 @@ export const main = function ($) {
     event.preventDefault();
   });
 
-
   /*===========================================
     =        servicesTab Active         =
   =============================================*/
-  $('.services__wrapper .services__item').on('mouseover', function () {
-    var li = $(this),
-      ul = li.parent(),
-      wrap = li.closest('.services-row'),
-      tab_content = $('.services__images', wrap),
-      current_index = li.index();
-    ul.find('.services__item').removeClass('active');
-    li.addClass('active');
-    tab_content.find(".services__images-item").removeClass('active').eq(current_index).addClass('active');
-
-  }).on('mouseout', function () {
-    var li = $(this);
-    var li = $(this),
-      ul = li.parent(),
-      wrap = li.closest('.services-row'),
-      tab_content = $('.services__images', wrap),
-      current_index = li.index();
-    if (ul.find('.active').length > 1) {
-      li.removeClass('active');
-    }
-    if (tab_content.find('.tab-pan.active').length > 1) {
-      tab_content.find(".services__images-item").eq(current_index).removeClass('active');
-    }
-  });
-
+  $('.services__wrapper .services__item')
+    .on('mouseover', function () {
+      var li = $(this),
+        ul = li.parent(),
+        wrap = li.closest('.services-row'),
+        tab_content = $('.services__images', wrap),
+        current_index = li.index();
+      ul.find('.services__item').removeClass('active');
+      li.addClass('active');
+      tab_content
+        .find('.services__images-item')
+        .removeClass('active')
+        .eq(current_index)
+        .addClass('active');
+    })
+    .on('mouseout', function () {
+      var li = $(this);
+      var li = $(this),
+        ul = li.parent(),
+        wrap = li.closest('.services-row'),
+        tab_content = $('.services__images', wrap),
+        current_index = li.index();
+      if (ul.find('.active').length > 1) {
+        li.removeClass('active');
+      }
+      if (tab_content.find('.tab-pan.active').length > 1) {
+        tab_content
+          .find('.services__images-item')
+          .eq(current_index)
+          .removeClass('active');
+      }
+    });
 
   /*===========================================
     =        FaqTab Active         =
   =============================================*/
-  $('.faq__wrapper .accordion-item').on('click', function () {
-    var li = $(this),
-      ul = li.parent(),
-      wrap = li.closest('.faq-rows'),
-      tab_content = $('.services__images', wrap),
-      current_index = li.index();
-    ul.find('.services__item').removeClass('active');
-    li.addClass('active');
-    tab_content.find(".services__images-item").removeClass('active').eq(current_index).addClass('active');
-
-  }).on('mouseout', function () {
-    var li = $(this);
-    var li = $(this),
-      ul = li.parent(),
-      wrap = li.closest('.faq-rows'),
-      tab_content = $('.services__images', wrap),
-      current_index = li.index();
-    if (ul.find('.active').length > 1) {
-      li.removeClass('active');
-    }
-    if (tab_content.find('.tab-pan.active').length > 1) {
-      tab_content.find(".services__images-item").eq(current_index).removeClass('active');
-    }
-  });
-
+  $('.faq__wrapper .accordion-item')
+    .on('click', function () {
+      var li = $(this),
+        ul = li.parent(),
+        wrap = li.closest('.faq-rows'),
+        tab_content = $('.services__images', wrap),
+        current_index = li.index();
+      ul.find('.services__item').removeClass('active');
+      li.addClass('active');
+      tab_content
+        .find('.services__images-item')
+        .removeClass('active')
+        .eq(current_index)
+        .addClass('active');
+    })
+    .on('mouseout', function () {
+      var li = $(this);
+      var li = $(this),
+        ul = li.parent(),
+        wrap = li.closest('.faq-rows'),
+        tab_content = $('.services__images', wrap),
+        current_index = li.index();
+      if (ul.find('.active').length > 1) {
+        li.removeClass('active');
+      }
+      if (tab_content.find('.tab-pan.active').length > 1) {
+        tab_content
+          .find('.services__images-item')
+          .eq(current_index)
+          .removeClass('active');
+      }
+    });
 
   /*===========================================
     =          SplitText Active         =
   =============================================*/
   function splitText() {
-    $(".tg__animate-text").each(function () {
+    $('.tg__animate-text').each(function () {
       var a = $(this),
-        d = a.text().split(""),
-        c = a.data("wait");
+        d = a.text().split(''),
+        c = a.data('wait');
       c || (c = 0);
-      var b = a.data("speed");
+      var b = a.data('speed');
       b || (b = 4),
         (b /= 100),
-        a.html("<em>321...</em>").addClass("ready"),
+        a.html('<em>321...</em>').addClass('ready'),
         a.waypoint({
           handler: function () {
-            a.hasClass("stop") ||
-              (a.addClass("stop"),
-                setTimeout(function () {
-                  a.text(""),
-                    $.each(d, function (d, e) {
-                      var c = document.createElement("span");
-                      (c.textContent = e), (c.style.animationDelay = d * b + "s"), a.append(c);
-                    });
-                }, c));
+            a.hasClass('stop') ||
+              (a.addClass('stop'),
+              setTimeout(function () {
+                a.text(''),
+                  $.each(d, function (d, e) {
+                    var c = document.createElement('span');
+                    (c.textContent = e),
+                      (c.style.animationDelay = d * b + 's'),
+                      a.append(c);
+                  });
+              }, c));
           },
-          offset: "90%",
+          offset: '90%',
         });
     });
-  };
-  if ($(window).width() < 768) {
-    $(".roadMap__list li").addClass('mobileView').removeClass('tg__animate-text');
   }
-
+  if ($(window).width() < 768) {
+    $('.roadMap__list li')
+      .addClass('mobileView')
+      .removeClass('tg__animate-text');
+  }
 
   /*=============================================
     =          GSAP Active         =
@@ -787,19 +822,19 @@ export const main = function ($) {
   gsap.registerPlugin(ScrollTrigger, SplitText);
   gsap.config({
     nullTargetWarn: false,
-    trialWarn: false
+    trialWarn: false,
   });
 
   function tg_title_animation() {
-
     var tg_var = jQuery('.tg__heading-wrapper');
     if (!tg_var.length) {
       return;
     }
-    const quotes = document.querySelectorAll(".tg__heading-wrapper .tg-element-title");
+    const quotes = document.querySelectorAll(
+      '.tg__heading-wrapper .tg-element-title'
+    );
 
-    quotes.forEach(quote => {
-
+    quotes.forEach((quote) => {
       //Reset if needed
       if (quote.animation) {
         quote.animation.progress(1).kill();
@@ -808,28 +843,28 @@ export const main = function ($) {
 
       var getclass = quote.closest('.tg__heading-wrapper').className;
       var animation = getclass.split('animation-');
-      if (animation[1] == "style4") return
+      if (animation[1] == 'style4') return;
 
       quote.split = new SplitText(quote, {
-        type: "lines,words,chars",
-        linesClass: "split-line"
+        type: 'lines,words,chars',
+        linesClass: 'split-line',
       });
       gsap.set(quote, { perspective: 400 });
 
-      if (animation[1] == "style1") {
+      if (animation[1] == 'style1') {
         gsap.set(quote.split.chars, {
           opacity: 0,
-          y: "90%",
-          rotateX: "-40deg"
+          y: '90%',
+          rotateX: '-40deg',
         });
       }
-      if (animation[1] == "style2") {
+      if (animation[1] == 'style2') {
         gsap.set(quote.split.chars, {
           opacity: 0,
-          x: "50"
+          x: '50',
         });
       }
-      if (animation[1] == "style3") {
+      if (animation[1] == 'style3') {
         gsap.set(quote.split.chars, {
           opacity: 0,
         });
@@ -837,20 +872,19 @@ export const main = function ($) {
       quote.animation = gsap.to(quote.split.chars, {
         scrollTrigger: {
           trigger: quote,
-          start: "top 90%",
+          start: 'top 90%',
         },
-        x: "0",
-        y: "0",
-        rotateX: "0",
+        x: '0',
+        y: '0',
+        rotateX: '0',
         opacity: 1,
         duration: 1,
         ease: Back.easeOut,
-        stagger: .02
+        stagger: 0.02,
       });
     });
   }
-  ScrollTrigger.addEventListener("refresh", tg_title_animation);
-
+  ScrollTrigger.addEventListener('refresh', tg_title_animation);
 
   /*=============================================
     =    		 Wow Active  	         =
@@ -861,10 +895,8 @@ export const main = function ($) {
       animateClass: 'animated',
       offset: 0,
       mobile: false,
-      live: true
+      live: true,
     });
     wow.init();
   }
-
-
 };
