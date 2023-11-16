@@ -147,3 +147,9 @@ export function getStartAndEndOfMonth() {
 
   return { startDate, endDate };
 }
+
+export function getImgSmall(url) {
+  const urlArr = url.split('/')
+  urlArr.splice(6, 0, 'q_auto:low')
+  return urlArr.join('/')
+}

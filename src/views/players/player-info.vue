@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative z-[1]  mt-0 mb-[25px] mx-0 last:m-0 xsm:bg-[#19222b] wow fadeInUp xsm:w-[80%]"
+    class="relative z-[1] mt-0 mb-[25px] mx-0 last:m-0 xsm:bg-[#19222b] wow fadeInUp xsm:w-[80%]"
     data-wow-delay=".2s"
   >
     <div
@@ -12,32 +12,35 @@
         <router-link :to="`/players/${player.id || 1}`"
           ><img
             class="border w-[232px] h-[357px] xsm:w-[100%] xsm:h-[auto] xsm:aspect-[232/357] rounded-md border-solid border-[#383c4e]"
-            :src="player.avatar_url ||avatar"
+            :src="avatar_url || avatar"
             alt="img"
         /></router-link>
       </div>
       <div
         class="streamers__content absolute pointer-events-none z-[1] bottom-7 inset-x-5"
       >
-        <h4 class="name text-xl tracking-[1px] m-0">{{ player.last_name + ' ' + player.first_name }}</h4>
+        <h4 class="name text-xl tracking-[1px] m-0">
+          {{ player.last_name + ' ' + player.first_name }}
+        </h4>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-
 import avatarDemo from '@/assets/img/team/streamers01.png';
+import { getImgSmall } from '@/utils/index';
 
 export default {
   props: {
     player: {
-      type: Object
+      type: Object,
     },
   },
   data() {
     return {
       avatar: avatarDemo,
+      avatar_url: this.player.avatar_url && getImgSmall(this.player.avatar_url),
     };
   },
 };
