@@ -27,14 +27,14 @@
             alt="thumb"
           />
         </div>
-        <div class="relative z-[1] pl-[0.5rem] pr-[0.5rem]">
+        <div class="relative z-[1] pl-[1.5rem] pr-[1.5rem]">
           <h5
             class="status block uppercase text-[24px] font-bold tracking-[1px] text-[#45f882] font-semibold tracking-[1px] transition-all duration-[0.3s] ease-[ease-out] delay-[0s] font-Barlow group-hover:text-[#ffbe18]"
           >
             0{{ index }}
           </h5>
         </div>
-        <div class="w-[205px] md:w- relative z-[1]">
+        <div class="w-[205px] relative z-[1]">
           <h5
             class="text-[21px] xl:text-[18px] md:text-[18px] sm:text-[18px] xsm:text-[18px] font-bold mt-0 mb-[1.125rem] mx-0 leading-[25.2px]"
           >
@@ -51,10 +51,10 @@
         class="flex items-center justify-between xsm:flex-col xsm:gap-[20px]"
         style="flex: 2"
       >
-        <div class="flex items-center justify-between">
-          <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between xsm:flex-col xsm:w-full xsm:gap-[20px]">
+          <div class="flex items-center justify-between xsm:w-full">
             <div
-              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-['']"
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] xsm:w-[50%] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-['']"
             >
               <h5
                 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"
@@ -68,7 +68,7 @@
               </h5>
             </div>
             <div
-              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] xsm:w-[50%] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
             >
               <h5
                 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"
@@ -82,9 +82,9 @@
               </h5>
             </div>
           </div>
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between xsm:w-full">
             <div
-              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] xsm:w-[50%] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] xsm:before:hidden before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
             >
               <h5
                 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"
@@ -98,7 +98,7 @@
               </h5>
             </div>
             <div
-              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
+              class="flex-1 2xl:w-[169px] xxl:w-[125px] xl:w-[125px] lg:w-[110px] xsm:w-[50%] flex-[0_0_auto] relative text-center z-[1] pl-[1.5rem] pr-[1.5rem] before:content-[''] before:absolute before:h-[26px] before:w-px before:z-[1] before:left-px before:bg-[#CBCBCB]"
             >
               <h5
                 class="text-[#A0A4B1] text-[16px] font-bold mt-0 mb-[1.125rem] mx-0"

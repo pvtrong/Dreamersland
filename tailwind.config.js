@@ -39,7 +39,7 @@ export default {
           max: '767.98px',
         },
         xsm: {
-          min: '360px',
+          min: '0px',
           max: '575.98px',
         },
       },

@@ -11,7 +11,7 @@
             <div class="flex justify-end items-center">
               <div
                 class="shop__ordering flex gap-5 relative ml-auto after:content-['\f107'] after:absolute after:-translate-y-2/4 after:font-bold after:text-[14px] after:right-5 after:top-2/4 after:font-FontAwesome xsm:m-[15px_auto_0]">
-                <el-date-picker v-model="filterBy" type="daterange" :ref="pickerRef" :picker-options="pickerOptions"
+                <el-date-picker class="xsm:!w-full" v-model="filterBy" type="daterange" :ref="pickerRef" :picker-options="pickerOptions"
                   @change="handleFilterBy">
                   ></el-date-picker>
               </div>
