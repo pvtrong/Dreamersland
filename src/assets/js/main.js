@@ -283,11 +283,12 @@ export const main = function ($) {
     $this.addClass('swiper-slider-' + index);
 
     var dragSize = $this.data('drag-size') ? $this.data('drag-size') : 24;
-    var freeMode = $this.data('free-mode') ? $this.data('free-mode') : false;
+    var freeMode = $this.data('free-mode') ? $this.data('free-mode') : true;
     var loop = $this.data('loop') ? $this.data('loop') : true;
     var slidesDesktop = $this.data('slides-desktop')
       ? $this.data('slides-desktop')
       : 4;
+
     var slidesLaptop = $this.data('slides-laptop')
       ? $this.data('slides-laptop')
       : 4;

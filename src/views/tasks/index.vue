@@ -1,14 +1,27 @@
 <template>
   <section>
-    <breadcrumb :pageTitle="'PLAY TO EARN'" :thumbImage="breadcrumbImage" :isUserDetail="false"></breadcrumb>
+    <breadcrumb
+      :pageTitle="'PLAY TO EARN'"
+      :thumbImage="breadcrumbImage"
+      :isUserDetail="false"
+    ></breadcrumb>
     <div class="pb-[120px] pt-[120px] bg-center bg-cover">
       <div class="container">
         <custom-title :title="'PLAY TO EARN'"></custom-title>
 
         <div
-          class="flex flex-wrap justify-start w-full xl:gap-[20px] xxl:gap-[20px] 2xl:gap-[20px] lg:gap-[15px] md:justify-between sm:justify-center xsm:justify-center">
-          <task-card-item v-for="task in listTasks" :key="task.id" :blood-count="task.bloodCount" :status="task.status"
-            :task-name="task.taskName" :point="task.point" :image="task.image" :isActive="task.isActive" />
+          class="flex flex-wrap justify-start w-full xl:gap-[20px] xxl:gap-[20px] 2xl:gap-[20px] lg:gap-[15px] md:justify-between sm:justify-center xsm:justify-center"
+        >
+          <task-card-item
+            v-for="task in listTasks"
+            :key="task.id"
+            :blood-count="task.bloodCount"
+            :status="task.status"
+            :task-name="task.taskName"
+            :point="task.point"
+            :image="task.image"
+            :isActive="task.isActive"
+          />
         </div>
 
         <!-- <div class="flex gap-[20px] justify-center flex-wrap">
@@ -40,7 +53,7 @@ export default {
     Breadcrumb,
     CustomTitle,
     breadcrumbImage,
-    TaskCardItem
+    TaskCardItem,
   },
   data() {
     return {
@@ -49,7 +62,7 @@ export default {
         {
           id: 1,
           bloodCount: 30,
-          status: 'Đã nhận',
+          status: 'Chưa nhận',
           taskName: 'KỶ LỤC GIA NGÀY',
           image: ItemCardImg,
           point: 40,
@@ -58,7 +71,7 @@ export default {
         {
           id: 2,
           bloodCount: 40,
-          status: 'Đã nhận',
+          status: 'Chưa nhận',
           taskName: 'KỶ LỤC GIA Tháng',
           image: ItemCardImg2,
           point: 20,
@@ -76,7 +89,7 @@ export default {
         {
           id: 4,
           bloodCount: 30,
-          status: 'Đã nhận',
+          status: 'Chưa nhận',
           taskName: 'KỶ LỤC GIA',
           image: ItemCardImg2,
           point: 30,
@@ -85,16 +98,16 @@ export default {
         {
           id: 5,
           bloodCount: 30,
-          status: 'Đã nhận',
+          status: 'Chưa nhận',
           taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
+          image: ItemCardImg,
           point: 30,
           isActive: false,
         },
         {
           id: 6,
           bloodCount: 30,
-          status: 'Đã nhận',
+          status: 'Chưa nhận',
           taskName: 'KỶ LỤC GIA',
           image: ItemCardImg2,
           point: 30,
@@ -103,7 +116,16 @@ export default {
         {
           id: 7,
           bloodCount: 30,
-          status: 'Đã nhận',
+          status: 'Chưa nhận',
+          taskName: 'KỶ LỤC GIA',
+          image: ItemCardImg,
+          point: 30,
+          isActive: false,
+        },
+        {
+          id: 8,
+          bloodCount: 30,
+          status: 'Chưa nhận',
           taskName: 'KỶ LỤC GIA',
           image: ItemCardImg2,
           point: 30,
@@ -145,7 +167,7 @@ export default {
     setTimeout(() => {
       main(window.jQuery);
     });
-  }
+  },
 };
 </script>
 
