@@ -36,7 +36,7 @@ import BrandArea from './brand-area.vue';
 import { getListPlayers } from '@/api/user';
 
 export default {
-  name: 'Dashboard',
+  name: 'Trang chủ',
   components: {
     BannerArea,
     MatchResultArea,

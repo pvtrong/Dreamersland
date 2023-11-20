@@ -49,6 +49,7 @@ import breadcrumbImage from '../../assets/img/others/breadcrumb_img01.png';
 import TaskCardItem from './task-card-item.vue';
 
 export default {
+  name: 'Danh sách nhiệm vụ',
   components: {
     Breadcrumb,
     CustomTitle,

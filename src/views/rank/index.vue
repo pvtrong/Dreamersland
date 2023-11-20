@@ -47,6 +47,7 @@ start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
 const defaultDate = [start, end];
 
 export default {
+  name: 'Bảng xếp hạng',
   components: {
     RankItem,
     Breadcrumb,
