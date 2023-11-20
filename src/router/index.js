@@ -55,12 +55,16 @@ export const constantRoutes = [
         path: '',
         name: 'Trang chủ',
         component: () => import('@/views/dashboard/index'),
-        meta: { name: 'Trang chủ', icon: 'dashboard', guard: GUARD.GUEST },
+        meta: { title: 'Trang chủ', icon: 'dashboard', guard: GUARD.GUEST },
       },
       {
         path: '/change-password',
         name: 'Thay đổi mật khẩu',
         component: () => import('@/views/changePassword/index'),
+        meta: {
+          title: 'Bảng xếp hạng',
+          guard: GUARD.AUTH,
+        },
       },
       {
         path: '/rank',
@@ -76,7 +80,7 @@ export const constantRoutes = [
         name: 'Danh sách những người chơi',
         component: () => import('@/views/players/index'),
         meta: {
-          name: 'Danh sách những người chơi',
+          title: 'Danh sách những người chơi',
           guard: GUARD.GUEST,
         },
       },
@@ -85,7 +89,7 @@ export const constantRoutes = [
         name: 'Chi tiết người chơi',
         component: () => import('@/views/players/player-detail/index'),
         meta: {
-          name: 'Chi tiết người chơi',
+          title: 'Chi tiết người chơi',
           guard: GUARD.GUEST,
         },
       },
@@ -94,7 +98,7 @@ export const constantRoutes = [
         name: 'Danh sách nhiệm vụ',
         component: () => import('@/views/tasks/index'),
         meta: {
-          name: 'Danh sách nhiệm vụ',
+          title: 'Danh sách nhiệm vụ',
           guard: GUARD.GUEST,
         },
       },
