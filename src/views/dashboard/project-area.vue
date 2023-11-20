@@ -25,74 +25,58 @@
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_01.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_01.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage1" class="popup-image">
+                  <img :src="ProjectImage1" alt="img" />
+                </a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_02.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_02.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage2" class="popup-image">
+                  <img :src="ProjectImage2" alt="img" />
+                </a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_03.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_03.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage3" class="popup-image">
+                  <img :src="ProjectImage3" alt="img" />
+                </a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_04.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_04.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage4" class="popup-image">
+                  <img :src="ProjectImage4" alt="img" />
+                </a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_05.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_05.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage5" class="popup-image">
+                  <img :src="ProjectImage5" alt="img" />
+                </a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_06.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_06.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage6" class="popup-image">
+                  <img :src="ProjectImage6" alt="img" />
+                </a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_07.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_07.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage7" class="popup-image">
+                  <img :src="ProjectImage7" alt="img" />
+                </a>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="project__item">
-                <a
-                  href="@/assets/img/gallery/project_08.jpg"
-                  class="popup-image"
-                  ><img src="@/assets/img/gallery/project_08.jpg" alt="img"
-                /></a>
+                <a :href="ProjectImage8" class="popup-image">
+                  <img :src="ProjectImage8" alt="img" />
+                </a>
               </div>
             </div>
           </div>
@@ -117,7 +101,29 @@
 </template>
 
 <script>
-export default {};
+import ProjectImage1 from '@/assets/img/gallery/project_01.jpg';
+import ProjectImage2 from '@/assets/img/gallery/project_02.jpg';
+import ProjectImage3 from '@/assets/img/gallery/project_03.jpg';
+import ProjectImage4 from '@/assets/img/gallery/project_04.jpg';
+import ProjectImage5 from '@/assets/img/gallery/project_05.jpg';
+import ProjectImage6 from '@/assets/img/gallery/project_06.jpg';
+import ProjectImage7 from '@/assets/img/gallery/project_07.jpg';
+import ProjectImage8 from '@/assets/img/gallery/project_08.jpg';
+
+export default {
+  data() {
+    return {
+      ProjectImage1,
+      ProjectImage2,
+      ProjectImage3,
+      ProjectImage4,
+      ProjectImage5,
+      ProjectImage6,
+      ProjectImage7,
+      ProjectImage8,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
