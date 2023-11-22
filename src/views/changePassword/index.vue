@@ -54,7 +54,7 @@ import backgroundImage from '@/assets/img/slider/slider_bg.jpg';
 
 
 export default {
-  name: 'Change Password',
+  name: 'Thay đổi mật khẩu',
   data() {
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {

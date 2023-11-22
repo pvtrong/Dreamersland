@@ -28,6 +28,7 @@ import breadcrumbImage from '@/assets/img/others/breadcrumb_img01.png';
 import { getListPlayers } from '@/api/user';
 
 export default {
+  name: 'Danh sách người chơi',
   components: {
     PlayerInfo,
     Breadcrumb,

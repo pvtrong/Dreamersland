@@ -133,10 +133,10 @@ export function getStartAndEndOfWeek() {
   return { startDate, endDate };
 }
 
-export function getStartAndEndOfMonth() {
+export function getStartAndEndOfMonth(minusMonth) {
   const now = new Date();
   const year = now.getFullYear();
-  const month = now.getMonth();
+  const month = now.getMonth() - Number(minusMonth || 0);
 
   // Calculate the start date of the month
   const startDate = new Date(year, month, 1);

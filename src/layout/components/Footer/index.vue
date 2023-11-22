@@ -1,121 +1,102 @@
 <template>
   <!-- footer-start done -->
-  <footer class="footer-style-one">
-    <div class="footer__top-wrap pt-20 pb-[30px] px-0 border-t-[#151d23] border-t border-solid">
-      <div class="container">
+  <footer
+    class="footer-style-two has-footer-animation bg-[#050506] relative overflow-hidden z-[1] before:content-[''] before:absolute before:bg-[url(./assets/img/bg/footer\_shape.png)] before:w-full before:h-full before:bg-[top_center] before:bg-cover before:translate-y-full before:transition-all before:duration-[2.5s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-0 before:top-0">
+    <div class="footer__country mt-0 mb-[100px] mx-0">
+      <div class="container custom-container">
         <div class="flex flex-wrap mx-[-15px]">
-          <div
-            class="w-4/12 basis-4/12 2xl:w-4/12 2xl:basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-5/12 lg:basis-5/12 md:w-7/12 md:basis-7/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
-            <div class="footer-widget mt-0 mb-[50px] mx-0 ">
-              <div class="footer-logo logo mt-0 mb-[30px] mx-0">
-                <a href="index.html"><img class="max-w-[177px]" src="@/assets/img/logo/logo.png" alt="Logo"></a>
-              </div>
-              <div class="footer-text mr-[30px] sm:mr-0 xsm:mr-0">
-                <p class="desc text-[15px] mt-0 mb-[25px] mx-0">Lorem ipsum dolor sitamet consectur adipiscing Duis
-                  esollici tudin augue euismod. Nulla ullam dolor sitamet consectetur</p>
-                <p
-                  class="social-title text-[16px] font-semibold uppercase text-[#ecebeb] leading-none mt-0 mb-[25px] mx-0">
-                  Active <span class=" text-[#45f882]">With Us <i class="fas fa-angle-double-right"></i></span></p>
-                <div class="footer-social flex flex-wrap gap-[10px_20px]">
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon01.png"
-                      alt="iocn"></a>
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon02.png"
-                      alt="iocn"></a>
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon03.png"
-                      alt="iocn"></a>
-                  <a class="block" href="#"><img class=" max-w-[30px]" src="@/assets/img/icons/social_icon04.png"
-                      alt="iocn"></a>
-                </div>
-              </div>
+          <div class="w-6/12 basis-6/12 relative px-[15px]">
+            <div class="footer__country-name leading-none">
+              <h2
+                class="text text-[90px] capitalize text-transparent font-extrabold inline-block transition-all duration-[0.3s] ease-[ease-out] delay-[0s] leading-[0.85] opacity-[0.66] m-0 hover:opacity-100 sm:block sm:text-[12vw] sm:leading-[0.9] xsm:block xsm:text-[12vw] xsm:leading-[0.9]">
+                Dubai
+              </h2>
             </div>
           </div>
-          <div
-            class="w-2/12 basis-2/12 2xl:w-2/12 2xl:basis-2/12 xl:w-2/12 xl:basis-2/12 lg:w-3/12 lg:basis-3/12 md:w-5/12 md:basis-5/12 sm:w-6/12 sm:basis-6/12 xsm:w-full xsm:basis-full relative px-[15px]">
-            <div class="footer-widget mt-0 mb-[50px] mx-0  pl-10 widget_nav_menu md:pl-0 sm:pl-0 xsm:pl-0">
-              <h4 class="fw-title  text-[20px] mt-0 mb-7 mx-0 ">quick link</h4>
-              <ul class="list-wrap m-0 p-0  menu">
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Gaming</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Product</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">All NFTs</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Social Network</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Domain Names</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Collectibles</a></li>
-              </ul>
-            </div>
-          </div>
-          <div
-            class="w-2/12 basis-2/12 2xl:w-2/12 2xl:basis-2/12 xl:w-2/12 xl:basis-2/12 lg:w-3/12 lg:basis-3/12 md:w-5/12 md:basis-5/12 sm:w-6/12 sm:basis-6/12 xsm:w-full xsm:basis-full relative px-[15px]">
-            <div class="footer-widget mt-0 mb-[50px] mx-0 pl-[50px]  widget_nav_menu md:pl-0 sm:pl-0 xsm:pl-0">
-              <h4 class="fw-title  text-[20px] mt-0 mb-7 mx-0 ">Supports</h4>
-              <ul class="list-wrap m-0 p-0  menu">
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Setting & Privacy</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Help & Support</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Live Auctions</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Item Details</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">24/7 Supports</a></li>
-                <li class=" mt-0 mb-1.5 mx-0"><a
-                    class=" text-[15px] inline-block text-[#adb0bc] relative hover:text-[#45f882]  after:content-[''] after:absolute after:w-full after:h-px after:origin-[right_top] after:transition-transform after:duration-[0.4s] after:ease-[cubic-bezier(0.74,0.72,0.27,0.24)] after:scale-x-0 after:scale-y-100 after:left-0 after:bottom-0 after:bg-[#45f882]  hover:after:origin-[left_top] hover:after:scale-100"
-                    href="#">Our News</a></li>
-              </ul>
-            </div>
-          </div>
-          <div
-            class="w-4/12 basis-4/12 2xl:w-4/12 2xl:basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-5/12 lg:basis-5/12 md:w-7/12 md:basis-7/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
-            <div class="footer-widget mt-0 mb-[50px] mx-0 pl-[78px] lg:pl-[0] md:pl-0 sm:pl-0 xsm:pl-0">
-              <h4 class="fw-title  text-[20px] mt-0 mb-7 mx-0 ">Newsletter</h4>
-              <div class="footer-newsletter">
-                <p class=" text-[15px] mt-0 mb-[25px] mx-0">Subscribe our newsletter to get our latest update &
-                  newsconsectetur</p>
-                <form action="#" class="footer-newsletter-form relative">
-                  <input type="email" placeholder="Your email address"
-                    class=" block w-full text-[14px] h-[60px] pl-[25px] pr-[100px] py-[17px] rounded-md border-none bg-[#1f2935] placeholder:text-[14px] focus:ring-[none] focus:!border-none ">
-                  <button type="submit"
-                    class=" absolute w-[63px] h-full text-[28px] text-[#1f2935] flex items-center justify-center p-2.5 rounded-md border-[none] right-0 top-0 bg-[#45f882] hover:bg-[#ffbe18] "><i
-                      class="flaticon-paper-plane"></i></button>
-                </form>
-              </div>
+          <div class="w-6/12 basis-6/12 relative px-[15px]">
+            <div class="footer__country-name leading-none text-right">
+              <h2
+                class="text text-[90px] capitalize text-transparent font-extrabold inline-block transition-all duration-[0.3s] ease-[ease-out] delay-[0s] leading-[0.85] opacity-[0.66] m-0 hover:opacity-100 sm:block sm:text-[12vw] sm:leading-[0.9] xsm:block xsm:text-[12vw] xsm:leading-[0.9]">
+                France
+              </h2>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="copyright__wrap px-0 py-5 bg-[#090d10]">
-      <div class="container">
-        <div class="flex flex-wrap mx-[-15px]  items-center ">
+    <div class="footer__two-widgets mt-0 mb-5 mx-0">
+      <div class="container custom-container">
+        <div class="flex flex-wrap mx-[-15px]">
           <div
-            class="w-7/12 basis-7/12 2xl:w-7/12 2xl:basis-7/12 xl:w-7/12 xl:basis-7/12 lg:w-7/12 lg:basis-7/12 md:w-7/12 md:basis-7/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
-            <div class="copyright__text text-left sm:text-center xsm:text-center">
-              <p class=" text-[14px] font-semibold uppercase text-[#9f9f9f] m-0 font-Barlow">Copyright © 2023 - All Rights
-                Reserved By <span class=" text-[#45f882]">Mykd</span></p>
+            class="w-4/12 basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-4/12 lg:basis-4/12 md:w-4/12 md:basis-4/12 sm:w-7/12 sm:basis-7/12 xsm:w-full xsm:basis-full relative px-[15px] order-1 md:order-none">
+            <div class="footer-el-widget mt-0 mb-[50px] mx-0 sm:mt-0 xsm:mt-0 md:mt-[30px]">
+              <h4
+                class="title relative text-[18px] tracking-[1px] mt-0 mb-5 mx-0 pl-[30px] after:text-[#45f882] before:content-['\f0d9'] before:absolute before:-translate-y-2/4 before:text-[20px] before:left-0 before:top-2/4 before:font-FontAwesome after:content-['\f0da'] after:absolute after:-translate-y-2/4 after:text-[20px] after:left-[11px] after:top-2/4 after:font-FontAwesome">
+                information
+              </h4>
+              <ul class="list-wrap m-0 p-0">
+                <li class="font-medium text-[#e2e1e1] font-Barlow">
+                  <a class="text-[#e2e1e1] hover:text-[#45f882]" href="tel:(+84) 37 987 2601">(+84) 37 987 2601</a>
+                </li>
+                <li class="font-medium text-[#e2e1e1] font-Barlow">
+                  <a class="text-[#e2e1e1] hover:text-[#45f882]"
+                    href="mailto:dbcorp.official@gmail.com">dbcorp.official@gmail.com</a>
+                </li>
+                <li class="font-medium text-[#e2e1e1] font-Barlow">
+                  Số 4 Chính Kinh, Thanh Xuân, Hà Nội.
+                </li>
+              </ul>
             </div>
           </div>
           <div
-            class="w-5/12 basis-5/12 2xl:w-5/12 2xl:basis-5/12 xl:w-5/12 xl:basis-5/12 lg:w-5/12 lg:basis-5/12 md:w-5/12 md:basis-5/12 sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative px-[15px]">
+            class="w-4/12 basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-4/12 lg:basis-4/12 md:w-4/12 md:basis-4/12 sm:w-5/12 sm:basis-5/12 xsm:w-full xsm:basis-full relative px-[15px] order-0 md:order-2">
             <div
-              class="copyright__card float-right sm:float-none sm:text-center sm:mt-[10px] sm:m-[0_auto] xsm:float-none xsm:text-center xsm:mt-[10px] xsm:m-[0_auto]">
-              <img class="sm:inline-block xsm:inline-block" src="@/assets/img/others/payment_card.png" alt="img">
+              class="footer-el-widget mt-0 mb-[50px] mx-0 md:text-center sm:text-left xsm:text-left text-center widget_nav_menu">
+              <div class="footer-el-logo mb-[35px] flex items-center justify-center sm:justify-start xsm:justify-start">
+                <a class="inline-block" href="index.html"><img class="my-0 mx-auto max-w-[165px]"
+                    src="@/assets/img/logo/logo.png" alt="Mykd" /></a>
+              </div>
+              <div class="footer-el-menu">
+                <ul class="list-wrap m-0 p-0">
+                  <li
+                    class="flex justify-center mt-0 mb-[13px] mx-0 font-medium text-[#e2e1e1] font-Barlow sm:justify-start sm:m-[0_0_10px] xsm:justify-start xsm:m-[0_0_10px]">
+                    <a class="block uppercase font-semibold text-[#e2e1e1] relative before:content-[''] before:absolute before:w-[42px] before:h-px before:-translate-y-2/4 before:rotate-0 before:opacity-0 before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:mx-auto before:my-0 before:top-2/4 before:inset-x-0 hover:text-[#45f882] hover:before:opacity-100 hover:before:-translate-y-2/4 hover:before:rotate-[-40deg] font-Barlow before:bg-[#45f882]"
+                      href="index.html">Home</a>
+                  </li>
+                  <li
+                    class="flex justify-center mt-0 mb-[13px] mx-0 font-medium text-[#e2e1e1] font-Barlow sm:justify-start sm:m-[0_0_10px] xsm:justify-start xsm:m-[0_0_10px]">
+                    <a class="block uppercase font-semibold text-[#e2e1e1] relative before:content-[''] before:absolute before:w-[42px] before:h-px before:-translate-y-2/4 before:rotate-0 before:opacity-0 before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:mx-auto before:my-0 before:top-2/4 before:inset-x-0 hover:text-[#45f882] hover:before:opacity-100 hover:before:-translate-y-2/4 hover:before:rotate-[-40deg] font-Barlow before:bg-[#45f882]"
+                      href="about-us.html">About Us</a>
+                  </li>
+                  <li
+                    class="flex justify-center mt-0 mb-[13px] m-0 font-medium text-[#e2e1e1] font-Barlow sm:justify-start sm:m-[0_0_10px] xsm:justify-start xsm:m-[0_0_10px]">
+                    <a class="block uppercase font-semibold text-[#e2e1e1] relative before:content-[''] before:absolute before:w-[42px] before:h-px before:-translate-y-2/4 before:rotate-0 before:opacity-0 before:transition-all before:duration-[0.3s] before:ease-[ease-out] before:delay-[0s] before:mx-auto before:my-0 before:top-2/4 before:inset-x-0 hover:text-[#45f882] hover:before:opacity-100 hover:before:-translate-y-2/4 hover:before:rotate-[-40deg] font-Barlow before:bg-[#45f882]"
+                      href="tournament.html">Tournament</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-4/12 basis-4/12 xl:w-4/12 xl:basis-4/12 lg:w-4/12 lg:basis-4/12 md:w-4/12 md:basis-4/12 sm:w-7/12 sm:basis-7/12 xsm:w-full xsm:basis-full relative px-[15px] order-3">
+            <div
+              class="footer-el-widget mt-0 mb-[50px] mx-0 text-right sm:text-left xsm:text-left text-md-end md:mt-[30px]">
+              <h4
+                class="title relative pr-[30px] text-[18px] tracking-[1px] mt-0 mb-5 mx-0 pl-[30px] before:content-['\f0d9'] before:absolute before:-translate-y-2/4 before:text-[20px] before:top-2/4 before:font-FontAwesome after:content-['\f0da'] after:absolute after:-translate-y-2/4 after:text-[20px] after:top-2/4 after:font-FontAwesome before:left-auto before:right-[11px] after:text-[#45f882] after:left-auto after:right-0 sm:pl-[30px] sm:pr-0 sm:before:left-0 sm:before:right-auto sm:after:left-[11px] sm:after:right-auto xsm:pl-[30px] xsm:pr-0 xsm:before:left-0 xsm:before:right-auto xsm:after:left-[11px] xsm:after:right-auto">
+                head office
+              </h4>
+              <ul class="list-wrap m-0 p-0">
+                <li class="font-medium text-[#e2e1e1] font-Barlow">
+                  <a class="text-[#e2e1e1] hover:text-[#45f882]" href="tel:(+84) 37 987 2601">(+84) 37 987 2601</a>
+                </li>
+                <li class="font-medium text-[#e2e1e1] font-Barlow">
+                  <a class="text-[#e2e1e1] hover:text-[#45f882]"
+                    href="mailto:dbcorp.official@gmail.com">dbcorp.official@gmail.com</a>
+                </li>
+                <li class="font-medium text-[#e2e1e1] font-Barlow">
+                  Số 4 Chính Kinh, Thanh Xuân, Hà Nội.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -125,9 +106,7 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped></style>

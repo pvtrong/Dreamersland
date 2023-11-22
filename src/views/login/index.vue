@@ -41,7 +41,7 @@ import { validPhoneNumber } from '@/utils/validate';
 import backgroundImage from '@/assets/img/slider/slider_bg.jpg';
 
 export default {
-  name: 'Login',
+  name: 'Đăng nhập',
   data() {
     const validatePhoneNumber = (rule, value, callback) => {
       if (!validPhoneNumber(value)) {

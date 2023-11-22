@@ -52,11 +52,11 @@ export default {
         //   itemKey: '6',
         //   itemName: 'HALL OF FAME',
         // },
-        // {
-        //   pathName: '/tasks',
-        //   itemKey: '7',
-        //   itemName: 'NHIỆM VỤ',
-        // },
+        {
+          pathName: '/tasks',
+          itemKey: '7',
+          itemName: 'NHIỆM VỤ',
+        },
       ],
     };
   },

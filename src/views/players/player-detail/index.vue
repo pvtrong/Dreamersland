@@ -33,7 +33,7 @@
                 " :rankName="currentUser.rank && currentUser.rank.rank_name" />
           </div>
 
-          <div class="services-row flex flex-wrap items-center align-items-xl-start mt-28">
+          <!-- <div class="services-row flex flex-wrap items-center align-items-xl-start mt-28">
             <div
               class="w-6/12 basis-6/12 xl:w-6/12 xl:basis-6/12 lg:w-6/12 lg:basis-6/12 md:w-full md:basis-full sm:w-full sm:basis-full xsm:w-full xsm:basis-full relative">
               <div
@@ -53,7 +53,7 @@
               <task-card-item v-for="task in tasks" :key="task.id" :blood-count="task.bloodCount" :status="task.status"
                 :task-name="task.taskName" :point="task.point" :image="task.image" :isActive="task.isActive" />
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
@@ -73,7 +73,7 @@ import ItemCardImg2 from '@/assets/img/others/breadcrumb_img03.png';
 import { getUserDetail } from '@/api/user';
 
 export default {
-  name: 'Users',
+  name: 'Chi tiết người chơi',
   components: {
     Breadcrumb,
     RankInfo,
@@ -88,71 +88,71 @@ export default {
       win02Img,
       currentUser: {},
       isLoading: false,
-      tasks: [
-        {
-          id: 1,
-          bloodCount: 30,
-          status: 'Đã nhận',
-          taskName: 'KỶ LỤC GIA NGÀY',
-          image: ItemCardImg,
-          point: 40,
-          isActive: false,
-        },
-        {
-          id: 2,
-          bloodCount: 40,
-          status: 'Đã nhận',
-          taskName: 'KỶ LỤC GIA Tháng',
-          image: ItemCardImg2,
-          point: 20,
-          isActive: true,
-        },
-        {
-          id: 3,
-          bloodCount: 10,
-          status: 'Chưa nhận',
-          taskName: 'KỶ LỤC',
-          image: ItemCardImg,
-          point: 40,
-          isActive: false,
-        },
-        {
-          id: 4,
-          bloodCount: 30,
-          status: 'Đã nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
-          point: 30,
-          isActive: false,
-        },
-        {
-          id: 5,
-          bloodCount: 30,
-          status: 'Đã nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
-          point: 30,
-          isActive: false,
-        },
-        {
-          id: 6,
-          bloodCount: 30,
-          status: 'Đã nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
-          point: 30,
-          isActive: false,
-        },
-        {
-          id: 7,
-          bloodCount: 30,
-          status: 'Đã nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
-          point: 30,
-          isActive: false,
-        },
-      ],
+      // tasks: [
+      //   {
+      //     id: 1,
+      //     bloodCount: 30,
+      //     status: 'Đã nhận',
+      //     taskName: 'KỶ LỤC GIA NGÀY',
+      //     image: ItemCardImg,
+      //     point: 40,
+      //     isActive: false,
+      //   },
+      //   {
+      //     id: 2,
+      //     bloodCount: 40,
+      //     status: 'Đã nhận',
+      //     taskName: 'KỶ LỤC GIA Tháng',
+      //     image: ItemCardImg2,
+      //     point: 20,
+      //     isActive: true,
+      //   },
+      //   {
+      //     id: 3,
+      //     bloodCount: 10,
+      //     status: 'Chưa nhận',
+      //     taskName: 'KỶ LỤC',
+      //     image: ItemCardImg,
+      //     point: 40,
+      //     isActive: false,
+      //   },
+      //   {
+      //     id: 4,
+      //     bloodCount: 30,
+      //     status: 'Đã nhận',
+      //     taskName: 'KỶ LỤC GIA',
+      //     image: ItemCardImg2,
+      //     point: 30,
+      //     isActive: false,
+      //   },
+      //   {
+      //     id: 5,
+      //     bloodCount: 30,
+      //     status: 'Đã nhận',
+      //     taskName: 'KỶ LỤC GIA',
+      //     image: ItemCardImg2,
+      //     point: 30,
+      //     isActive: false,
+      //   },
+      //   {
+      //     id: 6,
+      //     bloodCount: 30,
+      //     status: 'Đã nhận',
+      //     taskName: 'KỶ LỤC GIA',
+      //     image: ItemCardImg2,
+      //     point: 30,
+      //     isActive: false,
+      //   },
+      //   {
+      //     id: 7,
+      //     bloodCount: 30,
+      //     status: 'Đã nhận',
+      //     taskName: 'KỶ LỤC GIA',
+      //     image: ItemCardImg2,
+      //     point: 30,
+      //     isActive: false,
+      //   },
+      // ],
     };
   },
   methods: {
@@ -174,12 +174,13 @@ export default {
     setTimeout(() => {
       main(window.jQuery);
     });
-  }
+  },
 };
 </script>
 
 <style scoped>
 .title {
-  text-shadow: -1px 5px 0px rgba(69, 248, 130, 0.66);
+  text-shadow: -1px 2px 0px rgba(69, 248, 130, 0.66);
+  font-family: 'berlin_sans_fb_demibold';
 }
 </style>

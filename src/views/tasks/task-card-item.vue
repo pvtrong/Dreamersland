@@ -57,7 +57,7 @@
         <strong>Điều kiện mở khoá:</strong>
 
         <p>
-          Để mở khoá danh hiệu này, bạn cần vượt qua kỷ lục ngày của hệ thống.
+          Bạn cần vượt qua doanh số 20.000.000 triệu đồng.
         </p>
       </div>
     </div>
