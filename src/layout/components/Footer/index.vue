@@ -1,7 +1,7 @@
 <template>
   <!-- footer-start done -->
   <footer
-    class="footer-style-two has-footer-animation bg-[#050506] relative overflow-hidden z-[1] before:content-[''] before:absolute before:bg-[url(./assets/img/bg/footer\_shape.png)] before:w-full before:h-full before:bg-[top_center] before:bg-cover before:translate-y-full before:transition-all before:duration-[2.5s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-0 before:top-0">
+    class="footer-style-two pt-4 xxl:px-6 2xl:px-6 has-footer-animation bg-[#050506] relative overflow-hidden z-[1] before:content-[''] before:absolute before:bg-[url(./assets/img/bg/footer\_shape.png)] before:w-full before:h-full before:bg-[top_center] before:bg-cover before:translate-y-full before:transition-all before:duration-[2.5s] before:ease-[ease-out] before:delay-[0s] before:z-[-1] before:left-0 before:top-0">
     <div class="footer__country mt-0 mb-[100px] mx-0">
       <div class="container custom-container">
         <div class="flex flex-wrap mx-[-15px]">
