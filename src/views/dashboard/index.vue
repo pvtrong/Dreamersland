@@ -15,9 +15,7 @@
     <social-area />
     <!-- social-area-end -->
 
-    <!-- brand-area done -->
-
-    <brand-area />
+    <!-- <brand-area /> -->
   </div>
 </template>
 
@@ -50,7 +48,7 @@ export default {
     ...mapGetters(['name']),
   },
   created() {
-    this.getData({ page: 1, limit: 12 });
+    this.getData({ page: 1, limit: 10 });
   },
   data() {
     return {
@@ -64,7 +62,7 @@ export default {
       try {
         const { data } = await getListPlayers(params);
         this.listPlayers = data.data;
-      } catch (error) {}
+      } catch (error) { }
       this.isLoading = false;
     },
   },
@@ -81,6 +79,7 @@ export default {
   &-container {
     margin: 30px;
   }
+
   &-text {
     font-size: 30px;
     line-height: 46px;

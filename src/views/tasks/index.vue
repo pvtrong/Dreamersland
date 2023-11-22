@@ -1,37 +1,15 @@
 <template>
   <section>
-    <breadcrumb
-      :pageTitle="'PLAY TO EARN'"
-      :thumbImage="breadcrumbImage"
-      :isUserDetail="false"
-    ></breadcrumb>
+    <breadcrumb :pageTitle="'PLAY TO EARN'" :thumbImage="breadcrumbImage" :isUserDetail="false"></breadcrumb>
     <div class="pb-[120px] pt-[120px] bg-center bg-cover">
       <div class="container">
         <custom-title :title="'PLAY TO EARN'"></custom-title>
 
         <div
-          class="flex flex-wrap justify-start w-full xl:gap-[20px] xxl:gap-[20px] 2xl:gap-[20px] lg:gap-[15px] md:justify-between sm:justify-center xsm:justify-center"
-        >
-          <task-card-item
-            v-for="task in listTasks"
-            :key="task.id"
-            :blood-count="task.bloodCount"
-            :status="task.status"
-            :task-name="task.taskName"
-            :point="task.point"
-            :image="task.image"
-            :isActive="task.isActive"
-          />
+          class="flex flex-wrap justify-center w-full xl:gap-[20px] xxl:gap-[20px] 2xl:gap-[20px] lg:gap-[15px] md:justify-between sm:justify-center xsm:justify-center">
+          <task-card-item v-for="task in listTasks" :key="task.id" :blood-count="task.bloodCount" :status="task.status"
+            :task-name="task.taskName" :point="task.point" :image="task.image" :isActive="task.isActive" />
         </div>
-
-        <!-- <div class="flex gap-[20px] justify-center flex-wrap">
-          <task-info v-for="(player, index) in listTasks" :key="index" :player="player"></task-info>
-        </div> -->
-        <!-- <div class="block text-end mt-[2rem]">
-          <el-pagination layout="prev, pager, next" :page-size="pageSize" :current-page.sync="pageIndex" :total="total"
-            @current-change="handleCurrentChange">
-          </el-pagination>
-      </div> -->
       </div>
     </div>
   </section>
@@ -73,7 +51,7 @@ export default {
           id: 2,
           bloodCount: 40,
           status: 'Chưa nhận',
-          taskName: 'KỶ LỤC GIA Tháng',
+          taskName: 'KỶ LỤC GIA TUẦN',
           image: ItemCardImg2,
           point: 20,
           isActive: true,
@@ -82,54 +60,9 @@ export default {
           id: 3,
           bloodCount: 10,
           status: 'Chưa nhận',
-          taskName: 'KỶ LỤC',
+          taskName: 'KỶ LỤC GIA THÁNG',
           image: ItemCardImg,
           point: 40,
-          isActive: false,
-        },
-        {
-          id: 4,
-          bloodCount: 30,
-          status: 'Chưa nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
-          point: 30,
-          isActive: false,
-        },
-        {
-          id: 5,
-          bloodCount: 30,
-          status: 'Chưa nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg,
-          point: 30,
-          isActive: false,
-        },
-        {
-          id: 6,
-          bloodCount: 30,
-          status: 'Chưa nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
-          point: 30,
-          isActive: false,
-        },
-        {
-          id: 7,
-          bloodCount: 30,
-          status: 'Chưa nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg,
-          point: 30,
-          isActive: false,
-        },
-        {
-          id: 8,
-          bloodCount: 30,
-          status: 'Chưa nhận',
-          taskName: 'KỶ LỤC GIA',
-          image: ItemCardImg2,
-          point: 30,
           isActive: false,
         },
       ],
@@ -139,31 +72,6 @@ export default {
       pageIndex: 1,
     };
   },
-  // created() {
-  //   this.getData({ page: this.pageIndex, limit: this.pageSize });
-  // },
-  // methods: {
-  //   async getData(params) {
-  //     this.isLoading = true;
-  //     try {
-  //       const { data } = await getListPlayers(params);
-  //       this.listTasks = data.data;
-  //       this.total = data.total;
-  //     } catch (error) { }
-  //     this.isLoading = false;
-  //   },
-
-  //   handleCurrentChange(val) {
-  //     this.pageIndex = val;
-
-  //     this.getData({ page: val, limit: this.pageSize }).then(() => {
-  //       window.scrollTo({
-  //         top: 300,
-  //         behavior: 'smooth',
-  //       });
-  //     });
-  //   },
-  // },
   mounted() {
     setTimeout(() => {
       main(window.jQuery);
