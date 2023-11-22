@@ -80,6 +80,6 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-  text-shadow: -1px 5px 0px rgba(69, 248, 130, 0.66);
+  text-shadow: -1px 2px 0px rgba(69, 248, 130, 0.66);
 }
 </style>
