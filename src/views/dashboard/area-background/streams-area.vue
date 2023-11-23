@@ -11,7 +11,7 @@
               top streamers</span>
             <h3
               class="title text-[45px] font-extrabold tracking-[1px] m-0 sm:text-[35px] sm:leading-[1.1] xsm:text-[35px] xsm:leading-[1.1]">
-              top rated streamers
+              top rated dreamers
             </h3>
           </div>
         </div>
