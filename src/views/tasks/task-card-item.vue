@@ -57,7 +57,7 @@
         <strong>Điều kiện mở khoá:</strong>
 
         <p>
-          Bạn cần vượt qua doanh số 20.000.000 triệu đồng.
+          {{ openCondition }}
         </p>
       </div>
     </div>
@@ -90,6 +90,10 @@ export default {
     isActive: {
       type: Boolean,
       default: false,
+    },
+    openCondition: {
+      type: String,
+      default: '',
     },
   },
 };
