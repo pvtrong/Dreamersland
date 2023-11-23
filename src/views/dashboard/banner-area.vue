@@ -12,16 +12,16 @@
             <h2
               class="title text-[150px] leading-[0.8] mt-0 mb-[21px] mx-0 font-berlin wow bounceInLeft sm:text-[17vw] xsm:text-[17vw] md:text-[118px] xl:text-[136px]"
               data-wow-delay=".2s">
-              steaming
+              Dreamers
             </h2>
             <p class="text-[26px] uppercase font-bold tracking-[5px] leading-[1.4] text-[#fff] m-0 wow bounceInLeft lg:text-[22px] lg:tracking-[5x] md:text-[24px] md:tracking-[5px] sm:text-[20px] sm:tracking-[3px] xsm:text-[20px] xsm:tracking-[3px]"
               data-wow-delay=".4s">
-              video games online
+              league of legend
             </p>
             <div class="banner__btn mt-[33px] mb-0 mx-0 wow bounceInLeft" data-wow-delay=".6s">
-              <a href="contact.html" class="tg-btn-3 tg-svg mx-auto">
+              <a href="#" class="tg-btn-3 tg-svg mx-auto">
                 <div class="svg-icon" id="svg-1" data-svg-icon="../../assets/img/icons/shape.svg"></div>
-                <span>contact us</span>
+                <span>Tham gia ngay</span>
               </a>
             </div>
           </div>

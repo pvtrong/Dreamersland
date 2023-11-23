@@ -29,17 +29,15 @@
           <div
             class="section__title mb-[30px] text-left relative after:content-[''] after:block after:bg-[url(./assets/img/bg/title\_shape.svg)] after:w-[65px] after:h-[5px] after:mt-5 after:mb-0 after:mx-0">
             <h3 class="title text-[45px] font-extrabold tracking-[1px] m-0 leading-[1.15] sm:text-[35px] xsm:text-[35px]">
-              The Journey of The
-              <br class="md:hidden sm:hidden xsm:hidden" />
-              NFT Sites
+              Cuộc chiến của những thợ săn tiền thưởng
             </h3>
           </div>
           <div class="about__content-two">
             <p>
-              Gorem npsum dolor sit amet consectetur adipiscing elit. Duis
-              elementum sollici tudin augue euismod. Nulla ullamcorper nunc.
-              Morbi pharetra mi tellus mollis tincidunt massa venenatis. Etiam
-              lacinia ipsumultrices.
+              Tại dreamersland, chúng ta sẽ cùng nhau trải qua những trận chiến
+              nảy lửa và vô cùng kịch tính. Những trận combat hấp dẫn, thứ tự
+              trên bảng xếp hạng thay đổi liên tục. Và ai sẽ là người chinh phục
+              giải thưởng cuối cùng. Hãy đón xem!
             </p>
           </div>
           <div
@@ -64,7 +62,7 @@
                     <span class="formatting-mark block leading-none ml-[3px]">K</span>
                   </h2>
                   <p class="leading-none text-center text-[14px] font-medium m-0">
-                    Member
+                    Người chơi
                   </p>
                 </div>
                 <div class="about__funFact-item">
@@ -73,16 +71,16 @@
                     <span class="formatting-mark block leading-none ml-[3px]">K</span>
                   </h2>
                   <p class="leading-none text-center text-[14px] font-medium m-0">
-                    NFT
+                    Cặp đấu
                   </p>
                 </div>
                 <div class="about__funFact-item">
                   <h2 class="count flex items-center text-3xl font-semibold leading-none mt-0 mb-2 mx-0">
-                    <span class="odometer" data-count="30"></span>
+                    <span class="odometer" data-count="3000"></span>
                     <span class="formatting-mark block leading-none ml-[3px]">K</span>
                   </h2>
                   <p class="leading-none text-center text-[14px] font-medium m-0">
-                    Artist
+                    Giải thưởng
                   </p>
                 </div>
               </div>
@@ -91,7 +89,7 @@
                   class="tg-btn-3 tg-svg text-[14px] !text-[#fff] tracking-[0.5px] font-bold w-[158px] h-[55px]">
                   <div class="svg-icon !fill-transparent !stroke-[#45f882]" id="svg-6"
                     data-svg-icon="../../assets/img/icons/shape.svg"></div>
-                  <span>read more</span>
+                  <span>Xem ranking</span>
                 </a>
                 <a href="https://www.youtube.com/watch?v=ssrNcwxALS4"
                   class="popup-video flex items-center gap-[0_14px] text-[13px] font-semibold text-[#fff] tracking-[0.3px] hover:text-[#45f882] group"><i
@@ -113,5 +111,6 @@ export default {};
 <style lang="scss" scoped>
 .title {
   text-shadow: -1px 2px 0px rgba(69, 248, 130, 0.66);
+  font-family: 'Open Sans', sans-serif;
 }
 </style>
